@@ -1,10 +1,10 @@
 export const RARITY_COLORS: Record<string, string> = {
-  Common: "bg-zinc-600",
-  Uncommon: "bg-green-700",
-  Rare: "bg-blue-700",
-  Epic: "bg-purple-700",
-  Legendary: "bg-[#A67C1E] text-slate-950",
-  Mythical: "bg-[#DC2626]",
+  Common: "bg-zinc-600 text-slate-200",
+  Uncommon: "bg-green-700 text-white",
+  Rare: "bg-blue-700 text-white",
+  Epic: "bg-purple-700 text-white",
+  Legendary: "bg-[#C8963E] text-[#0A0A0F]",
+  Mythical: "bg-[#8B1A1A] text-white",
 };
 
 export const AFFINITY_COLORS: Record<string, string> = {

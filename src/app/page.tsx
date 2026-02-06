@@ -31,50 +31,57 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <h1 className="mb-2 text-4xl font-bold text-[#D4A43C]">RAID Tool</h1>
-      <p className="mb-8 text-slate-400">
-        Your all-in-one companion toolkit for RAID: Shadow Legends
-      </p>
+      {/* Clean brutal header */}
+      <div className="mb-10">
+        <h1 className="mb-2 text-[#C8963E] text-6xl font-black uppercase tracking-tighter">
+          RAID Tool
+        </h1>
+        <p className="text-base font-medium text-[#7A7570] mt-4">
+          Your all-in-one companion toolkit for <span className="text-[#E8E4DF] font-semibold">RAID: Shadow Legends</span>
+        </p>
+        <div className="h-[1px] w-32 bg-[#C8963E]/30 mt-4"></div>
+      </div>
 
       {user ? (
         /* Logged-in dashboard */
         <div className="space-y-6">
+          {/* Stat cards — clean data panels */}
           <div className="grid gap-4 sm:grid-cols-3">
-            <Card>
+            <Card className="border-[#C8963E]/30 hover:border-[#C8963E]/60 transition-colors group">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm text-muted-foreground">
+                <CardTitle className="text-xs text-[#7A7570] group-hover:text-[#C8963E] transition-colors">
                   Roster Size
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold">{roster.length}</p>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-[#C8963E] text-5xl font-black">{roster.length}</p>
+                <p className="text-xs text-[#7A7570] uppercase tracking-wide font-semibold mt-1">
                   champion{roster.length !== 1 ? "s" : ""}
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="border-[#4A5568]/30 hover:border-[#4A5568]/60 transition-colors group">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm text-muted-foreground">
+                <CardTitle className="text-xs text-[#7A7570] group-hover:text-[#4A5568] transition-colors">
                   Saved Teams
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold">{teams.length}</p>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-[#4A5568] text-5xl font-black">{teams.length}</p>
+                <p className="text-xs text-[#7A7570] uppercase tracking-wide font-semibold mt-1">
                   team{teams.length !== 1 ? "s" : ""}
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="border-[#8B1A1A]/30 hover:border-[#8B1A1A]/60 transition-colors group">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm text-muted-foreground">
+                <CardTitle className="text-xs text-[#7A7570] group-hover:text-[#8B1A1A] transition-colors">
                   Champion Database
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-3xl font-bold">{allChampions.length}</p>
-                <p className="text-xs text-muted-foreground">champions indexed</p>
+                <p className="text-[#8B1A1A] text-5xl font-black">{allChampions.length}</p>
+                <p className="text-xs text-[#7A7570] uppercase tracking-wide font-semibold mt-1">champions indexed</p>
               </CardContent>
             </Card>
           </div>
@@ -180,21 +187,6 @@ export default function DashboardPage() {
             <Button asChild>
               <Link href="/champions">Browse Champions</Link>
             </Button>
-            <Button asChild variant="outline">
-              <Link href="/team-builder">Team Builder</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/roster">My Roster</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/gear-optimizer">Gear Optimizer</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/clan-boss">Clan Boss</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/fusion-tracker">Fusions</Link>
-            </Button>
           </div>
         </div>
       ) : (
@@ -229,92 +221,21 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
 
-          {/* What you can do */}
-          <div className="grid gap-4 sm:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Champion Database</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  Browse {allChampions.length}+ champions with stats, skills,
-                  and ratings.
-                </p>
-                <Button asChild size="sm">
-                  <Link href="/champions">Browse Champions</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Team Builder</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  Build and speed-tune teams for any content type.
-                </p>
-                <Button asChild size="sm">
-                  <Link href="/team-builder">Build a Team</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Your Roster</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  Track your champions, builds, and gear. Log in to get started.
-                </p>
-                <Button asChild size="sm" variant="outline">
-                  <Link href="/login">Log In</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Advanced tools */}
-          <div className="grid gap-4 sm:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Gear Optimizer</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  Find the best gear sets for any champion and content area.
-                </p>
-                <Button asChild size="sm" variant="outline">
-                  <Link href="/gear-optimizer">Optimize Gear</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Clan Boss Calculator</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  Speed-tune your team and estimate damage output.
-                </p>
-                <Button asChild size="sm" variant="outline">
-                  <Link href="/clan-boss">Calculate</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Fusion Tracker</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-3 text-sm text-muted-foreground">
-                  Track your progress on active fusion events.
-                </p>
-                <Button asChild size="sm" variant="outline">
-                  <Link href="/fusion-tracker">Track Fusions</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          {/* Champion Database */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Champion Database</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-sm text-muted-foreground">
+                Browse {allChampions.length}+ champions with stats, skills,
+                and ratings.
+              </p>
+              <Button asChild size="sm">
+                <Link href="/champions">Browse Champions</Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       )}
     </div>

@@ -85,6 +85,9 @@
 | `/roster` | **My Roster** — View and manage owned champions (requires auth). |
 | `/tier-lists` | **Tier Lists** — Champion rankings by content area. |
 | `/guides` | **Guides** — Build guides and strategy content. |
+| `/gear-optimizer` | **Gear Optimizer** — Suggest best gear sets for a champion based on stat priorities and content area. |
+| `/clan-boss` | **Clan Boss Calculator** — Speed tune simulation, damage estimation, and turn order visualization. |
+| `/fusion-tracker` | **Fusion Tracker** — Track progress on active fusion events (requires auth). |
 | `/profile` | **Profile / Settings** — Account settings, preferences (requires auth). |
 | `/login` | **Login / Sign Up** — Supabase auth flow. |
 
@@ -285,35 +288,83 @@ Each chunk is a self-contained unit of work that can be built autonomously in ~1
 
 ---
 
-### Phase 4 — Advanced Tools
+### Phase 4 — Advanced Tools ✅
 
-**Chunk 4.1 — Gear Optimizer: Data Model + UI Shell**
-- [ ] Define gear data model (sets, slots, main stats, substats)
-- [ ] Build gear optimizer page shell
-- [ ] Champion selector + stat priority inputs
-- [ ] **Verify:** UI in place for gear optimization, data model ready.
+**Chunk 4.1 — Gear Optimizer: Data Model + UI Shell** ✅
+- [x] Define gear data model (sets, slots, main stats, substats) — `src/lib/gear.ts` with 40+ gear sets, 6 slots, stat types
+- [x] Build gear optimizer page shell — `/gear-optimizer`
+- [x] Champion selector + stat priority inputs
+- [x] **Verify:** UI in place for gear optimization, data model ready.
 
-**Chunk 4.2 — Gear Optimizer: Recommendation Engine**
-- [ ] Build recommendation logic (match gear sets to stat priorities)
-- [ ] Display suggested gear sets with reasoning
-- [ ] **Verify:** Working gear suggestions based on champion and stat priorities.
+**Chunk 4.2 — Gear Optimizer: Recommendation Engine** ✅
+- [x] Build recommendation logic (match gear sets to stat priorities)
+- [x] Display suggested gear sets with reasoning
+- [x] Content-specific gear profiles (10 content areas with recommended sets)
+- [x] **Verify:** Working gear suggestions based on champion and stat priorities.
 
-**Chunk 4.3 — Clan Boss Calculator**
-- [ ] Build CB calculator page
-- [ ] Advanced speed tune input (speeds, buffs, debuff considerations)
-- [ ] Damage estimation based on team comp and speeds
-- [ ] Extend Team Builder's basic speed tune with CB-specific suggestions
-- [ ] **Verify:** CB-specific calculator with damage estimates and speed tune suggestions.
+**Chunk 4.3 — Clan Boss Calculator** ✅
+- [x] Build CB calculator page — `/clan-boss`
+- [x] Advanced speed tune input (speeds, buffs, debuff considerations)
+- [x] Damage estimation based on team comp and speeds
+- [x] Turn order simulation (speed bar mechanics, 30 actions)
+- [x] **Verify:** CB-specific calculator with damage estimates and speed tune suggestions.
 
-**Chunk 4.4 — Fusion Tracker**
-- [ ] Build fusion tracker page
-- [ ] Input current fusion event champions and requirements
-- [ ] Track progress (fragments collected, events completed)
-- [ ] **Verify:** Users can track their progress on active fusion events.
+**Chunk 4.4 — Fusion Tracker** ✅
+- [x] Build fusion tracker page — `/fusion-tracker`
+- [x] Input current fusion event champions and requirements
+- [x] Track progress (fragments collected, events completed)
+- [x] Progress bars per requirement + overall fusion progress
+- [x] **Verify:** Users can track their progress on active fusion events.
 
 ## Resolved Questions
 
 1. **Data source reliability** — Fallback chain if InTeleria/HellHades APIs go down: (1) find and integrate alternative RAID data sources, (2) allow community contributions to submit/update champion data, (3) manual admin entry as a last resort.
 2. **Monetization** — Free to start. If running costs grow, explore options (donations, premium tier, ads) at that point. No monetization built into v1.
 3. **Mobile support** — Desktop-first. Mobile responsiveness will be added later, not a launch requirement.
+
+---
+
+## Frontend Craftsman Cleanup (Post Phase 4)
+
+A dedicated frontend cleanup pass was run across the entire codebase after all 4 phases were complete. Changes made:
+
+### Fixed Invalid Tailwind Color Classes
+Custom color classes (`text-gold`, `bg-gold-dark`, `bg-crimson`, `border-gold`) were used throughout the codebase but never defined in the Tailwind config. All instances replaced with proper hex values:
+- `text-gold` / `border-gold` / `bg-gold` → `text-[#D4A43C]` / `border-[#D4A43C]` / `bg-[#D4A43C]`
+- `bg-gold-dark` → `bg-[#A67C1E]`
+- `bg-crimson` → `bg-[#DC2626]`
+
+### Improved Navbar
+- Enhanced dark theme integration (`bg-slate-900/95` with backdrop blur)
+- Added `focus-visible:ring-2 focus-visible:ring-[#D4A43C]` for keyboard accessibility
+- Better hover states with `hover:bg-slate-800` backgrounds
+- Nav links hidden on small screens via `hidden lg:flex` (desktop-first per MASTERPLAN)
+- Added `shrink-0` to logo and auth section to prevent layout compression
+
+### Enhanced Champion Card Component
+- Smoother hover animations (`duration-300`, `scale-110`)
+- Gold glow effect on hover (`shadow-lg shadow-[#D4A43C]/10`)
+- Focus indicators for keyboard navigation
+- Title transitions to gold on hover
+- Consistent dark theme colors (`slate-800/50` bg, `slate-700/50` borders)
+
+### Consistent Gold Accent Usage
+All page headings standardized to `text-[#D4A43C]` across all 14 pages (dashboard, champions, team builder, gear optimizer, clan boss, fusion tracker, roster, profile, guides, tier lists, login).
+
+### Files Modified (15 files)
+- `src/lib/constants.ts` — Fixed rarity color mappings
+- `src/components/navbar.tsx` — Enhanced styling and accessibility
+- `src/components/champion-card.tsx` — Improved hover states and animations
+- `src/app/page.tsx` — Fixed gold colors
+- `src/app/champions/page.tsx` — Fixed heading color
+- `src/app/champions/[slug]/page.tsx` — Fixed skill multiplier and rating colors
+- `src/app/team-builder/page.tsx` — Fixed gold color references
+- `src/app/gear-optimizer/page.tsx` — Fixed gold color references
+- `src/app/clan-boss/page.tsx` — Fixed gold color references
+- `src/app/roster/page.tsx` — Fixed heading colors
+- `src/app/roster/[slug]/page.tsx` — Fixed gold color references
+- `src/app/profile/page.tsx` — Fixed heading color
+- `src/app/guides/page.tsx` — Fixed gold color references
+- `src/app/tier-lists/page.tsx` — Fixed heading color
+- `src/app/fusion-tracker/page.tsx` — Fixed heading color
 

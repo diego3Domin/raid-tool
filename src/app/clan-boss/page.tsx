@@ -89,7 +89,15 @@ export default function ClanBossPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Clan Boss Calculator</h1>
+      {/* Page header */}
+      <div className="mb-10 relative">
+        <h1 className="mb-2 bg-gradient-to-r from-[#E8C460] via-[#D4A43C] to-[#A67C1E] bg-clip-text text-5xl font-black uppercase tracking-tight text-transparent drop-shadow-[0_4px_12px_rgba(212,164,60,0.4)]">
+          Clan Boss Calculator
+        </h1>
+        <p className="text-slate-400 font-medium">Speed tune and damage optimization</p>
+        <div className="h-[2px] w-32 bg-gradient-to-r from-[#D4A43C] to-transparent mt-2"></div>
+        <div className="h-[1px] w-32 bg-gradient-to-r from-[#E8C460] to-transparent -mt-[1px]"></div>
+      </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Left: Configuration */}

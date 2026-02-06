@@ -81,13 +81,23 @@ export default function GuidesPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-[#D4A43C]">Guides</h1>
-        {user && (
-          <Button onClick={() => setShowCreate(!showCreate)}>
-            {showCreate ? "Cancel" : "Write a Guide"}
-          </Button>
-        )}
+      {/* Page header */}
+      <div className="mb-10 relative">
+        <div className="flex items-end justify-between">
+          <div>
+            <h1 className="mb-2 bg-gradient-to-r from-[#E8C460] via-[#D4A43C] to-[#A67C1E] bg-clip-text text-5xl font-black uppercase tracking-tight text-transparent drop-shadow-[0_4px_12px_rgba(212,164,60,0.4)]">
+              Guides
+            </h1>
+            <p className="text-slate-400 font-medium">Community wisdom and strategies</p>
+            <div className="h-[2px] w-32 bg-gradient-to-r from-[#D4A43C] to-transparent mt-2"></div>
+            <div className="h-[1px] w-32 bg-gradient-to-r from-[#E8C460] to-transparent -mt-[1px]"></div>
+          </div>
+          {user && (
+            <Button onClick={() => setShowCreate(!showCreate)}>
+              {showCreate ? "Cancel" : "Write a Guide"}
+            </Button>
+          )}
+        </div>
       </div>
 
       {/* Create guide form */}

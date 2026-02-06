@@ -21,7 +21,15 @@ export default function ChampionsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Champions</h1>
+      {/* Page header — epic medieval title */}
+      <div className="mb-10 relative">
+        <h1 className="mb-2 bg-gradient-to-r from-[#E8C460] via-[#D4A43C] to-[#A67C1E] bg-clip-text text-5xl font-black uppercase tracking-tight text-transparent drop-shadow-[0_4px_12px_rgba(212,164,60,0.4)]">
+          Champions
+        </h1>
+        {/* Ornate divider */}
+        <div className="h-[2px] w-32 bg-gradient-to-r from-[#D4A43C] to-transparent"></div>
+        <div className="h-[1px] w-32 bg-gradient-to-r from-[#E8C460] to-transparent -mt-[1px]"></div>
+      </div>
       <ChampionIndex
         champions={champions}
         factions={factions}

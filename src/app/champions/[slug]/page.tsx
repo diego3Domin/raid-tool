@@ -65,41 +65,45 @@ export default async function ChampionDetailPage({
       {/* Back link */}
       <Link
         href="/champions"
-        className="mb-6 inline-block text-sm text-muted-foreground hover:text-foreground"
+        className="group mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#7A7570] transition-colors hover:text-[#C8963E]"
       >
-        &larr; Back to Champions
+        <span className="transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
+        Back to Champions
       </Link>
 
-      {/* Hero section */}
-      <div className="mb-8 flex gap-6">
-        {/* Avatar */}
-        <div className="h-32 w-32 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
-          {champion.avatar_url ? (
-            <img
-              src={champion.avatar_url}
-              alt={champion.name}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-4xl font-bold text-muted-foreground">
-              {champion.name.charAt(0)}
-            </div>
-          )}
-        </div>
+      {/* Clean champion header */}
+      <div className="mb-10 border border-[#2A2A30] bg-[#141418] p-8 rounded-sm">
+        <div className="flex gap-8">
+          {/* Avatar — clean, no frame */}
+          <div className="h-48 w-48 shrink-0 overflow-hidden rounded-sm border border-[#C8963E]/40 bg-black/80">
+            {champion.avatar_url ? (
+              <img
+                src={champion.avatar_url}
+                alt={champion.name}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-6xl font-black text-[#2A2A30]">
+                {champion.name.charAt(0)}
+              </div>
+            )}
+          </div>
 
-        {/* Name & meta */}
-        <div className="flex flex-col justify-center gap-2">
-          <h1 className="text-3xl font-bold text-foreground">
-            {champion.name}
-          </h1>
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge className={rarityClass}>{champion.rarity}</Badge>
-            <span className={`font-medium ${affinityClass}`}>
-              {champion.affinity}
-            </span>
-            <span className="text-muted-foreground">{champion.role}</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground">{champion.faction}</span>
+          {/* Name & meta — heavy condensed */}
+          <div className="flex flex-col justify-center gap-4">
+            <h1 className="text-[#C8963E] text-5xl font-black uppercase tracking-tighter leading-tight">
+              {champion.name}
+            </h1>
+            <div className="flex flex-wrap items-center gap-3">
+              <Badge className={`text-xs ${rarityClass}`}>{champion.rarity}</Badge>
+              <span className={`text-base font-bold uppercase tracking-wide ${affinityClass}`}>
+                {champion.affinity}
+              </span>
+              <span className="text-[#2A2A30]">•</span>
+              <span className="text-base font-bold uppercase tracking-wide text-[#7A7570]">{champion.role}</span>
+              <span className="text-[#2A2A30]">•</span>
+              <span className="text-base font-semibold text-[#7A7570]">{champion.faction}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -175,31 +179,31 @@ export default async function ChampionDetailPage({
         )}
       </div>
 
-      {/* Skills */}
+      {/* Skills — clean cards with left accent */}
       {champion.skills.length > 0 && (
         <Card className="mt-6">
           <CardHeader>
-            <CardTitle>Skills</CardTitle>
+            <CardTitle>Skills & Abilities</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-3">
             {champion.skills.map((skill, i) => (
-              <div key={i} className="border-b border-border pb-4 last:border-0 last:pb-0">
-                <div className="flex items-center gap-3">
-                  <h3 className="font-semibold text-foreground">
+              <div key={i} className="border-l-2 border-[#4A5568] bg-[#1A1A20]/50 p-4 rounded-sm hover:border-[#C8963E] transition-colors">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="font-bold text-base uppercase tracking-wide text-[#E8E4DF]">
                     {skill.name}
                   </h3>
                   {skill.cooldown && (
-                    <span className="text-xs text-muted-foreground">
-                      CD: {skill.cooldown} turns
+                    <span className="bg-[#1A1A20] border border-[#2A2A30] px-2 py-1 text-xs font-bold uppercase tracking-wide text-[#7A7570]">
+                      CD: {skill.cooldown}
                     </span>
                   )}
                   {skill.multiplier && (
-                    <span className="text-xs text-[#D4A43C]">
+                    <span className="bg-[#C8963E]/20 border border-[#C8963E]/40 px-2 py-1 text-xs font-bold uppercase tracking-wide text-[#C8963E]">
                       {skill.multiplier}
                     </span>
                   )}
                 </div>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="text-sm leading-relaxed text-[#7A7570]">
                   {skill.description}
                 </p>
               </div>
@@ -247,7 +251,7 @@ function RatingDisplay({ value }: { value: number }) {
   const maxStars = 5;
   const filled = Math.round(value);
   return (
-    <span className="text-[#D4A43C]" title={`${value} / ${maxStars}`}>
+    <span className="text-[#C8963E]" title={`${value} / ${maxStars}`}>
       {"★".repeat(filled)}
       {"☆".repeat(maxStars - filled)}
     </span>

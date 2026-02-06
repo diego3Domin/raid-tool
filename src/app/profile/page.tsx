@@ -39,7 +39,7 @@ export default function ProfilePage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Profile</h1>
+      <h1 className="mb-8 bg-gradient-to-r from-[#E8C460] via-[#D4A43C] to-[#A67C1E] bg-clip-text text-4xl font-black uppercase tracking-tight text-transparent">Profile</h1>
 
       <div className="space-y-6">
         <Card>

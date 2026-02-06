@@ -44,10 +44,11 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-md items-center justify-center px-4">
-      <Card className="w-full">
+      {/* Clean login card */}
+      <Card className="w-full border-t-2 border-t-[#C8963E] border-[#2A2A30]">
         <CardHeader>
-          <CardTitle className="text-center text-2xl">
-            {isSignUp ? "Create Account" : "Log In"}
+          <CardTitle className="text-center text-2xl text-[#C8963E]">
+            {isSignUp ? "Create Account" : "Sign In"}
           </CardTitle>
         </CardHeader>
         <CardContent>

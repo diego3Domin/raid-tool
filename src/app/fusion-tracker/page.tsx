@@ -66,7 +66,14 @@ export default function FusionTrackerPage() {
   if (!user) {
     return (
       <div className="mx-auto max-w-4xl px-4 py-8">
-        <h1 className="mb-6 text-3xl font-bold text-gold">Fusion Tracker</h1>
+        {/* Page header */}
+        <div className="mb-10">
+          <h1 className="mb-2 text-[#C8963E] text-5xl font-black uppercase tracking-tighter">
+            Fusion Tracker
+          </h1>
+          <p className="text-[#7A7570] font-medium">Track your fusion progress</p>
+          <div className="h-[1px] w-32 bg-[#C8963E]/30 mt-4"></div>
+        </div>
         <Card>
           <CardContent className="py-8 text-center">
             <p className="text-muted-foreground">
@@ -80,11 +87,20 @@ export default function FusionTrackerPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gold">Fusion Tracker</h1>
-        <Button onClick={() => setShowCreate(!showCreate)}>
-          {showCreate ? "Cancel" : "New Fusion"}
-        </Button>
+      {/* Page header */}
+      <div className="mb-10">
+        <div className="flex items-end justify-between">
+          <div>
+            <h1 className="mb-2 text-[#C8963E] text-5xl font-black uppercase tracking-tighter">
+              Fusion Tracker
+            </h1>
+            <p className="text-[#7A7570] font-medium">Track your fusion progress</p>
+            <div className="h-[1px] w-32 bg-[#C8963E]/30 mt-4"></div>
+          </div>
+          <Button onClick={() => setShowCreate(!showCreate)}>
+            {showCreate ? "Cancel" : "New Fusion"}
+          </Button>
+        </div>
       </div>
 
       {/* Create form */}
@@ -245,13 +261,13 @@ export default function FusionTrackerPage() {
                       <span className="text-muted-foreground">
                         Overall: {completedReqs}/{totalReqs} requirements
                       </span>
-                      <span className="font-medium text-gold">
+                      <span className="font-medium text-[#C8963E]">
                         {Math.round(overallProgress * 100)}%
                       </span>
                     </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-muted">
+                    <div className="progress-bar">
                       <div
-                        className="h-full rounded-full bg-gold transition-all"
+                        className="progress-fill"
                         style={{ width: `${overallProgress * 100}%` }}
                       />
                     </div>
@@ -306,10 +322,10 @@ export default function FusionTrackerPage() {
                                 / {req.targetCount}
                               </span>
                             </div>
-                            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-muted">
+                            <div className="h-1.5 w-20 overflow-hidden rounded-sm bg-[#1A1A20] border border-[#2A2A30]">
                               <div
-                                className={`h-full rounded-full transition-all ${
-                                  isComplete ? "bg-green-400" : "bg-gold"
+                                className={`h-full transition-all ${
+                                  isComplete ? "bg-green-600" : "bg-[#C8963E]"
                                 }`}
                                 style={{ width: `${Math.min(progress * 100, 100)}%` }}
                               />

@@ -86,7 +86,14 @@ export default function TierListsPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Tier Lists</h1>
+      {/* Clean page header */}
+      <div className="mb-10">
+        <h1 className="mb-2 text-[#C8963E] text-5xl font-black uppercase tracking-tighter">
+          Tier Lists
+        </h1>
+        <p className="text-[#7A7570] font-medium">Champion rankings by content area</p>
+        <div className="h-[1px] w-32 bg-[#C8963E]/30 mt-4"></div>
+      </div>
 
       {/* Content area selector */}
       <div className="mb-6 flex items-center gap-3">

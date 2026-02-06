@@ -46,16 +46,13 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* RAID themed accent colors */
-  --color-gold: #D4A43C;
-  --color-gold-light: #E8C460;
-  --color-gold-dark: #A67C1E;
-  --color-royal: #7C3AED;
-  --color-royal-light: #9F67FF;
-  --color-royal-dark: #5B21B6;
-  --color-crimson: #DC2626;
-  --color-crimson-light: #EF4444;
-  --color-crimson-dark: #991B1B;
+  /* Brutal minimal medieval colors — ember, blood, steel */
+  --color-ember: #C8963E;
+  --color-ember-dim: #9A6E25;
+  --color-blood: #8B1A1A;
+  --color-blood-bright: #B42828;
+  --color-steel: #4A5568;
+  --color-steel-light: #64748B;
 }
 
 :root {
@@ -94,48 +91,117 @@
 }
 
 .dark {
-  /* slate-950 background, slate-900 for cards */
-  --background: #020617;
-  --foreground: #e2e8f0;
-  --card: #0f172a;
-  --card-foreground: #e2e8f0;
-  --popover: #0f172a;
-  --popover-foreground: #e2e8f0;
-  /* Gold primary for the fantasy vibe */
-  --primary: #D4A43C;
-  --primary-foreground: #020617;
-  /* Deep purple secondary */
-  --secondary: #1e1b4b;
-  --secondary-foreground: #e2e8f0;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #e2e8f0;
-  --destructive: #DC2626;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #D4A43C;
-  /* Chart colors: gold, purple, red, green, blue */
-  --chart-1: #D4A43C;
-  --chart-2: #7C3AED;
-  --chart-3: #DC2626;
-  --chart-4: #16a34a;
-  --chart-5: #2563eb;
-  --sidebar: #0f172a;
-  --sidebar-foreground: #e2e8f0;
-  --sidebar-primary: #D4A43C;
-  --sidebar-primary-foreground: #020617;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #e2e8f0;
-  --sidebar-border: #1e293b;
-  --sidebar-ring: #D4A43C;
+  /* Near-black background (#0A0A0F), dark charcoal for surfaces (#141418) */
+  --background: #0A0A0F;
+  --foreground: #E8E4DF;
+  --card: #141418;
+  --card-foreground: #E8E4DF;
+  --popover: #141418;
+  --popover-foreground: #E8E4DF;
+  /* Ember primary */
+  --primary: #C8963E;
+  --primary-foreground: #0A0A0F;
+  /* Darker surface for secondary */
+  --secondary: #1A1A20;
+  --secondary-foreground: #E8E4DF;
+  --muted: #1A1A20;
+  --muted-foreground: #7A7570;
+  --accent: #1A1A20;
+  --accent-foreground: #E8E4DF;
+  --destructive: #8B1A1A;
+  --border: #2A2A30;
+  --input: #1A1A20;
+  --ring: #C8963E;
+  /* Chart colors: ember, steel, blood */
+  --chart-1: #C8963E;
+  --chart-2: #4A5568;
+  --chart-3: #8B1A1A;
+  --chart-4: #64748B;
+  --chart-5: #9A6E25;
+  --sidebar: #141418;
+  --sidebar-foreground: #E8E4DF;
+  --sidebar-primary: #C8963E;
+  --sidebar-primary-foreground: #0A0A0F;
+  --sidebar-accent: #1A1A20;
+  --sidebar-accent-foreground: #E8E4DF;
+  --sidebar-border: #2A2A30;
+  --sidebar-ring: #C8963E;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    /* Subtle noise/grain texture — very minimal, like torchlit stone */
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(20, 20, 24, 0.3) 2px,
+        rgba(20, 20, 24, 0.3) 4px
+      );
+    background-size: 100% 4px;
+    background-attachment: fixed;
+  }
+
+  /* Heavy condensed typography — brutalist feel */
+  h1 {
+    @apply tracking-tighter font-black uppercase;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    @apply tracking-tight font-bold uppercase;
+  }
+
+  h3 {
+    @apply tracking-tight font-bold;
+  }
+
+  /* Minimal scrollbars — dark with thin ember thumb */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0F;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C8963E;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9A6E25;
+  }
+}
+
+@layer utilities {
+  /* Thin ruled line dividers */
+  .divider-ember {
+    height: 1px;
+    background: rgba(200, 150, 62, 0.3);
+  }
+
+  /* Clean progress bar — no shimmer */
+  .progress-bar {
+    height: 20px;
+    background: #1A1A20;
+    border: 1px solid #2A2A30;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #C8963E;
+    transition: width 0.3s ease;
   }
 }

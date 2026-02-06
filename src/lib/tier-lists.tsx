@@ -14,12 +14,12 @@ export type Tier = "S" | "A" | "B" | "C" | "D" | "F";
 export const TIERS: Tier[] = ["S", "A", "B", "C", "D", "F"];
 
 export const TIER_COLORS: Record<Tier, string> = {
-  S: "bg-red-500/20 text-red-400 border-red-500/40",
-  A: "bg-orange-500/20 text-orange-400 border-orange-500/40",
-  B: "bg-yellow-500/20 text-yellow-400 border-yellow-500/40",
-  C: "bg-green-500/20 text-green-400 border-green-500/40",
-  D: "bg-blue-500/20 text-blue-400 border-blue-500/40",
-  F: "bg-gray-500/20 text-gray-400 border-gray-500/40",
+  S: "bg-[#8B1A1A] text-white border border-[#8B1A1A] font-black",
+  A: "bg-orange-700 text-white border border-orange-700 font-black",
+  B: "bg-yellow-700 text-[#0A0A0F] border border-yellow-700 font-black",
+  C: "bg-green-700 text-white border border-green-700 font-black",
+  D: "bg-blue-700 text-white border border-blue-700 font-black",
+  F: "bg-gray-700 text-[#E8E4DF] border border-gray-700 font-black",
 };
 
 export interface TierPlacement {
