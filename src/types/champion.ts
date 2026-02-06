@@ -1,5 +1,5 @@
 export type Affinity = "Magic" | "Force" | "Spirit" | "Void";
-export type Rarity = "Common" | "Uncommon" | "Rare" | "Epic" | "Legendary";
+export type Rarity = "Common" | "Uncommon" | "Rare" | "Epic" | "Legendary" | "Mythical";
 export type Role = "Attack" | "Defense" | "HP" | "Support";
 
 export interface ChampionStats {

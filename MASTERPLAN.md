@@ -251,35 +251,37 @@ Each chunk is a self-contained unit of work that can be built autonomously in ~1
 
 ---
 
-### Phase 3 — Guides, Tier Lists & Community
+### Phase 3 — Guides, Tier Lists & Community ✅
 
-**Chunk 3.1 — Tier Lists: Curated**
-- [ ] Create `tier_lists` table in Supabase
-- [ ] Build `/tier-lists` page
-- [ ] Implement admin role checks (gate admin UI behind `admin_role` on the users table)
-- [ ] Admin interface to create/edit official tier lists (content area → champion → tier S/A/B/C/D/F)
-- [ ] Public view: filter by content area, see champions grouped by tier
-- [ ] **Verify:** Admin can manage tier lists. Non-admin users cannot access admin UI. Public users can browse them.
+> _Supabase deferred — using localStorage for all data. Tiptap chosen for WYSIWYG editor._
 
-**Chunk 3.2 — Tier Lists: Community Voted**
-- [ ] Add voting system (users vote on champion tier per content area)
-- [ ] Aggregate votes into a community tier list view
-- [ ] Display alongside the curated list (tabs or toggle)
-- [ ] **Verify:** Users can vote on champion tiers. Community list auto-generates from votes.
+**Chunk 3.1 — Tier Lists: Curated** ✅
+- [x] Create TierListsProvider with localStorage persistence
+- [x] Build `/tier-lists` page with Curated tab
+- [x] Implement admin role checks (`admin_role` on User, `admin@raid.tool` for testing)
+- [x] Admin interface to create/edit tier lists (content area → search champion → assign tier S/A/B/C/D/F)
+- [x] Public view: filter by content area, see champions grouped by tier
+- [x] **Verify:** Admin can manage tier lists. Non-admin users see read-only view. Build clean.
 
-**Chunk 3.3 — Guides: WYSIWYG Editor + Publishing**
-- [ ] Create `guides` table in Supabase
-- [ ] Build `/guides` page (list view)
-- [ ] Guide creation form with rich text editor (WYSIWYG) — _Editor library TBD (likely Tiptap or similar), to be decided during implementation._
-- [ ] Fields: title, champion, build recommendation, tags, content body
-- [ ] **Verify:** Users can write and publish guides with rich text formatting.
+**Chunk 3.2 — Tier Lists: Community Voted** ✅
+- [x] Add voting system (users vote on champion tier per content area)
+- [x] Aggregate votes into community tier list view (majority vote per champion)
+- [x] Display alongside curated list (tabs: Curated / Community)
+- [x] **Verify:** Users can vote on champion tiers. Community list auto-generates from votes.
 
-**Chunk 3.4 — Guides: Detail View + Community Interaction**
-- [ ] Guide detail page with full content display
-- [ ] Upvote/downvote system
-- [ ] Comments section
-- [ ] Link guides to champion detail pages
-- [ ] **Verify:** Users can read, vote on, and comment on guides. Guides appear on champion pages.
+**Chunk 3.3 — Guides: WYSIWYG Editor + Publishing** ✅
+- [x] Create GuidesProvider with localStorage persistence
+- [x] Build `/guides` page (list view with tag filtering, vote scores, champion avatars)
+- [x] Guide creation form with Tiptap rich text editor (bold, italic, headings, lists, blockquote, code)
+- [x] Fields: title, champion (optional), tags, content body
+- [x] **Verify:** Users can write and publish guides with rich text formatting.
+
+**Chunk 3.4 — Guides: Detail View + Community Interaction** ✅
+- [x] Guide detail page (`/guides/[id]`) with full HTML content display
+- [x] Upvote/downvote system with visual indicators
+- [x] Comments section with real-time posting
+- [x] Link guides to champion detail pages (replaced placeholder on `/champions/[slug]`)
+- [x] **Verify:** Users can read, vote on, and comment on guides. Guides linked from champion pages.
 
 ---
 

@@ -21,7 +21,7 @@ export default function ChampionsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-gold">Champions</h1>
+      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Champions</h1>
       <ChampionIndex
         champions={champions}
         factions={factions}

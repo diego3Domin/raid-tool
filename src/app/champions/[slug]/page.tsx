@@ -11,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { RARITY_COLORS, AFFINITY_COLORS } from "@/lib/constants";
 
 export async function generateStaticParams() {
   return getAllChampions().map((c) => ({ slug: c.slug }));
@@ -29,22 +30,6 @@ export async function generateMetadata({
     description: `${champion.name} — ${champion.rarity} ${champion.affinity} ${champion.role} from ${champion.faction}`,
   };
 }
-
-const AFFINITY_COLORS: Record<string, string> = {
-  Magic: "text-blue-400",
-  Force: "text-red-400",
-  Spirit: "text-green-400",
-  Void: "text-purple-400",
-};
-
-const RARITY_COLORS: Record<string, string> = {
-  Common: "bg-zinc-600",
-  Uncommon: "bg-green-700",
-  Rare: "bg-blue-700",
-  Epic: "bg-purple-700",
-  Legendary: "bg-gold-dark text-background",
-  Mythical: "bg-crimson",
-};
 
 const RATING_LABELS: Record<string, string> = {
   overall: "Overall",
@@ -209,7 +194,7 @@ export default async function ChampionDetailPage({
                     </span>
                   )}
                   {skill.multiplier && (
-                    <span className="text-xs text-gold">
+                    <span className="text-xs text-[#D4A43C]">
                       {skill.multiplier}
                     </span>
                   )}
@@ -262,7 +247,7 @@ function RatingDisplay({ value }: { value: number }) {
   const maxStars = 5;
   const filled = Math.round(value);
   return (
-    <span className="text-gold" title={`${value} / ${maxStars}`}>
+    <span className="text-[#D4A43C]" title={`${value} / ${maxStars}`}>
       {"★".repeat(filled)}
       {"☆".repeat(maxStars - filled)}
     </span>

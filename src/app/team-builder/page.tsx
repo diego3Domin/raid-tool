@@ -56,7 +56,9 @@ export default function TeamBuilderPage() {
     setSlots(slots.filter((_, i) => i !== index));
   };
 
-  const updateSlotSpeed = (index: number, speed: number) => {
+  const updateSlotSpeed = (index: number, raw: string) => {
+    const speed = raw === "" ? undefined : Number(raw);
+    if (speed !== undefined && isNaN(speed)) return;
     setSlots(slots.map((s, i) => (i === index ? { ...s, speed } : s)));
   };
 
@@ -106,7 +108,7 @@ export default function TeamBuilderPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-gold">Team Builder</h1>
+      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Team Builder</h1>
 
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Left: Builder */}
@@ -187,7 +189,7 @@ export default function TeamBuilderPage() {
                       type="number"
                       placeholder="SPD"
                       value={slot.speed ?? ""}
-                      onChange={(e) => updateSlotSpeed(i, Number(e.target.value))}
+                      onChange={(e) => updateSlotSpeed(i, e.target.value)}
                       className="w-20"
                     />
                     <button
@@ -244,7 +246,7 @@ export default function TeamBuilderPage() {
                     const champ = championById.get(s.champion_id);
                     return (
                       <div key={i} className="flex flex-col items-center gap-1">
-                        <span className="text-xs text-gold">{i + 1}</span>
+                        <span className="text-xs text-[#D4A43C]">{i + 1}</span>
                         <div className="h-12 w-12 overflow-hidden rounded-lg border border-border bg-muted">
                           {champ?.avatar_url ? (
                             <img src={champ.avatar_url} alt={champ.name} className="h-full w-full object-cover" />

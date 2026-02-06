@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import DOMPurify from "dompurify";
 import { useAuth } from "@/lib/auth";
 import { useGuides } from "@/lib/guides";
 import { getAllChampions } from "@/lib/champions";
@@ -157,7 +158,7 @@ export default function GuideDetailPage() {
         <CardContent className="py-6">
           <div
             className="prose prose-invert prose-sm max-w-none"
-            dangerouslySetInnerHTML={{ __html: guide.body }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(guide.body) }}
           />
           {!guide.body && (
             <p className="text-sm text-muted-foreground italic">

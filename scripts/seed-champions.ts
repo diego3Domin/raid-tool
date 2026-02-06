@@ -110,10 +110,25 @@ function slugify(name: string): string {
     .replace(/^-|-$/g, "");
 }
 
+function decodeHtmlEntities(text: string): string {
+  return text
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&rsquo;/g, "\u2019")
+    .replace(/&lsquo;/g, "\u2018")
+    .replace(/&ndash;/g, "\u2013")
+    .replace(/&mdash;/g, "\u2014");
+}
+
 function extractNameFromHtml(html: string): string {
   // InTeleria name field contains HTML like: <a href="...">Champion Name</a>...
   const match = html.match(/>([^<]+)</);
-  return match ? match[1].trim() : html.trim();
+  const raw = match ? match[1].trim() : html.trim();
+  return decodeHtmlEntities(raw);
 }
 
 function extractImageFromHtml(html: string): string {
@@ -145,6 +160,20 @@ const HH_ROLE_MAP: Record<string, string> = {
   "Def": "Defense",
   "Supp": "Support",
   "HP": "HP",
+};
+
+// Some InTeleria champions use abbreviated or non-standard role values
+const ROLE_NORMALIZE: Record<string, string> = {
+  "Attack": "Attack",
+  "Defense": "Defense",
+  "Support": "Support",
+  "HP": "HP",
+  "ATK": "Attack",
+  "DEF": "Defense",
+  "TBC": "Support", // placeholder — default to Support
+  "Atk": "Attack",
+  "Def": "Defense",
+  "Supp": "Support",
 };
 
 // --- Fetch Functions ---
@@ -248,7 +277,7 @@ async function main() {
       faction: it.faction,
       affinity: it.affinity,
       rarity: it.rarity,
-      role: it.type,
+      role: ROLE_NORMALIZE[it.type] ?? it.type,
       avatar_url: avatarUrl,
       stats: {
         "6": {

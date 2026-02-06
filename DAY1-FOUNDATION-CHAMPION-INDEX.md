@@ -144,3 +144,33 @@ Target: 5 hours | Chunks 1.1–1.6
 - [x] Comments section with real-time posting
 - [x] Link guides to champion detail pages (replaced placeholder on `/champions/[slug]`)
 - [x] **Verify:** Users can read, vote on, and comment on guides. Guides linked from champion pages. Build clean.
+
+---
+
+## Phase 4 — Advanced Tools
+
+### Chunk 4.1 — Gear Optimizer: Data Model + UI Shell ✅
+- [x] Define gear data model (sets, slots, main stats, substats) — `src/lib/gear.ts` with 40+ gear sets, 6 slots, stat types
+- [x] Build gear optimizer page shell — `/gear-optimizer`
+- [x] Champion selector + stat priority inputs
+- [x] **Verify:** UI in place for gear optimization, data model ready.
+
+### Chunk 4.2 — Gear Optimizer: Recommendation Engine ✅
+- [x] Build recommendation logic (match gear sets to stat priorities)
+- [x] Display suggested gear sets with reasoning
+- [x] Content-specific gear profiles (10 content areas with recommended sets)
+- [x] **Verify:** Working gear suggestions based on champion and stat priorities.
+
+### Chunk 4.3 — Clan Boss Calculator ✅
+- [x] Build CB calculator page — `/clan-boss`
+- [x] Advanced speed tune input (speeds, buffs, debuff considerations)
+- [x] Damage estimation based on team comp and speeds
+- [x] Turn order simulation (speed bar mechanics, 30 actions)
+- [x] **Verify:** CB-specific calculator with damage estimates and speed tune suggestions.
+
+### Chunk 4.4 — Fusion Tracker ✅
+- [x] Build fusion tracker page — `/fusion-tracker`
+- [x] Input current fusion event champions and requirements
+- [x] Track progress (fragments collected, events completed)
+- [x] Progress bars per requirement + overall fusion progress
+- [x] **Verify:** Users can track their progress on active fusion events.

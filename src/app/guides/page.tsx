@@ -82,7 +82,7 @@ export default function GuidesPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gold">Guides</h1>
+        <h1 className="text-3xl font-bold text-[#D4A43C]">Guides</h1>
         {user && (
           <Button onClick={() => setShowCreate(!showCreate)}>
             {showCreate ? "Cancel" : "Write a Guide"}
@@ -173,7 +173,7 @@ export default function GuidesPage() {
                     onClick={() => toggleTag(tag)}
                     className={`rounded-md border px-2 py-0.5 text-xs font-medium transition-colors ${
                       selectedTags.includes(tag)
-                        ? "border-gold bg-gold/20 text-gold"
+                        ? "border-[#D4A43C] bg-[#D4A43C]/20 text-[#D4A43C]"
                         : "border-border text-muted-foreground hover:border-muted-foreground"
                     }`}
                   >
@@ -211,7 +211,7 @@ export default function GuidesPage() {
           onClick={() => setFilterTag("")}
           className={`rounded-md border px-2 py-0.5 text-xs font-medium transition-colors ${
             !filterTag
-              ? "border-gold bg-gold/20 text-gold"
+              ? "border-[#D4A43C] bg-[#D4A43C]/20 text-[#D4A43C]"
               : "border-border text-muted-foreground hover:border-muted-foreground"
           }`}
         >
@@ -223,7 +223,7 @@ export default function GuidesPage() {
             onClick={() => setFilterTag(filterTag === tag ? "" : tag)}
             className={`rounded-md border px-2 py-0.5 text-xs font-medium transition-colors ${
               filterTag === tag
-                ? "border-gold bg-gold/20 text-gold"
+                ? "border-[#D4A43C] bg-[#D4A43C]/20 text-[#D4A43C]"
                 : "border-border text-muted-foreground hover:border-muted-foreground"
             }`}
           >
@@ -250,7 +250,7 @@ export default function GuidesPage() {
             const score = guide.upvotes.length - guide.downvotes.length;
             return (
               <Link key={guide.id} href={`/guides/${guide.id}`}>
-                <Card className="transition-colors hover:border-gold/50">
+                <Card className="transition-colors hover:border-[#D4A43C]/50">
                   <CardContent className="flex items-center gap-4 py-4">
                     {/* Vote score */}
                     <div className="flex flex-col items-center text-sm">

@@ -31,8 +31,8 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <h1 className="mb-2 text-4xl font-bold text-gold">RAID Tool</h1>
-      <p className="mb-8 text-muted-foreground">
+      <h1 className="mb-2 text-4xl font-bold text-[#D4A43C]">RAID Tool</h1>
+      <p className="mb-8 text-slate-400">
         Your all-in-one companion toolkit for RAID: Shadow Legends
       </p>
 
@@ -98,7 +98,7 @@ export default function DashboardPage() {
                       href={`/champions/${c!.slug}`}
                       className="group flex flex-col items-center gap-1"
                     >
-                      <div className="h-14 w-14 overflow-hidden rounded-lg border border-border bg-muted transition-colors group-hover:border-gold">
+                      <div className="h-14 w-14 overflow-hidden rounded-lg border border-border bg-muted transition-colors group-hover:border-[#D4A43C]">
                         {c!.avatar_url ? (
                           <img
                             src={c!.avatar_url}
@@ -186,6 +186,15 @@ export default function DashboardPage() {
             <Button asChild variant="outline">
               <Link href="/roster">My Roster</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link href="/gear-optimizer">Gear Optimizer</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/clan-boss">Clan Boss</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/fusion-tracker">Fusions</Link>
+            </Button>
           </div>
         </div>
       ) : (
@@ -204,7 +213,7 @@ export default function DashboardPage() {
                     href={`/champions/${c.slug}`}
                     className="group flex flex-col items-center gap-1"
                   >
-                    <div className="h-14 w-14 overflow-hidden rounded-lg border border-border bg-muted transition-colors group-hover:border-gold">
+                    <div className="h-14 w-14 overflow-hidden rounded-lg border border-border bg-muted transition-colors group-hover:border-[#D4A43C]">
                       <img
                         src={c.avatar_url!}
                         alt={c.name}
@@ -259,6 +268,49 @@ export default function DashboardPage() {
                 </p>
                 <Button asChild size="sm" variant="outline">
                   <Link href="/login">Log In</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Advanced tools */}
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Gear Optimizer</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-3 text-sm text-muted-foreground">
+                  Find the best gear sets for any champion and content area.
+                </p>
+                <Button asChild size="sm" variant="outline">
+                  <Link href="/gear-optimizer">Optimize Gear</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Clan Boss Calculator</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-3 text-sm text-muted-foreground">
+                  Speed-tune your team and estimate damage output.
+                </p>
+                <Button asChild size="sm" variant="outline">
+                  <Link href="/clan-boss">Calculate</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Fusion Tracker</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-3 text-sm text-muted-foreground">
+                  Track your progress on active fusion events.
+                </p>
+                <Button asChild size="sm" variant="outline">
+                  <Link href="/fusion-tracker">Track Fusions</Link>
                 </Button>
               </CardContent>
             </Card>

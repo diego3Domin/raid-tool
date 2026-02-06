@@ -5,6 +5,7 @@ import { RosterProvider } from "@/lib/roster";
 import { TeamsProvider } from "@/lib/teams";
 import { TierListsProvider } from "@/lib/tier-lists";
 import { GuidesProvider } from "@/lib/guides";
+import { FusionsProvider } from "@/lib/fusions";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
@@ -38,8 +39,10 @@ export default function RootLayout({
             <TeamsProvider>
               <TierListsProvider>
                 <GuidesProvider>
-                  <Navbar />
-                  <main>{children}</main>
+                  <FusionsProvider>
+                    <Navbar />
+                    <main>{children}</main>
+                  </FusionsProvider>
                 </GuidesProvider>
               </TierListsProvider>
             </TeamsProvider>

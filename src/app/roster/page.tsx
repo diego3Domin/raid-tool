@@ -10,6 +10,7 @@ import { Champion } from "@/types/champion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { LoadingSpinner } from "@/components/loading";
 
 const allChampions = getAllChampions();
 
@@ -41,12 +42,13 @@ export default function RosterPage() {
       .slice(0, 10);
   }, [search, roster]);
 
-  if (loading || !user) return null;
+  if (loading) return <LoadingSpinner />;
+  if (!user) return null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gold">My Roster</h1>
+        <h1 className="text-3xl font-bold text-[#D4A43C]">My Roster</h1>
         <Button onClick={() => setShowSearch(!showSearch)}>
           {showSearch ? "Done" : "+ Add Champion"}
         </Button>

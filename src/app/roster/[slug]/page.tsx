@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { LoadingSpinner } from "@/components/loading";
 
 const GEAR_SETS = [
   "Life", "Offense", "Defense", "Speed", "Critical Rate", "Critical Damage",
@@ -57,7 +58,8 @@ export default function RosterDetailPage() {
     }
   }, [entry]);
 
-  if (authLoading || !user || !champion) return null;
+  if (authLoading) return <LoadingSpinner />;
+  if (!user || !champion) return null;
 
   if (!isInRoster(champion.id)) {
     return (
@@ -195,7 +197,7 @@ export default function RosterDetailPage() {
                   onClick={() => toggleGearSet(set)}
                   className={`rounded-md border px-2.5 py-1 text-xs font-medium transition-colors ${
                     gearSets.includes(set)
-                      ? "border-gold bg-gold/20 text-gold"
+                      ? "border-[#D4A43C] bg-gold/20 text-[#D4A43C]"
                       : "border-border text-muted-foreground hover:border-muted-foreground"
                   }`}
                 >

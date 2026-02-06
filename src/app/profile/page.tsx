@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LoadingSpinner } from "@/components/loading";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -18,7 +19,8 @@ export default function ProfilePage() {
     if (user) setDisplayName(user.display_name);
   }, [user, loading, router]);
 
-  if (loading || !user) return null;
+  if (loading) return <LoadingSpinner />;
+  if (!user) return null;
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ export default function ProfilePage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold text-gold">Profile</h1>
+      <h1 className="mb-6 text-3xl font-bold text-[#D4A43C]">Profile</h1>
 
       <div className="space-y-6">
         <Card>
