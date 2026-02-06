@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AuthProvider } from "@/lib/auth";
 import { RosterProvider } from "@/lib/roster";
 import { TeamsProvider } from "@/lib/teams";
+import { TierListsProvider } from "@/lib/tier-lists";
+import { GuidesProvider } from "@/lib/guides";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
@@ -34,8 +36,12 @@ export default function RootLayout({
         <AuthProvider>
           <RosterProvider>
             <TeamsProvider>
-              <Navbar />
-              <main>{children}</main>
+              <TierListsProvider>
+                <GuidesProvider>
+                  <Navbar />
+                  <main>{children}</main>
+                </GuidesProvider>
+              </TierListsProvider>
             </TeamsProvider>
           </RosterProvider>
         </AuthProvider>

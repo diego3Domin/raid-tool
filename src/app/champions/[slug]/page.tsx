@@ -237,14 +237,20 @@ export default async function ChampionDetailPage({
             </p>
           </CardContent>
         </Card>
-        <Card className="border-dashed">
+        <Card>
           <CardHeader>
-            <CardTitle className="text-muted-foreground">Guides</CardTitle>
+            <CardTitle>Guides</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Coming soon — community guides and strategies.
+            <p className="mb-3 text-sm text-muted-foreground">
+              Community-written guides and strategies for {champion.name}.
             </p>
+            <Link
+              href="/guides"
+              className="text-sm text-primary hover:underline"
+            >
+              Browse Guides &rarr;
+            </Link>
           </CardContent>
         </Card>
       </div>

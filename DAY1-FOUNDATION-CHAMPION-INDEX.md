@@ -110,3 +110,37 @@ Target: 5 hours | Chunks 1.1–1.6
 - [x] Logged out: featured champions (8 legendaries), quick links to Champions and Team Builder
 - [x] Logged in: roster summary, saved teams, quick links
 - [x] **Verify:** Dashboard shows relevant content based on auth state.
+
+---
+
+## Phase 3 — Guides, Tier Lists & Community
+
+> _Supabase still deferred — using localStorage for all user data._
+
+### Chunk 3.1 — Tier Lists: Curated ✅
+- [x] Create tier list data layer (TierListsProvider + localStorage persistence)
+- [x] Build `/tier-lists` page with Curated tab
+- [x] Implement admin role checks (`admin_role` on User, `admin@raid.tool` email for testing)
+- [x] Admin interface to create/edit tier lists (content area → search champion → assign tier S/A/B/C/D/F)
+- [x] Public view: filter by content area, see champions grouped by tier
+- [x] **Verify:** Admin can manage tier lists. Non-admin users see read-only view. Build clean.
+
+### Chunk 3.2 — Tier Lists: Community Voted ✅
+- [x] Add voting system (users vote on champion tier per content area)
+- [x] Aggregate votes into community tier list view (majority vote per champion)
+- [x] Display alongside curated list (tabs: Curated / Community)
+- [x] **Verify:** Users can vote on champion tiers. Community list auto-generates from votes. Build clean.
+
+### Chunk 3.3 — Guides: WYSIWYG Editor + Publishing ✅
+- [x] Create guides data layer (GuidesProvider + localStorage persistence)
+- [x] Build `/guides` page (list view with tag filtering, vote score, champion avatars)
+- [x] Guide creation form with Tiptap rich text editor (bold, italic, headings, lists, blockquote, code)
+- [x] Fields: title, champion (optional), tags, content body
+- [x] **Verify:** Users can write and publish guides with rich text formatting. Build clean.
+
+### Chunk 3.4 — Guides: Detail View + Community Interaction ✅
+- [x] Guide detail page (`/guides/[id]`) with full HTML content display
+- [x] Upvote/downvote system with visual indicators
+- [x] Comments section with real-time posting
+- [x] Link guides to champion detail pages (replaced placeholder on `/champions/[slug]`)
+- [x] **Verify:** Users can read, vote on, and comment on guides. Guides linked from champion pages. Build clean.

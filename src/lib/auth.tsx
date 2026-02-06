@@ -13,6 +13,7 @@ export interface User {
   email: string;
   display_name: string;
   avatar_url?: string;
+  admin_role?: boolean;
 }
 
 interface AuthContextType {
@@ -55,10 +56,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, _password: string) => {
     // Mock login — accepts any credentials
+    // admin@raid.tool gets admin role for testing
     const mockUser: User = {
       id: crypto.randomUUID(),
       email,
       display_name: email.split("@")[0],
+      admin_role: email === "admin@raid.tool",
     };
     persistUser(mockUser);
   };
