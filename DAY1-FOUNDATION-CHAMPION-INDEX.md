@@ -55,3 +55,56 @@ Target: 5 hours | Chunks 1.1–1.6
 - [x] Ratings by content area (star display)
 - [x] Placeholder sections for "Recommended Builds" and "Guides"
 - [x] **Verify:** 1002 champion detail pages generated statically. Build clean.
+
+---
+
+## Phase 2 — Auth + Roster + Team Builder
+
+### Chunk 2.1 — Auth System
+- [ ] Set up Supabase Auth (email/password + Google OAuth)
+- [ ] Build `/login` page with sign up / sign in forms
+- [ ] Auth state management (session provider, middleware for protected routes)
+- [ ] Update navbar to show logged-in user / logout button
+- [ ] **Verify:** Users can sign up, log in, log out. Navbar reflects auth state.
+
+### Chunk 2.2 — User Profile + Settings
+- [ ] Build `/profile` page (protected route)
+- [ ] Display and edit: display name, avatar
+- [ ] Account settings (change password, delete account)
+- [ ] **Verify:** Logged-in users can view and edit their profile.
+
+### Chunk 2.3 — Roster: Schema + Add Champions
+- [ ] Create `user_roster` table in Supabase (with RLS — users can only access their own)
+- [ ] Build `/roster` page (protected route)
+- [ ] Search-and-add flow: search champions by name, click to add to roster
+- [ ] Display roster as a grid/list of owned champions
+- [ ] **Verify:** Users can search for and add champions to their roster.
+
+### Chunk 2.4 — Roster: Build Details
+- [ ] Edit view for a rostered champion: stars, level, ascension
+- [ ] Gear section: select gear sets, input individual piece stats
+- [ ] Masteries section: select mastery tree nodes
+- [ ] Skill books section: track books used per skill
+- [ ] **Verify:** Users can fully spec out any champion in their roster.
+
+### Chunk 2.5 — Team Builder: Core
+- [ ] Create `teams` and `team_slots` tables in Supabase (with RLS)
+- [ ] Build `/team-builder` page (works for all users, saving requires auth)
+- [ ] Content type selector: category → detail → stage (e.g., Dungeon → Dragon → 25)
+- [ ] Auto-set team size based on content type, with manual override
+- [ ] Add champions to team slots (search from all champions, toggle to "My Roster only")
+- [ ] **Verify:** Users can create a team, pick content type, and add champions to slots.
+
+### Chunk 2.6 — Team Builder: Speed Tune + AI
+- [ ] Speed input per team slot
+- [ ] Visual turn order display based on champion speeds
+- [ ] Integrate Claude API for AI explanations
+- [ ] Generate and display synergy breakdown when team is built
+- [ ] Save / load teams
+- [ ] **Verify:** Full team builder with speed tuning and AI explanations.
+
+### Chunk 2.7 — Dashboard
+- [ ] Build `/` dashboard page
+- [ ] Logged out: featured champions, quick links to Champions and Team Builder
+- [ ] Logged in: roster summary (total champions, recent additions), saved teams, quick links
+- [ ] **Verify:** Dashboard shows relevant content based on auth state.
