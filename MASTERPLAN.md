@@ -16,7 +16,7 @@
    - **Filters (dropdowns):** Faction, Affinity (Magic/Force/Spirit/Void), Rarity (Common–Legendary), Role (Attack/Defense/HP/Support)
    - **Text search** by champion name
    - **Champion images:** Hotlinked from external sources (InTeleria, wiki, etc.)
-2. **Team Builder** — Build and save teams for specific game content. Includes speed tune turn order display.
+2. **Team Builder** — Build and save teams for specific game content. Includes speed tune turn order display and AI-powered team suggestions.
    - **Content types:**
      - **Clan Boss** (per difficulty: Normal through Ultra-Nightmare)
      - **Hydra** (per difficulty)
@@ -29,7 +29,8 @@
      - **Sand Devil** (per stage)
      - **Shogun** (per stage)
    - **Speed Tuning:** Visual turn order display based on champion speeds so users can verify their tune is correct.
-   - **AI Explanations:** When a team or speed tune is suggested/built, an AI-generated explanation describes why the composition works — champion synergies, skill combos, buff/debuff chains, and why the turn order matters for that specific content.
+   - **AI Team Suggestions:** When a user selects a content type, the AI analyzes their roster and suggests the best possible team composition from champions they actually own. Includes recommended turn order, gear set suggestions, and an explanation of why the team works (synergies, buff/debuff chains, skill combos). Available only for logged-in users with a roster.
+   - **AI Explanations:** When a team is manually built, an AI-generated explanation describes why the composition works — champion synergies, skill combos, buff/debuff chains, and why the turn order matters for that specific content. Works for all users (not roster-dependent).
    - **Champion source:** All champions by default, with a toggle to filter to "My Roster only."
    - **Team size:** Auto-set based on content type (CB=5, Hydra=6, Arena=4, etc.) with manual override. _Note: These sizes are approximate defaults — verify against current game data during implementation._
 3. **My Roster** — Track which champions you own, their level, rank, gear, and masteries.
@@ -235,9 +236,10 @@ Each chunk is a self-contained unit of work that can be built autonomously in ~1
 - [ ] Speed input per team slot
 - [ ] Visual turn order display based on champion speeds
 - [ ] Integrate Claude API for AI explanations
-- [ ] Generate and display synergy breakdown when team is built
+- [ ] Generate and display synergy breakdown when team is manually built
+- [ ] "Suggest Best Team" button (logged-in users with roster): AI analyzes user's roster + selected content type and suggests the optimal team composition with turn order, gear recommendations, and synergy explanation
 - [ ] Save / load teams
-- [ ] **Verify:** Full team builder with speed tuning and AI explanations.
+- [ ] **Verify:** Full team builder with speed tuning, AI suggestions from roster, and AI explanations.
 
 **Chunk 2.7 — Dashboard**
 - [ ] Build `/` dashboard page
