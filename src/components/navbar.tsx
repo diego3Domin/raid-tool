@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -9,6 +12,8 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const { user, logout } = useAuth();
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-sm">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
@@ -33,9 +38,29 @@ export function Navbar() {
         </div>
 
         {/* Auth — right */}
-        <Button variant="outline" size="sm" asChild>
-          <Link href="/login">Log in</Link>
-        </Button>
+        {user ? (
+          <div className="flex items-center gap-3">
+            <Link
+              href="/profile"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground"
+            >
+              {user.display_name}
+            </Link>
+            <Link
+              href="/roster"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground"
+            >
+              My Roster
+            </Link>
+            <Button variant="outline" size="sm" onClick={logout}>
+              Log out
+            </Button>
+          </div>
+        ) : (
+          <Button variant="outline" size="sm" asChild>
+            <Link href="/login">Log in</Link>
+          </Button>
+        )}
       </nav>
     </header>
   );

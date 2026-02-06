@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AuthProvider } from "@/lib/auth";
+import { RosterProvider } from "@/lib/roster";
+import { TeamsProvider } from "@/lib/teams";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
@@ -28,8 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <Navbar />
-        <main>{children}</main>
+        <AuthProvider>
+          <RosterProvider>
+            <TeamsProvider>
+              <Navbar />
+              <main>{children}</main>
+            </TeamsProvider>
+          </RosterProvider>
+        </AuthProvider>
       </body>
     </html>
   );
