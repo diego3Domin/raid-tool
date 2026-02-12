@@ -1,6 +1,6 @@
 # RAID Tool
 
-All-in-one companion toolkit for RAID: Shadow Legends.
+Community champion reference and build guide platform for RAID: Shadow Legends.
 
 **Full project spec, features, data model, and roadmap:** See `MASTERPLAN.md`
 
@@ -8,9 +8,9 @@ All-in-one companion toolkit for RAID: Shadow Legends.
 See `MASTERPLAN.md` > Tech Stack for full details.
 - **Framework:** Next.js (App Router) + React + TypeScript
 - **Styling:** Tailwind CSS v4 + shadcn/ui (Radix primitives)
-- **Backend:** Supabase (Postgres, Auth, Realtime)
-- **AI:** Claude API (Anthropic) for team synergy explanations
-- **Hosting:** Vercel + Supabase (free tiers)
+- **Backend:** Supabase (Postgres, Auth, Storage)
+- **Data:** Hybrid — static JSON for champion data, Supabase for user/community data
+- **Hosting:** Vercel (`raid-tool.vercel.app`)
 
 ## Project Structure
 ```
@@ -20,6 +20,7 @@ src/
   lib/
     supabase/    # Supabase client (client.ts, server.ts)
   types/         # TypeScript type definitions
+  data/          # Static champion JSON data
 scripts/         # Data seeding and utility scripts
 ```
 
@@ -33,38 +34,45 @@ scripts/         # Data seeding and utility scripts
 
 ## Design Rules
 See `MASTERPLAN.md` > Design / Theme for full details.
-- **Dark theme only** — gaming/medieval aesthetic with dark backgrounds (slate-900/950).
-- **Accent colors:** golds, purples, reds for the fantasy vibe.
-- **Navigation:** Top navbar with logo left, nav links center, auth right. Hamburger on mobile.
+- **Dark Souls-inspired medieval aesthetic** — near-black backgrounds (#0A0A0F), ember/blood/steel palette.
+- **Typography:** Cinzel (serif) for headings, Geist Sans for body.
+- **Accent colors:** Ember gold (#C8963E), blood red (#8B1A1A), steel gray (#4A5568).
+- **Navigation:** Top navbar — `Champions | Tier Lists | Guides` center, auth right. `My Roster` when logged in.
+- **Mobile:** Mobile-friendly, not mobile-first. Desktop is the primary experience.
 - Never use light mode or light backgrounds.
 
-## Supabase
-See `MASTERPLAN.md` > Data Model for full schema.
-- Champions data is **publicly readable** (no auth required).
-- User-specific data (roster, teams, guides) requires auth.
-- Row Level Security (RLS) must be enabled on all tables.
-- Auth methods: email/password + Google OAuth.
+## Auth
+- **Provider:** Supabase Auth — email/password + Google OAuth
+- **Public:** Champions, tier lists (read), guides (read), comparison, landing page
+- **Auth required:** Roster, voting, guide submission, profile/settings
+- RLS enabled on all Supabase tables.
 
 ## Champion Data
-See `MASTERPLAN.md` > Champion Data for sourcing strategy and freshness requirements.
-- ~990+ champions seeded from external sources (InTeleria, HellHades).
-- Images are hotlinked from external URLs, not stored locally.
-- Champion seeding script lives in `scripts/seed-champions.ts`.
+See `MASTERPLAN.md` > Champion Data for full details.
+- ~996 champions seeded from InTeleria + HellHades APIs.
+- Images will be self-hosted (currently hotlinked — migration in progress).
+- Champion seeding script: `scripts/seed-champions.ts` (run with `npx tsx`).
+- Automated weekly sync via GitHub Actions cron.
 
-## Pages & Routes
-See `MASTERPLAN.md` > Pages / Routes for the full route table.
+## Core Features (4 total)
+1. **Champion Index + Detail** — Browse, search, filter, compare. Stats, skills, ratings, tier placements, gear/mastery recs, similar champions.
+2. **Tier Lists** — Community-voted rankings per content area (13 areas), seeded from HH data.
+3. **Guides** — Structured build templates (gear, stats, masteries, skill books). Community-written.
+4. **Roster** — Personal champion tracking with full build details.
 
-## Features
-See `MASTERPLAN.md` > Core Features for the full feature list and details.
+## Cut Features (not in scope)
+Team Builder, Gear Optimizer, Clan Boss Calculator, Fusion Tracker, AI-generated guides. See `MASTERPLAN.md` > Cut Features for rationale.
 
 ## Planning Files
 
-- **`MASTERPLAN.md`** — Long-term project spec. Contains the full vision, all features, data model, tech stack, and the complete 4-phase roadmap. Reference this for "why" and "what" decisions. Do NOT build directly from this file.
-- **`DAY1-FOUNDATION-CHAMPION-INDEX.md`** — The active work plan. Contains the specific checklist of tasks to execute right now. **Build from this file.** Check off items as they are completed.
+- **`MASTERPLAN.md`** — Long-term project spec. Full vision, features, data model, tech stack, and phased roadmap. Reference for "why" and "what" decisions. Do NOT build directly from this file.
+- **`DAY1-FOUNDATION-CHAMPION-INDEX.md`** — Historical record of the original Phase 1 prototype work. Completed. Do not modify.
+- **`DAY1-REVISED.md`** — The active work plan. Contains the specific checklist of chunks to execute. **Build from this file.** Check off items as completed.
 
 ## Current Focus
 
-**Active plan:** `DAY1-FOUNDATION-CHAMPION-INDEX.md`
-- Work through chunks 1.1–1.6 in order.
-- Check off each item (`- [ ]` → `- [x]`) as it is completed.
-- Do not work on features outside this file (auth, roster, team builder, etc. are future phases).
+**Active plan:** `DAY1-REVISED.md`
+- Phase 1: Champion Index + Detail (launch-ready)
+- Work through chunks 1–9 in order.
+- Check off each item (`- [ ]` → `- [x]`) as completed.
+- Do not work on Phase 2+ features (tier lists, guides, roster) until Phase 1 is deployed.

@@ -1,370 +1,288 @@
-# RAID: Shadow Legends - Tool Project Plan
+# RAID Tool — Master Plan
 
 ## Vision
 
-**RAID Tool** is an all-in-one companion toolkit for RAID: Shadow Legends players. It combines champion browsing, team building, account/roster management, and guides into a single, cohesive experience.
+**RAID Tool** is a community champion reference and build guide platform for RAID: Shadow Legends. It serves as both a public utility for the RAID community and a portfolio showcase.
 
-- **Audience:** Public community — any RAID player can use it.
-- **Access model:** Open browsing for all reference content (champions, guides, comparisons). User accounts only required for saving personal data (rosters, builds, teams).
-- **Core differentiator:** A smoother, more intuitive UX than existing tools. Easy to learn, easy to use. Existing tools (HellHades, AyumiLove, etc.) are functional but clunky and dated — RAID Tool prioritizes modern design and frictionless usability.
+- **Audience:** Any RAID player. Public browsing, accounts for personal features.
+- **Access model:** All reference content (champions, tier lists, guides) is freely browsable. Accounts required only for saving personal data (roster, voting, commenting, submitting guides).
+- **Core differentiator:** A modern, polished UX that existing tools (HellHades, AyumiLove) lack — combined with strong SEO so players find us when Googling champion builds.
+- **Portfolio angle:** Dark Souls-inspired medieval design, clean architecture, real community features backed by Supabase.
 
 
 ## Core Features
 
-### Must-Haves (Launch)
-1. **Champion Index** — Browse, search, and filter all champions with stats, skills, and ratings.
-   - **Filters (dropdowns):** Faction, Affinity (Magic/Force/Spirit/Void), Rarity (Common–Legendary), Role (Attack/Defense/HP/Support)
-   - **Text search** by champion name
-   - **Champion images:** Hotlinked from external sources (InTeleria, wiki, etc.)
-2. **Team Builder** — Build and save teams for specific game content. Includes speed tune turn order display and AI-powered team suggestions.
-   - **Content types:**
-     - **Clan Boss** (per difficulty: Normal through Ultra-Nightmare)
-     - **Hydra** (per difficulty)
-     - **Chimera** (per difficulty)
-     - **Dungeons** (Dragon, Spider, Fire Knight, Ice Golem, Minotaur — per stage, e.g., Dragon 25)
-     - **Arena** (Offense / Defense)
-     - **Doom Tower** (Normal / Hard, per floor/boss)
-     - **Faction Wars** (per faction)
-     - **Iron Twins** (per stage)
-     - **Sand Devil** (per stage)
-     - **Shogun** (per stage)
-   - **Speed Tuning:** Visual turn order display based on champion speeds so users can verify their tune is correct.
-   - **AI Team Suggestions:** When a user selects a content type, the AI analyzes their roster and suggests the best possible team composition from champions they actually own. Includes recommended turn order, gear set suggestions, and an explanation of why the team works (synergies, buff/debuff chains, skill combos). Available only for logged-in users with a roster.
-   - **AI Explanations:** When a team is manually built, an AI-generated explanation describes why the composition works — champion synergies, skill combos, buff/debuff chains, and why the turn order matters for that specific content. Works for all users (not roster-dependent).
-   - **Champion source:** All champions by default, with a toggle to filter to "My Roster only."
-   - **Team size:** Auto-set based on content type (CB=5, Hydra=6, Arena=4, etc.) with manual override. _Note: These sizes are approximate defaults — verify against current game data during implementation._
-3. **My Roster** — Track which champions you own, their level, rank, gear, and masteries.
-   - **Entry method:** Search by name and add one by one, then fill in build details.
-   - **RSL Helper JSON import** (post-launch): Upload account export to auto-populate roster.
-   - Manual edits always available on top of imported data.
-4. **Guides / Tier Lists** — Champion ratings, build guides, and tier lists by content area.
-   - **Tier Lists:** Official curated tier list (admin-maintained) + separate community-voted tier list.
-   - **Guides:** Rich text editor (WYSIWYG) for creating build guides.
+### 1. Champion Index + Detail (Priority 1 — Launch Feature)
 
-### Nice-to-Haves (Post-Launch)
-5. **Gear Optimizer** — Suggest best gear sets for a champion based on stat priorities.
-6. **Clan Boss Calculator** — Damage calculator and advanced speed tune suggestions for CB teams (extends the basic turn order display in Team Builder).
-7. **Fusion Tracker** — Track progress on ongoing fusion events.
-8. **Community Features** — User-submitted builds, ratings, comments, and voting.
-9. **RSL Helper JSON Import** — Upload RSL Helper account export to auto-populate roster data.
+**Index page** (`/champions`):
+- Browse, search, and filter all ~996 champions
+- **Filters:** Faction, Affinity (Magic/Force/Spirit/Void), Rarity (Common–Mythical), Role (Attack/Defense/HP/Support)
+- **Text search** by champion name
+- **Sorting:** Name A–Z/Z–A, Rarity High–Low/Low–High, Rating High–Low/Low–High
+- **Pagination** to handle ~996+ champions
+- **Self-hosted champion images** (downloaded from InTeleria/HellHades, served from our own CDN)
+
+**Detail page** (`/champions/[slug]`):
+- Full champion profile: avatar, name, faction, affinity, rarity, role
+- **Stats table** (6-star base stats: HP, ATK, DEF, SPD, C.Rate, C.DMG, RES, ACC)
+- **Skills list** with descriptions, multipliers, cooldowns (fill gaps from alternative data source)
+- **Ratings by content area** (half-star precision display)
+- **Tier placements** — show where this champion ranks (S/A/B/C/D/F) across all content areas in one view
+- **Recommended gear sets + masteries** per content area (sourced from community guides when available)
+- **Similar champions** — skill-based similarity (champions with comparable skill effects/debuffs)
+- **Linked guides** — community build guides for this champion
+
+**Comparison feature** (`/compare`):
+- Select 2–3 champions, see stats and ratings side-by-side in a table
+- Accessible from champion detail pages ("Compare with...")
+
+**SEO:**
+- Unique meta titles/descriptions per champion page (e.g., "Drexthar Bloodtwin Build Guide — RAID Tool")
+- Open Graph images (auto-generated or champion avatar-based)
+- JSON-LD structured data (VideoGame schema)
+- XML sitemap for all champion pages
+- Champion-name-based URLs (already using slugs)
+
+### 2. Tier Lists (Priority 2)
+
+- **Seeded from HellHades rating data** — pre-populate tier placements from existing HH ratings in our champion data
+- **Community voting** — logged-in users vote on champion tier (S/A/B/C/D/F) per content area. Votes aggregate over time to adjust tiers.
+- **Granular content areas** (13 areas):
+  - Clan Boss, Hydra, Chimera
+  - Dragon, Spider, Fire Knight, Ice Golem
+  - Arena
+  - Doom Tower
+  - Faction Wars
+  - Iron Twins, Sand Devil, Shogun
+- **No admin-curated tier list** — community-driven only, seeded from data
+- **Public** — browsable without login. Login required to vote.
+
+### 3. Guides (Priority 3)
+
+- **Community-written** champion build guides (no AI generation at launch)
+- **Structured build templates** — no free-form rich text editor. Fields:
+  - Champion (required)
+  - Content area (which content this build is for)
+  - Gear sets (dropdowns from gear set list)
+  - Stat priorities (ranked list: e.g., SPD > ACC > DEF > HP)
+  - Mastery picks (selected mastery nodes)
+  - Skill booking order (which skills to book first)
+- **Champion build guides only** — focused scope, no free-form strategy articles
+- **Upvote/downvote** system for quality sorting
+- **Login required** to submit or vote on guides. Browsable without login.
+
+### 4. Roster (Priority 4)
+
+- **Full build tracking** per owned champion:
+  - Stars, level, ascension
+  - Gear sets + gear piece stats
+  - Mastery selections
+  - Skill book tracking
+- **Search-and-add flow:** search champions by name, add to roster
+- **Requires login** — roster data stored in Supabase per user
+- _Future: RSL Helper JSON import to auto-populate roster data_
+
+
+## Cut Features
+
+These were prototyped with localStorage but are **removed from scope**. Code may remain in the codebase but is hidden from navigation and not maintained.
+
+| Feature | Reason |
+|---|---|
+| **Team Builder + AI Synergy** | Deprioritized. May return in a future phase once core features are solid. |
+| **Gear Optimizer** | Other tools (HellHades optimizer, RSL Helper) already do this well. Not worth duplicating. |
+| **Clan Boss Calculator** | Redundant with existing community tools. |
+| **Fusion Tracker** | Cut for now. Not a core reference feature. |
+| **AI-Generated Guides** | Deferred. Community-written guides come first. AI generation may be added later. |
+
 
 ## Champion Data
 
-- **Approach:** Hybrid — seed from external community sources (InTeleria, HellHades APIs), then layer on our own ratings, guides, and metadata.
-- **Freshness:** Critical — new champions should be available within days of release. Automated sync/scrape pipeline needed.
-- **Previous version:** ~990 champions seeded from InTeleria + HellHades APIs.
-- **Storage:** Own database with champion base data + custom fields (ratings, guides, tier placements, user-submitted builds).
+- **Source:** Hybrid seed from InTeleria (base stats, avatars) + HellHades (ratings, skills)
+- **Count:** ~996 champions, deduped via fuzzy name matching
+- **Skills gap:** ~958 champions have empty skills arrays (HH API limitation). **Action: research alternative data sources** (RAID Wiki, AyumiLove, or other scrapeable endpoints) to fill skill data for all champions.
+- **Images:** Self-hosted. Download all champion images from source URLs and serve from Supabase Storage or Vercel/public directory. Eliminates dependency on external URL stability.
+- **Freshness:** New champions released every 1–2 weeks. **Automated weekly cron job** (GitHub Actions) runs the seed script, detects new champions, and triggers redeployment.
+- **Storage:** Champion base data lives in static JSON (`src/data/champions.json`) for fast static page generation. User-generated data (tier votes, guides, roster) lives in Supabase.
 
 
 ## Tech Stack
 
-- **Frontend:** Next.js (App Router) + React + TypeScript
-- **Styling:** Tailwind CSS v4
-- **Backend:** Supabase (Postgres DB + Auth + Realtime + Storage)
-- **ORM/Client:** Supabase JS client (direct DB access from Next.js server components + API routes)
-- **AI:** Claude API (Anthropic) — generate team synergy explanations based on champion skills and composition context.
-- **Deployment:** TBD (covered in Deployment section)
+- **Framework:** Next.js (App Router) + React + TypeScript
+- **Styling:** Tailwind CSS v4 + shadcn/ui (Radix primitives)
+- **Backend:** Supabase (Postgres + Auth + Storage)
+- **Data approach:** Hybrid — static JSON for champion reference data, Supabase for user/community data
+- **Auth:** Supabase Auth — email/password + Google OAuth
+- **Hosting:** Vercel (free tier) — `raid-tool.vercel.app` initially, custom domain later
+- **CI/CD:** GitHub Actions for automated champion data sync (weekly cron)
 
 
 ## Design / Theme
 
-- **Theme:** Dark mode with gaming/medieval aesthetic (matches RAID's visual identity).
-- **Component Library:** shadcn/ui (Radix + Tailwind) — consistent, accessible, fully customizable.
-- **Typography & Colors:** TBD during implementation, but dark backgrounds with accent colors (golds, purples, reds) to fit the medieval/fantasy vibe.
-- **Navigation:** Top navbar — logo/brand left, main nav links center (Champions, Team Builder, Roster, Tier Lists, Guides), login/profile right. Collapses to hamburger on mobile.
+- **Aesthetic:** Dark Souls-inspired medieval — dark backgrounds, ember/blood/steel color palette
+- **Typography:** Cinzel (serif) for headings, Geist Sans for body text
+- **Colors:** Ember gold (#C8963E) primary, blood red (#8B1A1A) destructive, steel gray (#4A5568) secondary. Near-black background (#0A0A0F).
+- **Component library:** shadcn/ui (new-york variant, dark theme)
+- **Mobile:** Mobile-friendly, not mobile-first. Should look decent and be usable on phones, but desktop is the optimized experience.
+- **Navigation:** Top navbar — logo left, nav links center (`Champions | Tier Lists | Guides`), auth right. `My Roster` link appears when logged in.
 
 
 ## Pages / Routes
 
-| Route | Description |
-|---|---|
-| `/` | **Dashboard** — Featured champions, recent guides, roster summary (if logged in), quick links. |
-| `/champions` | **Champion Index** — Browse, search, filter all champions. |
-| `/champions/[slug]` | **Champion Detail** — Full stats, skills, ratings, recommended builds, tier placements. |
-| `/team-builder` | **Team Builder** — Create and save teams by content area (dungeons, CB, arena, etc.). |
-| `/roster` | **My Roster** — View and manage owned champions (requires auth). |
-| `/tier-lists` | **Tier Lists** — Champion rankings by content area. |
-| `/guides` | **Guides** — Build guides and strategy content. |
-| `/gear-optimizer` | **Gear Optimizer** — Suggest best gear sets for a champion based on stat priorities and content area. |
-| `/clan-boss` | **Clan Boss Calculator** — Speed tune simulation, damage estimation, and turn order visualization. |
-| `/fusion-tracker` | **Fusion Tracker** — Track progress on active fusion events (requires auth). |
-| `/profile` | **Profile / Settings** — Account settings, preferences (requires auth). |
-| `/login` | **Login / Sign Up** — Supabase auth flow. |
+| Route | Description | Auth |
+|---|---|---|
+| `/` | **Landing page** — Hero section, feature highlights, screenshots, CTA to browse champions. Marketing/portfolio-oriented. | Public |
+| `/champions` | **Champion Index** — Browse, search, filter, sort all champions. | Public |
+| `/champions/[slug]` | **Champion Detail** — Stats, skills, ratings, tier placements, gear/mastery recs, similar champions, linked guides. | Public |
+| `/compare` | **Champion Comparison** — Select 2–3 champions, side-by-side stat/rating table. | Public |
+| `/tier-lists` | **Tier Lists** — Community-voted champion rankings by content area (13 areas). | Public (vote: auth) |
+| `/guides` | **Guides** — Browse community build guides, filter by champion/content area. | Public |
+| `/guides/new` | **Submit Guide** — Structured build template form. | Auth required |
+| `/roster` | **My Roster** — View and manage owned champions with full build details. | Auth required |
+| `/login` | **Login / Sign Up** — Supabase auth (email/password + Google OAuth). | Public |
+| `/profile` | **Profile / Settings** — Account settings. | Auth required |
 
 
 ## Data Model
 
-### Champions (seeded from external sources)
+### Champions (static JSON — `src/data/champions.json`)
 - `id`, `name`, `slug`, `faction`, `affinity`, `rarity`, `role`, `avatar_url`
 - **Stats** (per star level): HP, ATK, DEF, SPD, C.Rate, C.DMG, RES, ACC
 - **Skills**: name, description, multiplier, cooldown, effects
-- **Ratings** (`champion_ratings`): Numeric scores (e.g., 1–5) per content area, seeded from external data sources (InTeleria, HellHades). These are imported reference data.
+- **Ratings**: Numeric scores (1–5) per content area (overall, clan_boss, arena, dungeons, hydra, faction_wars, doom_tower)
 
-### Users (Supabase Auth)
-- `id`, `email`, `display_name`, `avatar_url`, `admin_role` (boolean, default false), `created_at`
+### Users (Supabase Auth + `profiles` table)
+- `id` (UUID, from Supabase Auth), `email`, `display_name`, `avatar_url`, `created_at`
 
-### User Roster (per user, per champion)
-- `user_id`, `champion_id`
+### Tier Votes (`tier_votes` table — Supabase)
+- `id`, `user_id`, `champion_id`, `content_area`, `tier` (S/A/B/C/D/F), `created_at`, `updated_at`
+- Unique constraint: one vote per user per champion per content area
+- RLS: users can only insert/update their own votes, all votes readable publicly (aggregated)
+
+### Guides (`guides` table — Supabase)
+- `id`, `author_id`, `champion_id`, `content_area`
+- `gear_sets` (array of gear set names)
+- `stat_priorities` (ordered array: e.g., ["SPD", "ACC", "DEF", "HP"])
+- `mastery_picks` (array of mastery node identifiers)
+- `skill_booking_order` (ordered array of skill indices)
+- `upvotes`, `downvotes`, `created_at`, `updated_at`
+
+### Guide Votes (`guide_votes` table — Supabase)
+- `id`, `user_id`, `guide_id`, `vote` (+1 or -1), `created_at`
+- Unique constraint: one vote per user per guide
+
+### User Roster (`roster_champions` table — Supabase)
+- `id`, `user_id`, `champion_id`
 - `stars`, `level`, `ascension`
-- `gear` (set types + individual piece stats)
-- `masteries` (selected mastery tree nodes)
-- `skill_books` (books used per skill)
+- `gear_sets` (array), `gear_stats` (JSONB — slot-level stats)
+- `masteries` (array of selected mastery node identifiers)
+- `skill_books` (JSONB — books used per skill index)
+- `created_at`, `updated_at`
+- RLS: users can only read/write their own roster
 
-### Teams
-- `id`, `user_id`, `name`
-- `content_category` (e.g., "dungeon", "clan_boss", "hydra", "arena", "chimera", etc.)
-- `content_detail` (e.g., "Dragon", "Ultra-Nightmare", "Offense")
-- `content_stage` (e.g., 25, null for non-staged content)
-- **Team Slots**: champion_id, position/role, speed, notes
-- **Speed Tune**: calculated turn order based on slot speeds
-- **AI Explanation**: generated synergy breakdown (why this team works, skill combos, buff/debuff chains)
 
-### Guides
-- `id`, `champion_id`, `author_id`, `title`, `content`, `build_recommendation`
-- Tags, upvotes/downvotes
+## Auth
 
-### Tier Lists
-- `content_area`, `champion_id`, `tier` (S/A/B/C/D/F), `notes`
-- _Distinct from `champion_ratings`: Tier lists are curated (admin) and community-voted S/A/B/C/D/F rankings maintained by us. Ratings are numeric scores imported from external sources._
+- **Provider:** Supabase Auth
+- **Methods:** Email/password + Google OAuth
+- **Public access:** Champion index, champion detail, comparison, tier lists (read), guides (read), landing page
+- **Auth required:** Roster (all), voting (tier lists + guides), submitting guides, profile/settings
+- **RLS:** Enabled on all Supabase tables. Users can only modify their own data.
+
+
+## SEO Strategy
+
+- **Meta tags:** Unique `<title>` and `<meta description>` per champion page, tier list page, and guide page
+- **Open Graph:** OG image per champion (avatar-based), OG title/description for social sharing
+- **Structured data:** JSON-LD markup (VideoGame/SoftwareApplication schema) on key pages
+- **Sitemap:** Auto-generated XML sitemap covering all champion pages, tier list pages, and guide pages
+- **URLs:** Human-readable slugs (already in place: `/champions/drexthar-bloodtwin`)
+- **Performance:** Static generation for champion pages (fast TTFB, good Core Web Vitals)
 
 
 ## Deployment
 
-- **Hosting:** Vercel (free tier) — best-in-class Next.js support, automatic SSL, edge network.
-- **Database:** Supabase (free tier) — hosted Postgres.
-- **CI/CD:** Manual deploys for now. Can add auto-deploy from GitHub later.
-- **Domain:** TBD.
+- **Hosting:** Vercel (free tier) — `raid-tool.vercel.app` initially
+- **Database:** Supabase (free tier) — hosted Postgres
+- **Custom domain:** TBD — will add once site is polished (e.g., `raidtool.gg` or similar)
+- **CI/CD:** GitHub Actions for automated weekly champion data sync
 
 
-## Milestones (1-Hour Chunks)
+## Milestones
 
-Each chunk is a self-contained unit of work that can be built autonomously in ~1 hour.
+### Phase 1 — Champion Index + Detail (Launch-Ready)
+Ship the champion reference as a standalone, publicly accessible site.
 
----
+- [ ] Research and scrape skills data from alternative source (fill 958/996 empty skills)
+- [ ] Download and self-host all champion images
+- [ ] Add tier placements section to champion detail page (derived from rating data)
+- [ ] Add recommended gear/mastery section to detail page (placeholder until guides exist)
+- [ ] Build `/compare` route — champion comparison (side-by-side stat table)
+- [ ] Build marketing landing page (`/`)
+- [ ] Implement SEO: meta tags, OG images, JSON-LD, sitemap
+- [ ] Mobile-friendly polish pass (responsive filters, cards, detail page)
+- [ ] Deploy to Vercel (`raid-tool.vercel.app`)
+- [ ] Set up GitHub Actions cron for weekly champion data sync
 
-### Phase 1 — Foundation + Champion Index
+### Phase 2 — Supabase + Auth + Tier Lists
+Add real backend and the first community feature.
 
-**Chunk 1.1 — Project Scaffolding** ✅
-- [x] Initialize Next.js (App Router) + TypeScript
-- [x] Install and configure Tailwind CSS v4
-- [x] Install and configure shadcn/ui
-- [x] Install Supabase JS client (`@supabase/supabase-js`, `@supabase/ssr`)
-- [x] Set up folder structure (`src/app`, `src/components`, `src/lib`, `src/types`, `scripts/`)
-- [x] Initialize Git repo
-- [x] Add `.gitignore` (include `node_modules/`, `.env.local`, `.next/`, etc.)
-- [x] Add `.env.local.example` with placeholder keys (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
-- [x] **Verify:** App runs on `localhost` with a blank page and no errors
+- [ ] Set up Supabase project (create tables, RLS policies, auth config)
+- [ ] Implement real auth (replace mock localStorage auth): email/password + Google OAuth
+- [ ] Build `tier_votes` table and API
+- [ ] Seed tier list data from HellHades ratings
+- [ ] Build tier list UI: browse by content area, community-voted rankings
+- [ ] Add voting UI (logged-in users vote S–F per champion per content area)
+- [ ] Connect tier placements on champion detail page to live vote data
+- [ ] Update navbar: `Champions | Tier Lists | Guides`
 
-**Chunk 1.2 — Dark Theme + Navbar** ✅
-- [x] Configure shadcn/ui dark theme with custom color palette (slate-900/950 backgrounds, gold/purple/red accents)
-- [x] Build the top navbar component (logo left, nav links center, login button right)
-- [x] Apply global dark styles, typography, and spacing
-- _Note: Mobile hamburger menu deferred — desktop-first per Resolved Questions #3._
-- [x] **Verify:** Every page shows the themed navbar on desktop.
+### Phase 3 — Guides (Structured Build Templates)
+Add community build guides with structured fields.
 
-**Chunk 1.3 — Data Layer** ✅
-> _Supabase deferred — using local JSON data for Day 1. Will wire up Supabase later._
+- [ ] Build `guides` + `guide_votes` tables in Supabase
+- [ ] Build guide submission form: structured template (gear sets, stat priorities, mastery picks, skill booking)
+- [ ] Build guide browse page: filter by champion, content area, sort by votes
+- [ ] Build guide display on champion detail page
+- [ ] Add upvote/downvote system with Supabase
+- [ ] Link gear/mastery recommendations on champion detail page to top-voted guides
 
-- [x] Define TypeScript types for champions (`src/types/champion.ts`)
-- [x] Create local data access layer (`src/lib/champions.ts`) reading from JSON
-- [x] Create `src/data/` directory for local champion data
-- [ ] _Deferred: Create Supabase project, tables, RLS policies, and helpers_
+### Phase 4 — Roster
+Add personal champion tracking.
 
-**Chunk 1.4 — Champion Data Seeding** ✅
-- [x] Research InTeleria / HellHades API endpoints and data formats
-- [x] **Verify API accessibility first** — both APIs confirmed working
-- [x] Build seeding script (`scripts/seed-champions.ts`)
-- [x] Fetch, normalize, and merge champion data (InTeleria: 964 base stats, HellHades: 1021 ratings)
-- [x] Seed 1002 unique champions to `src/data/champions.json` (964 with full stats + avatars, 39 with skills)
-- [x] **Verify:** All champions in local JSON with stats populated.
+- [ ] Build `roster_champions` table in Supabase with RLS
+- [ ] Build roster page: search-and-add, grid of owned champions
+- [ ] Build roster champion detail: stars, level, ascension, gear, masteries, skill books
+- [ ] Add "Add to Roster" button on champion detail pages
+- [ ] Add `My Roster` nav link (visible when logged in)
 
-**Chunk 1.5 — Champion Index Page** ✅
-- [x] Build `/champions` page — server component fetching all champions
-- [x] Champion card component (avatar, name, rarity, faction, affinity, role)
-- [x] Card grid layout
-- [x] Text search input (filter by name)
-- [x] Dropdown filters: Faction, Affinity, Rarity, Role (using shadcn/ui Select)
-- [x] Pagination (paginated grid with page controls) to handle ~990+ champions without performance issues
-- [x] **Verify:** Browse, search, filter, and paginate 1002 champions on `/champions`.
+### Phase 5 — Advanced Features (Pending Research)
+These depend on data availability. Research first, build if feasible.
 
-**Chunk 1.6 — Champion Detail Page** ✅
-- [x] Build `/champions/[slug]` page — server component fetching single champion
-- [x] Display: avatar, name, faction, affinity, rarity, role
-- [x] Stats table (6-star base stats)
-- [x] Skills list with descriptions, multipliers, cooldowns
-- [x] Ratings by content area (star display)
-- [x] Placeholder sections for "Recommended Builds" and "Guides"
-- [x] **Verify:** 1002 champion detail pages generated statically. Build clean.
+- [ ] **Research:** Find scrapeable mastery tree data (all nodes, connections, prerequisites per tree)
+- [ ] **Research:** Find parseable skill effect data (debuff types, buff types, AoE vs single target)
+- [ ] **Visual mastery tree diagram** — interactive tree with highlighted recommended nodes (if data available)
+- [ ] **Skill-based champion similarity** — "Similar Champions" section on detail page (if skill effect data available)
+- [ ] **Fallback if data unavailable:** Text-based mastery lists, role+rarity-based similarity
 
----
 
-### Phase 2 — Auth + Roster + Team Builder ✅
+## Research Tasks
 
-> _Supabase deferred — using mock auth + localStorage for all user data._
+These must be investigated before certain features can be built:
 
-**Chunk 2.1 — Auth System** ✅
-- [x] Set up mock auth system (React Context + localStorage)
-- [x] Build `/login` page with sign up / sign in forms
-- [x] Auth state management (AuthProvider, useAuth hook)
-- [x] Update navbar to show logged-in user / logout button
-- [x] **Verify:** Users can sign up, log in, log out. Navbar reflects auth state.
+1. **Alternative skills data source** — InTeleria, RAID Wiki, AyumiLove, or other sources that have skill descriptions/multipliers/cooldowns for all ~996 champions. The HellHades API only returns skills for ~38 champions.
+2. **Mastery tree data** — Complete mastery node data (name, tier, tree, prerequisites, effects) for all 3 trees (Offense, Defense, Support). Needed for the visual mastery tree diagram and structured guide templates.
+3. **Skill effect taxonomy** — Parsed skill effects (Decrease DEF, Stun, Poison, etc.) to power the "Similar Champions" feature. May need to be extracted from skill descriptions via parsing or AI.
 
-**Chunk 2.2 — User Profile + Settings** ✅
-- [x] Build `/profile` page (protected route)
-- [x] Display and edit: display name
-- [x] Account settings (delete account — clears all localStorage)
-- [x] **Verify:** Logged-in users can view and edit their profile.
-
-**Chunk 2.3 — Roster: Schema + Add Champions** ✅
-- [x] Create RosterProvider with localStorage persistence (keyed per user)
-- [x] Build `/roster` page (protected route)
-- [x] Search-and-add flow: search champions by name, click to add to roster
-- [x] Display roster as a grid of owned champions with remove button
-- [x] **Verify:** Users can search for and add champions to their roster.
-
-**Chunk 2.4 — Roster: Build Details** ✅
-- [x] Edit view for a rostered champion: stars, level, ascension
-- [x] Gear section: select gear sets (toggle from 40+ set options)
-- [x] Masteries section: placeholder (coming soon)
-- [x] Skill books section: placeholder (coming soon)
-- [x] **Verify:** Users can configure builds for any champion in their roster.
-
-**Chunk 2.5 — Team Builder: Core** ✅
-- [x] Create TeamsProvider with localStorage persistence (keyed per user)
-- [x] Build `/team-builder` page (works for all users, saving requires auth)
-- [x] Content type selector: category → detail → stage (e.g., Dungeon → Dragon → 25)
-- [x] Auto-set team size based on content type (10 content types configured)
-- [x] Add champions to team slots via search
-- [x] **Verify:** Users can create a team, pick content type, and add champions to slots.
-
-**Chunk 2.6 — Team Builder: Speed Tune + AI** ✅
-- [x] Speed input per team slot
-- [x] Visual turn order display based on champion speeds
-- [x] AI synergy explanation — mock placeholder (Claude API deferred)
-- [x] Generate and display synergy breakdown when team is built
-- [ ] "Suggest Best Team" button (logged-in users with roster): AI analyzes user's roster + selected content type and suggests the optimal team composition with turn order, gear recommendations, and synergy explanation _(deferred — requires Claude API)_
-- [x] Save / load teams
-- [x] **Verify:** Full team builder with speed tuning and AI explanation placeholder.
-
-**Chunk 2.7 — Dashboard** ✅
-- [x] Build `/` dashboard page
-- [x] Logged out: featured champions (8 legendaries), quick links to Champions and Team Builder
-- [x] Logged in: roster summary, saved teams, quick links
-- [x] **Verify:** Dashboard shows relevant content based on auth state.
-
----
-
-### Phase 3 — Guides, Tier Lists & Community ✅
-
-> _Supabase deferred — using localStorage for all data. Tiptap chosen for WYSIWYG editor._
-
-**Chunk 3.1 — Tier Lists: Curated** ✅
-- [x] Create TierListsProvider with localStorage persistence
-- [x] Build `/tier-lists` page with Curated tab
-- [x] Implement admin role checks (`admin_role` on User, `admin@raid.tool` for testing)
-- [x] Admin interface to create/edit tier lists (content area → search champion → assign tier S/A/B/C/D/F)
-- [x] Public view: filter by content area, see champions grouped by tier
-- [x] **Verify:** Admin can manage tier lists. Non-admin users see read-only view. Build clean.
-
-**Chunk 3.2 — Tier Lists: Community Voted** ✅
-- [x] Add voting system (users vote on champion tier per content area)
-- [x] Aggregate votes into community tier list view (majority vote per champion)
-- [x] Display alongside curated list (tabs: Curated / Community)
-- [x] **Verify:** Users can vote on champion tiers. Community list auto-generates from votes.
-
-**Chunk 3.3 — Guides: WYSIWYG Editor + Publishing** ✅
-- [x] Create GuidesProvider with localStorage persistence
-- [x] Build `/guides` page (list view with tag filtering, vote scores, champion avatars)
-- [x] Guide creation form with Tiptap rich text editor (bold, italic, headings, lists, blockquote, code)
-- [x] Fields: title, champion (optional), tags, content body
-- [x] **Verify:** Users can write and publish guides with rich text formatting.
-
-**Chunk 3.4 — Guides: Detail View + Community Interaction** ✅
-- [x] Guide detail page (`/guides/[id]`) with full HTML content display
-- [x] Upvote/downvote system with visual indicators
-- [x] Comments section with real-time posting
-- [x] Link guides to champion detail pages (replaced placeholder on `/champions/[slug]`)
-- [x] **Verify:** Users can read, vote on, and comment on guides. Guides linked from champion pages.
-
----
-
-### Phase 4 — Advanced Tools ✅
-
-**Chunk 4.1 — Gear Optimizer: Data Model + UI Shell** ✅
-- [x] Define gear data model (sets, slots, main stats, substats) — `src/lib/gear.ts` with 40+ gear sets, 6 slots, stat types
-- [x] Build gear optimizer page shell — `/gear-optimizer`
-- [x] Champion selector + stat priority inputs
-- [x] **Verify:** UI in place for gear optimization, data model ready.
-
-**Chunk 4.2 — Gear Optimizer: Recommendation Engine** ✅
-- [x] Build recommendation logic (match gear sets to stat priorities)
-- [x] Display suggested gear sets with reasoning
-- [x] Content-specific gear profiles (10 content areas with recommended sets)
-- [x] **Verify:** Working gear suggestions based on champion and stat priorities.
-
-**Chunk 4.3 — Clan Boss Calculator** ✅
-- [x] Build CB calculator page — `/clan-boss`
-- [x] Advanced speed tune input (speeds, buffs, debuff considerations)
-- [x] Damage estimation based on team comp and speeds
-- [x] Turn order simulation (speed bar mechanics, 30 actions)
-- [x] **Verify:** CB-specific calculator with damage estimates and speed tune suggestions.
-
-**Chunk 4.4 — Fusion Tracker** ✅
-- [x] Build fusion tracker page — `/fusion-tracker`
-- [x] Input current fusion event champions and requirements
-- [x] Track progress (fragments collected, events completed)
-- [x] Progress bars per requirement + overall fusion progress
-- [x] **Verify:** Users can track their progress on active fusion events.
 
 ## Resolved Questions
 
-1. **Data source reliability** — Fallback chain if InTeleria/HellHades APIs go down: (1) find and integrate alternative RAID data sources, (2) allow community contributions to submit/update champion data, (3) manual admin entry as a last resort.
-2. **Monetization** — Free to start. If running costs grow, explore options (donations, premium tier, ads) at that point. No monetization built into v1.
-3. **Mobile support** — Desktop-first. Mobile responsiveness will be added later, not a launch requirement.
-
----
-
-## Frontend Craftsman Cleanup (Post Phase 4)
-
-A dedicated frontend cleanup pass was run across the entire codebase after all 4 phases were complete. Changes made:
-
-### Fixed Invalid Tailwind Color Classes
-Custom color classes (`text-gold`, `bg-gold-dark`, `bg-crimson`, `border-gold`) were used throughout the codebase but never defined in the Tailwind config. All instances replaced with proper hex values:
-- `text-gold` / `border-gold` / `bg-gold` → `text-[#D4A43C]` / `border-[#D4A43C]` / `bg-[#D4A43C]`
-- `bg-gold-dark` → `bg-[#A67C1E]`
-- `bg-crimson` → `bg-[#DC2626]`
-
-### Improved Navbar
-- Enhanced dark theme integration (`bg-slate-900/95` with backdrop blur)
-- Added `focus-visible:ring-2 focus-visible:ring-[#D4A43C]` for keyboard accessibility
-- Better hover states with `hover:bg-slate-800` backgrounds
-- Nav links hidden on small screens via `hidden lg:flex` (desktop-first per MASTERPLAN)
-- Added `shrink-0` to logo and auth section to prevent layout compression
-
-### Enhanced Champion Card Component
-- Smoother hover animations (`duration-300`, `scale-110`)
-- Gold glow effect on hover (`shadow-lg shadow-[#D4A43C]/10`)
-- Focus indicators for keyboard navigation
-- Title transitions to gold on hover
-- Consistent dark theme colors (`slate-800/50` bg, `slate-700/50` borders)
-
-### Consistent Gold Accent Usage
-All page headings standardized to `text-[#D4A43C]` across all 14 pages (dashboard, champions, team builder, gear optimizer, clan boss, fusion tracker, roster, profile, guides, tier lists, login).
-
-### Files Modified (15 files)
-- `src/lib/constants.ts` — Fixed rarity color mappings
-- `src/components/navbar.tsx` — Enhanced styling and accessibility
-- `src/components/champion-card.tsx` — Improved hover states and animations
-- `src/app/page.tsx` — Fixed gold colors
-- `src/app/champions/page.tsx` — Fixed heading color
-- `src/app/champions/[slug]/page.tsx` — Fixed skill multiplier and rating colors
-- `src/app/team-builder/page.tsx` — Fixed gold color references
-- `src/app/gear-optimizer/page.tsx` — Fixed gold color references
-- `src/app/clan-boss/page.tsx` — Fixed gold color references
-- `src/app/roster/page.tsx` — Fixed heading colors
-- `src/app/roster/[slug]/page.tsx` — Fixed gold color references
-- `src/app/profile/page.tsx` — Fixed heading color
-- `src/app/guides/page.tsx` — Fixed gold color references
-- `src/app/tier-lists/page.tsx` — Fixed heading color
-- `src/app/fusion-tracker/page.tsx` — Fixed heading color
-
+1. **Data source reliability** — Champion images will be self-hosted to eliminate external URL dependency. Champion data refreshed via automated weekly cron.
+2. **Monetization** — Free. No monetization in v1.
+3. **Mobile support** — Mobile-friendly, not mobile-first. Desktop is the primary experience.
+4. **Auth scope** — All reference content public. Login only for personal features (roster, voting, guide submission).
+5. **Gear optimizer** — Cut. External tools (HellHades, RSL Helper) handle this adequately.
+6. **Team builder** — Cut for now. May return in a future phase.
+7. **AI guides** — Deferred. Community guides first, AI generation may be layered on later.
+8. **Tier list curation** — No admin-curated tier list. Community-voted only, seeded from HellHades data.
+9. **Guide format** — Structured templates only (no free-form rich text). Ensures consistency and comparability.
+10. **Domain** — Vercel subdomain first (`raid-tool.vercel.app`). Custom domain later.

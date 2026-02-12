@@ -110,6 +110,18 @@ function slugify(name: string): string {
     .replace(/^-|-$/g, "");
 }
 
+/** Normalize a champion name for fuzzy matching: lowercase, strip all punctuation/diacritics */
+function normalizeName(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")  // strip diacritics
+    .replace(/[\u2018\u2019\u201C\u201D]/g, "") // smart quotes
+    .replace(/[^a-z0-9 ]/g, "")  // strip remaining punctuation
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function decodeHtmlEntities(text: string): string {
   return text
     .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
@@ -153,6 +165,9 @@ const HH_FACTION_MAP: Record<string, string> = {
   "shadowkin": "Shadowkin",
   "sylvan-watchers": "Sylvan Watchers",
   "knights-of-magaava": "Knights of Magaava",
+  "bannerlords": "Banner Lords",
+  "sacred-order": "The Sacred Order",
+  "argonites": "Argonites",
 };
 
 const HH_ROLE_MAP: Record<string, string> = {
@@ -206,6 +221,23 @@ async function fetchHellHades(): Promise<HellHadesChampion[]> {
   return data;
 }
 
+/** Scrape a HellHades champion page for a portrait image URL */
+async function fetchHellHadesAvatar(pageUrl: string): Promise<string> {
+  try {
+    const res = await fetch(pageUrl);
+    if (!res.ok) return "";
+    const html = await res.text();
+    // Look for Portrait image first, then Splash Artwork as fallback
+    const portraitMatch = html.match(/https:\/\/hellhades\.com\/wp-content\/uploads\/[^"]+Portrait[^"]*\.png/);
+    if (portraitMatch) return portraitMatch[0];
+    const splashMatch = html.match(/https:\/\/hellhades\.com\/wp-content\/uploads\/[^"]+Splash[^"]*\.(jpg|png)/);
+    if (splashMatch) return splashMatch[0];
+    return "";
+  } catch {
+    return "";
+  }
+}
+
 async function fetchHellHadesSkills(heroId: number): Promise<HellHadesSkill[]> {
   try {
     const res = await fetch(`https://hellhades.com/wp-json/hh-api/v3/raid/skills/${heroId}`);
@@ -246,10 +278,17 @@ async function main() {
     return;
   }
 
-  // Build a lookup of HellHades data by normalized champion name
+  // Build lookups of HellHades data: exact (lowercase) and fuzzy (stripped punctuation)
   const hhByName = new Map<string, HellHadesChampion>();
+  const hhByFuzzy = new Map<string, HellHadesChampion>();
   for (const hh of hellhades) {
     hhByName.set(hh.champion.toLowerCase().trim(), hh);
+    hhByFuzzy.set(normalizeName(hh.champion), hh);
+  }
+
+  /** Look up a HellHades champion by exact name, then fuzzy name */
+  function findHH(name: string): HellHadesChampion | undefined {
+    return hhByName.get(name.toLowerCase().trim()) ?? hhByFuzzy.get(normalizeName(name));
   }
 
   // Step 3: Build merged champion list (InTeleria as primary, HellHades for enrichment)
@@ -268,7 +307,7 @@ async function main() {
     seenSlugs.add(slug);
 
     const avatarUrl = extractImageFromHtml(it.image);
-    const hh = hhByName.get(name.toLowerCase().trim());
+    const hh = findHH(name);
 
     const champion: Champion = {
       id: slug,
@@ -306,7 +345,7 @@ async function main() {
 
   // Add HellHades-only champions (ones not in InTeleria)
   for (const hh of hellhades) {
-    const name = hh.champion.trim();
+    const name = decodeHtmlEntities(hh.champion.trim());
     const slug = slugify(name);
     if (seenSlugs.has(slug)) continue;
     seenSlugs.add(slug);
@@ -334,7 +373,36 @@ async function main() {
     champions.push(champion);
   }
 
+  // Log HH-only champions (missing stats/avatars)
+  const hhOnly = champions.filter((c) => !c.avatar_url && Object.keys(c.stats).length === 0);
+  if (hhOnly.length > 0) {
+    console.log(`\n⚠ ${hhOnly.length} HellHades-only champions (no stats/avatar):`);
+    for (const c of hhOnly) {
+      console.log(`  - ${c.name} (${c.faction}, ${c.rarity})`);
+    }
+  }
+
   console.log(`\nMerged total: ${champions.length} unique champions`);
+
+  // Step 3b: Fetch avatars from HellHades pages for champions missing them
+  const missingAvatars = champions.filter((c) => !c.avatar_url);
+  if (missingAvatars.length > 0) {
+    console.log(`\nFetching avatars from HellHades pages for ${missingAvatars.length} champions...`);
+    let avatarsFetched = 0;
+    for (const champ of missingAvatars) {
+      const hh = findHH(champ.name);
+      if (!hh?.url) continue;
+      const avatarUrl = await fetchHellHadesAvatar(hh.url);
+      if (avatarUrl) {
+        champ.avatar_url = avatarUrl;
+        avatarsFetched++;
+        console.log(`  ✓ ${champ.name}: ${avatarUrl.split('/').pop()}`);
+      } else {
+        console.log(`  ✗ ${champ.name}: no portrait found`);
+      }
+    }
+    console.log(`Avatars fetched: ${avatarsFetched}/${missingAvatars.length}`);
+  }
 
   // Step 4: Fetch skills from HellHades (batch with rate limiting)
   console.log("\nFetching skills from HellHades (this may take a few minutes)...");
@@ -346,10 +414,10 @@ async function main() {
     const batch = champions.slice(i, i + BATCH_SIZE);
     await Promise.all(
       batch.map(async (champ) => {
-        const hh = hhByName.get(champ.name.toLowerCase().trim());
+        const hh = findHH(champ.name);
         if (!hh) return;
 
-        const skills = await fetchHellHadesSkills(hh.heroId);
+        const skills = await fetchHellHadesSkills(Number(hh.id));
         if (skills.length > 0) {
           champ.skills = skills.map((s) => ({
             name: s.name,

@@ -1,4 +1,5 @@
 import { Champion } from "@/types/champion";
+import { RARITY_ORDER } from "@/lib/constants";
 import championsData from "@/data/champions.json";
 
 const champions: Champion[] = championsData as Champion[];
@@ -20,7 +21,8 @@ export function getUniqueAffinities(): string[] {
 }
 
 export function getUniqueRarities(): string[] {
-  return [...new Set(champions.map((c) => c.rarity))];
+  const unique = [...new Set(champions.map((c) => c.rarity))];
+  return unique.sort((a, b) => RARITY_ORDER.indexOf(a) - RARITY_ORDER.indexOf(b));
 }
 
 export function getUniqueRoles(): string[] {

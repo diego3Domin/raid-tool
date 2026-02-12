@@ -9,6 +9,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-cinzel);
+  --font-display: var(--font-cinzel-decorative);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -135,73 +137,247 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Subtle noise/grain texture — very minimal, like torchlit stone */
+    /* Dark medieval fortress background — stone masonry with atmospheric depth */
+    background-color: #0A0A0F;
     background-image:
+      /* Dark vignette overlay for depth */
+      radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.5) 100%),
+      /* Subtle ember light from above (like torchlight) */
+      radial-gradient(ellipse at top center, rgba(200, 150, 62, 0.02) 0%, transparent 40%),
+      /* Stone masonry texture — large blocks */
       repeating-linear-gradient(
         0deg,
         transparent,
-        transparent 2px,
-        rgba(20, 20, 24, 0.3) 2px,
-        rgba(20, 20, 24, 0.3) 4px
-      );
-    background-size: 100% 4px;
-    background-attachment: fixed;
+        transparent 120px,
+        rgba(20, 20, 24, 0.3) 120px,
+        rgba(20, 20, 24, 0.3) 122px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 180px,
+        rgba(20, 20, 24, 0.25) 180px,
+        rgba(20, 20, 24, 0.25) 182px
+      ),
+      /* Offset stone pattern for realism */
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 90px,
+        rgba(15, 15, 18, 0.2) 90px,
+        rgba(15, 15, 18, 0.2) 91px,
+        transparent 91px,
+        transparent 180px
+      ),
+      /* Fine grain texture for aged stone */
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.08"/></svg>'),
+      /* Subtle diagonal hatching (medieval pattern) */
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(20, 20, 24, 0.08) 40px,
+        rgba(20, 20, 24, 0.08) 41px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(20, 20, 24, 0.06) 40px,
+        rgba(20, 20, 24, 0.06) 41px
+      ),
+      /* Base dark gradient with warmth */
+      linear-gradient(180deg, #0A0A0F 0%, #08080C 50%, #060608 100%);
+    background-size:
+      100% 100%,           /* vignette */
+      100% 300px,          /* ember light */
+      100% 122px,          /* horizontal stone lines */
+      100% 100%,           /* vertical stone lines */
+      100% 122px,          /* offset stone pattern */
+      200px 200px,         /* grain texture */
+      100% 100%,           /* diagonal hatch 1 */
+      100% 100%,           /* diagonal hatch 2 */
+      100% 100%;           /* base gradient */
+    background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed;
   }
 
-  /* Heavy condensed typography — brutalist feel */
+  /* Medieval typography — Cinzel for headings, brutalist feel */
   h1 {
     @apply tracking-tighter font-black uppercase;
-    letter-spacing: -0.03em;
+    font-family: var(--font-cinzel), serif;
+    letter-spacing: 0.02em;
   }
 
   h2 {
     @apply tracking-tight font-bold uppercase;
+    font-family: var(--font-cinzel), serif;
+    letter-spacing: 0.01em;
   }
 
   h3 {
     @apply tracking-tight font-bold;
+    font-family: var(--font-cinzel), serif;
   }
 
-  /* Minimal scrollbars — dark with thin ember thumb */
+  h4 {
+    font-family: var(--font-cinzel), serif;
+  }
+
+  /* Refined scrollbars — dark with ember glow */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   ::-webkit-scrollbar-track {
     background: #0A0A0F;
+    border-left: 1px solid #2A2A30;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #C8963E;
+    background: linear-gradient(180deg, #C8963E 0%, #9A6E25 100%);
     border-radius: 0;
+    border: 1px solid #9A6E25;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #9A6E25;
+    background: linear-gradient(180deg, #D4A43C 0%, #C8963E 100%);
+    box-shadow: 0 0 8px rgba(200, 150, 62, 0.4);
   }
 }
 
 @layer utilities {
-  /* Thin ruled line dividers */
+  /* Forged divider — double-line like metal seam */
   .divider-ember {
-    height: 1px;
-    background: rgba(200, 150, 62, 0.3);
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(200, 150, 62, 0.5) 0%, transparent 100%);
   }
 
-  /* Clean progress bar — no shimmer */
+  .divider-ember::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(200, 150, 62, 0.2) 0%, transparent 100%);
+  }
+
+  /* Progress bar with depth and glow */
   .progress-bar {
     height: 20px;
-    background: #1A1A20;
-    border: 1px solid #2A2A30;
+    background: #0A0A0F;
+    border: 2px solid #2A2A30;
     border-radius: 2px;
     position: relative;
     overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
   }
 
   .progress-fill {
     height: 100%;
-    background: #C8963E;
+    background: linear-gradient(180deg, #D4A43C 0%, #C8963E 50%, #9A6E25 100%);
     transition: width 0.3s ease;
+    box-shadow:
+      0 0 8px rgba(200, 150, 62, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  .progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+  }
+
+  /* Card depth utilities */
+  .card-depth {
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(200, 150, 62, 0.05);
+  }
+
+  .card-depth-heavy {
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.6),
+      0 1px 2px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 rgba(200, 150, 62, 0.08);
+  }
+
+  /* Double-line border effect */
+  .border-double-ember {
+    position: relative;
+    border: 1px solid #C8963E;
+  }
+
+  .border-double-ember::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 1px solid rgba(200, 150, 62, 0.3);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* Corner notch effect */
+  .corner-notch {
+    position: relative;
+  }
+
+  .corner-notch::before,
+  .corner-notch::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #C8963E;
+  }
+
+  .corner-notch::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .corner-notch::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Ember glow effect */
+  .ember-glow {
+    box-shadow:
+      0 0 12px rgba(200, 150, 62, 0.3),
+      0 0 24px rgba(200, 150, 62, 0.1);
+  }
+
+  .ember-glow-strong {
+    box-shadow:
+      0 0 16px rgba(200, 150, 62, 0.5),
+      0 0 32px rgba(200, 150, 62, 0.2),
+      0 0 48px rgba(200, 150, 62, 0.1);
+  }
+
+  /* Recessed inset effect */
+  .inset-recess {
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.6),
+      inset 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Skill card hover glow */
+  .skill-card:hover {
+    box-shadow:
+      inset 0 1px 2px rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      inset 4px 0 8px rgba(200, 150, 62, 0.15);
   }
 }

@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { AuthProvider } from "@/lib/auth";
-import { RosterProvider } from "@/lib/roster";
-import { TeamsProvider } from "@/lib/teams";
-import { TierListsProvider } from "@/lib/tier-lists";
-import { GuidesProvider } from "@/lib/guides";
-import { FusionsProvider } from "@/lib/fusions";
+import { Geist, Geist_Mono, Cinzel, Cinzel_Decorative } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
@@ -19,9 +13,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const cinzelDecorative = Cinzel_Decorative({
+  variable: "--font-cinzel-decorative",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+});
+
 export const metadata: Metadata = {
-  title: "RAID Tool",
-  description: "All-in-one companion toolkit for RAID: Shadow Legends",
+  metadataBase: new URL("https://raid-tool.vercel.app"),
+  title: {
+    default: "RAID Tool — Champion Reference for RAID: Shadow Legends",
+    template: "%s | RAID Tool",
+  },
+  description:
+    "Browse 990+ champions with stats, skills, ratings, and tier placements. The community-driven reference tool for RAID: Shadow Legends.",
+  openGraph: {
+    type: "website",
+    siteName: "RAID Tool",
+    title: "RAID Tool — Champion Reference for RAID: Shadow Legends",
+    description: "Browse 990+ champions with stats, skills, ratings, and tier placements.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RAID Tool — Champion Reference for RAID: Shadow Legends",
+    description: "Browse 990+ champions with stats, skills, ratings, and tier placements.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -32,22 +58,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${cinzelDecorative.variable} font-sans antialiased`}
       >
-        <AuthProvider>
-          <RosterProvider>
-            <TeamsProvider>
-              <TierListsProvider>
-                <GuidesProvider>
-                  <FusionsProvider>
-                    <Navbar />
-                    <main>{children}</main>
-                  </FusionsProvider>
-                </GuidesProvider>
-              </TierListsProvider>
-            </TeamsProvider>
-          </RosterProvider>
-        </AuthProvider>
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
   );

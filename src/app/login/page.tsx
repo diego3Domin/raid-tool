@@ -1,114 +1,53 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+export const metadata = {
+  title: "Login | RAID Tool",
+  description: "Sign in to RAID Tool to access roster tracking, voting, and guide submission.",
+};
 
 export default function LoginPage() {
-  const router = useRouter();
-  const { user, login, signup } = useAuth();
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
-  const [error, setError] = useState("");
-
-  if (user) {
-    router.push("/");
-    return null;
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-
-    if (!email || !password) {
-      setError("Email and password are required.");
-      return;
-    }
-
-    try {
-      if (isSignUp) {
-        await signup(email, password, displayName || email.split("@")[0]);
-      } else {
-        await login(email, password);
-      }
-      router.push("/");
-    } catch {
-      setError("Something went wrong. Please try again.");
-    }
-  };
-
   return (
-    <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-md items-center justify-center px-4">
-      {/* Clean login card */}
-      <Card className="w-full border-t-2 border-t-[#C8963E] border-[#2A2A30]">
-        <CardHeader>
-          <CardTitle className="text-center text-2xl text-[#C8963E]">
-            {isSignUp ? "Create Account" : "Sign In"}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {isSignUp && (
-              <div>
-                <label className="mb-1 block text-sm font-medium">
-                  Display Name
-                </label>
-                <Input
-                  value={displayName}
-                  onChange={(e) => setDisplayName(e.target.value)}
-                  placeholder="Your name"
-                />
-              </div>
-            )}
-            <div>
-              <label className="mb-1 block text-sm font-medium">Email</label>
-              <Input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium">
-                Password
-              </label>
-              <Input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                required
-              />
-            </div>
-            {error && <p className="text-sm text-destructive">{error}</p>}
-            <Button type="submit" className="w-full">
-              {isSignUp ? "Sign Up" : "Log In"}
-            </Button>
-          </form>
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-            <button
-              onClick={() => {
-                setIsSignUp(!isSignUp);
-                setError("");
-              }}
-              className="font-medium text-primary hover:underline"
-            >
-              {isSignUp ? "Log in" : "Sign up"}
-            </button>
+    <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-md items-center justify-center px-4 relative">
+      <div
+        className="absolute inset-0 -z-10 opacity-40"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(200, 150, 62, 0.08) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      />
+      <div className="w-full rounded-sm border-2 border-[#2A2A30] border-t-4 border-t-[#C8963E] bg-[#141418] p-8 text-center"
+        style={{
+          boxShadow: '0 12px 32px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.9)',
+        }}
+      >
+        <h1
+          className="mb-4 text-3xl"
+          style={{
+            background: 'linear-gradient(180deg, #E8C460 0%, #C8963E 50%, #9A6E25 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          Sign In
+        </h1>
+        <p className="mb-6 text-sm text-[#7A7570]">
+          Authentication is coming soon. Once available, you&apos;ll be able to save your roster, vote on tier lists, and submit build guides.
+        </p>
+        <div className="inline-block rounded-sm border-2 border-[#C8963E]/30 bg-[#1A1A20] px-6 py-3">
+          <p className="text-sm font-bold uppercase tracking-wider text-[#C8963E]">
+            Coming Soon
           </p>
-          <p className="mt-2 text-center text-xs text-muted-foreground">
-            Mock auth — any credentials will work.
-          </p>
-        </CardContent>
-      </Card>
+        </div>
+        <div className="mt-6">
+          <Link
+            href="/champions"
+            className="text-sm font-medium text-[#7A7570] transition-colors hover:text-[#C8963E]"
+          >
+            &larr; Browse Champions
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
