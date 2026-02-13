@@ -9,41 +9,64 @@ interface MasteryTreeDiagramProps {
 
 const TREE_NAMES = ["Offense", "Defense", "Support"] as const;
 const TIERS = [6, 5, 4, 3, 2, 1] as const;
+const TIER_NUMERALS = ["VI", "V", "IV", "III", "II", "I"] as const;
 
 function MasteryNodeCell({
   node,
   isSelected,
   isCapstone,
+  accentColor,
 }: {
   node: MasteryNode;
   isSelected: boolean;
   isCapstone: boolean;
+  accentColor: string;
 }) {
   return (
     <div className="group/node relative">
       <div
         className={cn(
-          "rounded-sm border px-1.5 py-1 text-center leading-tight font-medium transition-all cursor-default select-none",
-          isCapstone ? "py-1.5 text-[9px] font-bold min-w-[56px]" : "text-[8px] min-w-[48px]",
+          "rounded-md border-2 text-center leading-tight font-semibold transition-all cursor-default select-none",
+          isCapstone
+            ? "px-3 py-2 text-[11px] font-bold min-w-[80px]"
+            : "px-2 py-1.5 text-[10px] min-w-[68px]",
           isSelected
-            ? "bg-[#C8963E]/15 border-[#C8963E] text-[#C8963E]"
-            : "bg-[#1A1A20] border-[#2A2A30] text-[#3A3630]"
+            ? "text-white"
+            : "bg-[#12121A] border-[#2A2A30] text-[#3A3A40]"
         )}
         style={
           isSelected
-            ? { boxShadow: "0 0 6px rgba(200, 150, 62, 0.3)" }
+            ? {
+                backgroundColor: `${accentColor}20`,
+                borderColor: accentColor,
+                color: accentColor,
+                boxShadow: `0 0 8px ${accentColor}40, inset 0 0 12px ${accentColor}10`,
+              }
             : undefined
         }
       >
         {node.name}
       </div>
-      {/* CSS-only tooltip */}
-      <div className="pointer-events-none absolute bottom-full left-1/2 z-50 -translate-x-1/2 mb-1.5 w-48 rounded border border-[#C8963E]/30 bg-[#0A0A0F] p-2 text-left opacity-0 shadow-lg transition-opacity duration-150 group-hover/node:opacity-100">
-        <p className="text-[10px] font-bold text-[#C8963E]">{node.name}</p>
-        <p className="mt-0.5 text-[9px] leading-snug text-[#7A7570]">
+      {/* Tooltip */}
+      <div className="pointer-events-none absolute bottom-full left-1/2 z-50 -translate-x-1/2 mb-2 w-52 rounded-md border border-[#C8963E]/30 bg-[#0A0A0F] p-2.5 text-left opacity-0 shadow-xl transition-opacity duration-150 group-hover/node:opacity-100">
+        <p className="text-xs font-bold text-[#C8963E]">{node.name}</p>
+        <p className="mt-1 text-[10px] leading-snug text-[#7A7570]">
           {node.description}
         </p>
       </div>
+    </div>
+  );
+}
+
+function TierConnector({ accentColor, hasSelected }: { accentColor: string; hasSelected: boolean }) {
+  return (
+    <div className="flex justify-center py-0.5">
+      <div
+        className="w-0.5 h-3 rounded-full"
+        style={{
+          backgroundColor: hasSelected ? `${accentColor}60` : "#2A2A30",
+        }}
+      />
     </div>
   );
 }
@@ -54,7 +77,7 @@ export function MasteryTreeDiagram({ masteryTree, role }: MasteryTreeDiagramProp
 
   return (
     <div className="overflow-x-auto">
-      <div className="grid grid-cols-3 gap-2" style={{ minWidth: 480 }}>
+      <div className="grid grid-cols-3 gap-3" style={{ minWidth: 640 }}>
         {TREE_NAMES.map((treeName) => {
           const isActive =
             treeName === build.primaryTree || treeName === build.secondaryTree;
@@ -65,35 +88,70 @@ export function MasteryTreeDiagram({ masteryTree, role }: MasteryTreeDiagramProp
           return (
             <div
               key={treeName}
-              className={cn("space-y-1", !isActive && "opacity-20")}
+              className={cn(
+                "rounded-md border bg-[#0E0E14] p-2.5 transition-opacity",
+                isActive ? "border-[#2A2A30]" : "border-[#1A1A20] opacity-20"
+              )}
             >
               {/* Tree header */}
               <div
-                className="text-center text-[10px] font-bold uppercase tracking-wider pb-0.5"
-                style={{ color: accentColor }}
+                className="mb-3 rounded-sm py-1.5 text-center text-xs font-bold uppercase tracking-widest"
+                style={{
+                  color: accentColor,
+                  backgroundColor: `${accentColor}10`,
+                  borderBottom: `2px solid ${accentColor}40`,
+                }}
               >
                 {treeName}
                 {treeName === build.primaryTree && (
-                  <span className="ml-1 text-[8px] opacity-60">PRIMARY</span>
+                  <span className="ml-1.5 text-[9px] font-medium opacity-50">
+                    PRIMARY
+                  </span>
                 )}
               </div>
 
               {/* Tiers: T6 (top) → T1 (bottom) */}
-              {TIERS.map((tier) => {
+              {TIERS.map((tier, tierIdx) => {
                 const tierNodes = nodes.filter((n) => n.tier === tier);
+                const tierHasSelected = tierNodes.some((n) =>
+                  selectedSet.has(n.id)
+                );
+
                 return (
-                  <div
-                    key={tier}
-                    className="flex flex-wrap justify-center gap-1"
-                  >
-                    {tierNodes.map((node) => (
-                      <MasteryNodeCell
-                        key={node.id}
-                        node={node}
-                        isSelected={selectedSet.has(node.id)}
-                        isCapstone={tier === 6}
+                  <div key={tier}>
+                    {/* Connector line between tiers */}
+                    {tierIdx > 0 && (
+                      <TierConnector
+                        accentColor={accentColor}
+                        hasSelected={tierHasSelected}
                       />
-                    ))}
+                    )}
+
+                    {/* Tier row */}
+                    <div className="flex items-center gap-1.5">
+                      {/* Tier numeral */}
+                      <span
+                        className={cn(
+                          "w-5 shrink-0 text-center text-[9px] font-bold",
+                          tierHasSelected ? "text-[#5A5550]" : "text-[#2A2A30]"
+                        )}
+                      >
+                        {TIER_NUMERALS[tierIdx]}
+                      </span>
+
+                      {/* Nodes */}
+                      <div className="flex flex-1 flex-wrap justify-center gap-1.5">
+                        {tierNodes.map((node) => (
+                          <MasteryNodeCell
+                            key={node.id}
+                            node={node}
+                            isSelected={selectedSet.has(node.id)}
+                            isCapstone={tier === 6}
+                            accentColor={accentColor}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 );
               })}
