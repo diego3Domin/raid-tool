@@ -243,7 +243,7 @@ export default async function ChampionDetailPage({
             <CardTitle>Tier Placements</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-2 sm:grid-cols-3 md:grid-cols-4">
               {tierPlacements.map((area) => {
                 const tier = area.tier;
                 const colors = tier ? TIER_COLORS[tier] : null;
@@ -356,7 +356,7 @@ export default async function ChampionDetailPage({
         </CardHeader>
         <CardContent>
           {champion.skills.length > 0 ? (
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {champion.skills.map((skill, i) => (
                 <div
                   key={i}
@@ -463,7 +463,7 @@ export default async function ChampionDetailPage({
                 </div>
 
                 {/* Main Stats */}
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="rounded-sm border border-[#2A2A30] bg-[#1A1A20] p-2.5 text-center">
                     <p className="text-[10px] font-semibold uppercase tracking-wide text-[#7A7570]">
                       Gauntlets

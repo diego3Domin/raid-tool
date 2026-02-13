@@ -189,7 +189,7 @@ export function CompareClient({ champions }: Props) {
               <table className="w-full min-w-[360px] text-sm">
                 <thead>
                   <tr className="border-b border-[#2A2A30]">
-                    <th className="py-3 pr-4 pl-4 sm:pl-0 text-left text-xs font-bold uppercase tracking-wider text-[#7A7570]">
+                    <th className="sticky left-0 z-10 bg-[#141418] py-3 pr-4 pl-4 sm:pl-0 text-left text-xs font-bold uppercase tracking-wider text-[#7A7570] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-[#2A2A30] sm:after:hidden">
                       Stat
                     </th>
                     {selected.map((c) => (
@@ -206,7 +206,7 @@ export function CompareClient({ champions }: Props) {
                     const highest = getHighest(row.key, "stat");
                     return (
                       <tr key={row.key} className="border-b border-[#2A2A30]/50">
-                        <td className="py-2 pr-4 pl-4 sm:pl-0 font-semibold text-[#E8E4DF]">{row.label}</td>
+                        <td className="sticky left-0 z-10 bg-[#141418] py-2 pr-4 pl-4 sm:pl-0 font-semibold text-[#E8E4DF] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-[#2A2A30]/50 sm:after:hidden">{row.label}</td>
                         {selected.map((c) => {
                           const val = (c.stats["6"] as unknown as Record<string, number>)?.[row.key];
                           const isHighest = val === highest && selected.length > 1;
@@ -238,7 +238,7 @@ export function CompareClient({ champions }: Props) {
               <table className="w-full min-w-[360px] text-sm">
                 <thead>
                   <tr className="border-b border-[#2A2A30]">
-                    <th className="py-3 pr-4 pl-4 sm:pl-0 text-left text-xs font-bold uppercase tracking-wider text-[#7A7570]">
+                    <th className="sticky left-0 z-10 bg-[#141418] py-3 pr-4 pl-4 sm:pl-0 text-left text-xs font-bold uppercase tracking-wider text-[#7A7570] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-[#2A2A30] sm:after:hidden">
                       Content Area
                     </th>
                     {selected.map((c) => (
@@ -253,7 +253,7 @@ export function CompareClient({ champions }: Props) {
                     const highest = getHighest(row.key, "rating");
                     return (
                       <tr key={row.key} className="border-b border-[#2A2A30]/50">
-                        <td className="py-2 pr-4 pl-4 sm:pl-0 font-semibold text-[#E8E4DF]">{row.label}</td>
+                        <td className="sticky left-0 z-10 bg-[#141418] py-2 pr-4 pl-4 sm:pl-0 font-semibold text-[#E8E4DF] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-[#2A2A30]/50 sm:after:hidden">{row.label}</td>
                         {selected.map((c) => {
                           const val = (c.ratings as unknown as Record<string, number | undefined>)[row.key];
                           const isHighest = val === highest && selected.length > 1;

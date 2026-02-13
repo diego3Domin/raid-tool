@@ -198,7 +198,7 @@
       100% 100%,           /* diagonal hatch 1 */
       100% 100%,           /* diagonal hatch 2 */
       100% 100%;           /* base gradient */
-    background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed;
+    background-attachment: scroll;
   }
 
   /* Medieval typography — Cinzel for headings, brutalist feel */

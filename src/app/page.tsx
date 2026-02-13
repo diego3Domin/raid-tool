@@ -68,10 +68,10 @@ export default function LandingPage() {
             <span className="font-semibold text-[#E8E4DF]">RAID: Shadow Legends</span>.
             Stats, skills, tier lists, and build guides — all in one place.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Link
               href="/champions"
-              className="inline-flex items-center gap-2 rounded-sm border-2 border-[#C8963E] bg-[#C8963E] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#0A0A0F] transition-all hover:bg-[#E8C460] hover:border-[#E8C460]"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-sm border-2 border-[#C8963E] bg-[#C8963E] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#0A0A0F] transition-all hover:bg-[#E8C460] hover:border-[#E8C460]"
               style={{
                 boxShadow: '0 4px 16px rgba(200, 150, 62, 0.4), 0 0 24px rgba(200, 150, 62, 0.2)',
               }}
@@ -80,7 +80,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/compare"
-              className="inline-flex items-center gap-2 rounded-sm border-2 border-[#2A2A30] bg-[#141418] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#7A7570] transition-all hover:border-[#C8963E]/50 hover:text-[#C8963E]"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-sm border-2 border-[#2A2A30] bg-[#141418] px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#7A7570] transition-all hover:border-[#C8963E]/50 hover:text-[#C8963E]"
             >
               Compare Champions
             </Link>
@@ -102,7 +102,7 @@ export default function LandingPage() {
           >
             Top Rated Champions
           </h2>
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12">
+          <div className="grid grid-cols-4 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12">
             {featuredChampions.map((c) => (
               <Link
                 key={c.id}
@@ -177,7 +177,7 @@ export default function LandingPage() {
 
       {/* Stats Bar */}
       <section className="border-t border-[#2A2A30] px-4 py-12">
-        <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-6 sm:gap-16">
+        <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-8 sm:gap-16">
           <div className="text-center">
             <p className="text-3xl font-black text-[#C8963E]">{totalChampions}+</p>
             <p className="text-xs font-bold uppercase tracking-wider text-[#7A7570]">Champions</p>

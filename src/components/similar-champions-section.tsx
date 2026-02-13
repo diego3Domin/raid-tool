@@ -72,7 +72,7 @@ export function SimilarChampionsSection({ champion }: { champion: Champion }) {
                       {sharedStrengths.slice(0, 3).map((s) => (
                         <span
                           key={s}
-                          className="text-[8px] font-medium uppercase tracking-wide text-[#C8963E]/80 bg-[#C8963E]/10 px-1 py-0.5 rounded-sm"
+                          className="text-[9px] sm:text-[8px] font-medium uppercase tracking-wide text-[#C8963E]/80 bg-[#C8963E]/10 px-1 py-0.5 rounded-sm"
                         >
                           {s}
                         </span>

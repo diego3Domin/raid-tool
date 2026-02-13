@@ -25,12 +25,12 @@ type SortOption =
   | "rating-asc";
 
 const SORT_LABELS: Record<SortOption, string> = {
-  "name-asc": "Name A–Z",
-  "name-desc": "Name Z–A",
-  "rarity-desc": "Rarity High–Low",
-  "rarity-asc": "Rarity Low–High",
-  "rating-desc": "Rating High–Low",
-  "rating-asc": "Rating Low–High",
+  "name-asc": "Name A\u2013Z",
+  "name-desc": "Name Z\u2013A",
+  "rarity-desc": "Rarity High\u2013Low",
+  "rarity-asc": "Rarity Low\u2013High",
+  "rating-desc": "Rating High\u2013Low",
+  "rating-asc": "Rating Low\u2013High",
 };
 
 interface ChampionIndexProps {
@@ -55,6 +55,7 @@ export function ChampionIndex({
   const [role, setRole] = useState("all");
   const [sort, setSort] = useState<SortOption>("name-asc");
   const [page, setPage] = useState(1);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const hasActiveFilters =
     search !== "" ||
@@ -62,6 +63,10 @@ export function ChampionIndex({
     affinity !== "all" ||
     rarity !== "all" ||
     role !== "all";
+
+  const activeFilterCount = [faction, affinity, rarity, role].filter(
+    (v) => v !== "all"
+  ).length;
 
   function clearAllFilters() {
     setSearch("");
@@ -119,102 +124,130 @@ export function ChampionIndex({
     setPage(1);
   };
 
+  // Mobile: show 5 page buttons, desktop: show 7
+  const maxPageButtons = typeof window !== "undefined" && window.innerWidth < 640 ? 5 : 7;
+
   return (
     <div className="space-y-6">
-      {/* Filters */}
-      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3">
-        <Input
-          placeholder="Search champions..."
-          aria-label="Search champions by name"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setPage(1);
-          }}
-          className="col-span-2 sm:w-64"
-        />
-        <Select value={faction} onValueChange={handleFilterChange(setFaction)}>
-          <SelectTrigger className="w-full sm:w-44" aria-label="Filter by faction">
-            <SelectValue placeholder="Faction" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Factions</SelectItem>
-            {factions.map((f) => (
-              <SelectItem key={f} value={f}>
-                {f}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select value={affinity} onValueChange={handleFilterChange(setAffinity)}>
-          <SelectTrigger className="w-full sm:w-36" aria-label="Filter by affinity">
-            <SelectValue placeholder="Affinity" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Affinities</SelectItem>
-            {affinities.map((a) => (
-              <SelectItem key={a} value={a}>
-                {a}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select value={rarity} onValueChange={handleFilterChange(setRarity)}>
-          <SelectTrigger className="w-full sm:w-36" aria-label="Filter by rarity">
-            <SelectValue placeholder="Rarity" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Rarities</SelectItem>
-            {rarities.map((r) => (
-              <SelectItem key={r} value={r}>
-                {r}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select value={role} onValueChange={handleFilterChange(setRole)}>
-          <SelectTrigger className="w-full sm:w-36" aria-label="Filter by role">
-            <SelectValue placeholder="Role" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Roles</SelectItem>
-            {roles.map((r) => (
-              <SelectItem key={r} value={r}>
-                {r}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select value={sort} onValueChange={(v) => { setSort(v as SortOption); setPage(1); }}>
-          <SelectTrigger className="w-full sm:w-44" aria-label="Sort champions">
-            <SelectValue placeholder="Sort by" />
-          </SelectTrigger>
-          <SelectContent>
-            {(Object.entries(SORT_LABELS) as [SortOption, string][]).map(
-              ([value, label]) => (
-                <SelectItem key={value} value={value}>
-                  {label}
-                </SelectItem>
-              )
-            )}
-          </SelectContent>
-        </Select>
-        {hasActiveFilters && (
+      {/* Search + Filter toggle (mobile) */}
+      <div className="space-y-2">
+        <div className="flex gap-2">
+          <Input
+            placeholder="Search champions..."
+            aria-label="Search champions by name"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setPage(1);
+            }}
+            className="flex-1 sm:w-64 sm:flex-none"
+          />
           <Button
-            variant="ghost"
+            variant="outline"
             size="sm"
-            onClick={clearAllFilters}
-            className="col-span-2 sm:col-span-1 text-[#C8963E] hover:text-[#E8C460] hover:bg-[#C8963E]/10"
+            onClick={() => setFiltersOpen((prev) => !prev)}
+            className="sm:hidden shrink-0 h-9 px-3 text-xs font-bold uppercase tracking-wide"
           >
-            Clear All
+            Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ""}
+            <svg
+              className={`ml-1.5 h-3.5 w-3.5 transition-transform ${filtersOpen ? "rotate-180" : ""}`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </Button>
-        )}
+        </div>
+
+        {/* Filter panel — always visible on sm+, toggleable on mobile */}
+        <div className={`${filtersOpen ? "grid" : "hidden"} sm:flex grid-cols-1 gap-2 sm:flex-wrap sm:items-center sm:gap-3`}>
+          <Select value={faction} onValueChange={handleFilterChange(setFaction)}>
+            <SelectTrigger className="w-full sm:w-44 h-11 sm:h-9" aria-label="Filter by faction">
+              <SelectValue placeholder="Faction" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Factions</SelectItem>
+              {factions.map((f) => (
+                <SelectItem key={f} value={f}>
+                  {f}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select value={affinity} onValueChange={handleFilterChange(setAffinity)}>
+            <SelectTrigger className="w-full sm:w-36 h-11 sm:h-9" aria-label="Filter by affinity">
+              <SelectValue placeholder="Affinity" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Affinities</SelectItem>
+              {affinities.map((a) => (
+                <SelectItem key={a} value={a}>
+                  {a}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select value={rarity} onValueChange={handleFilterChange(setRarity)}>
+            <SelectTrigger className="w-full sm:w-36 h-11 sm:h-9" aria-label="Filter by rarity">
+              <SelectValue placeholder="Rarity" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Rarities</SelectItem>
+              {rarities.map((r) => (
+                <SelectItem key={r} value={r}>
+                  {r}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select value={role} onValueChange={handleFilterChange(setRole)}>
+            <SelectTrigger className="w-full sm:w-36 h-11 sm:h-9" aria-label="Filter by role">
+              <SelectValue placeholder="Role" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Roles</SelectItem>
+              {roles.map((r) => (
+                <SelectItem key={r} value={r}>
+                  {r}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select value={sort} onValueChange={(v) => { setSort(v as SortOption); setPage(1); }}>
+            <SelectTrigger className="w-full sm:w-44 h-11 sm:h-9" aria-label="Sort champions">
+              <SelectValue placeholder="Sort by" />
+            </SelectTrigger>
+            <SelectContent>
+              {(Object.entries(SORT_LABELS) as [SortOption, string][]).map(
+                ([value, label]) => (
+                  <SelectItem key={value} value={value}>
+                    {label}
+                  </SelectItem>
+                )
+              )}
+            </SelectContent>
+          </Select>
+          {hasActiveFilters && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearAllFilters}
+              className="w-full sm:w-auto h-11 sm:h-9 text-[#C8963E] hover:text-[#E8C460] hover:bg-[#C8963E]/10"
+            >
+              Clear All
+            </Button>
+          )}
+        </div>
       </div>
 
       {/* Results count */}
       <p className="text-sm text-muted-foreground" aria-live="polite">
         {filtered.length} champion{filtered.length !== 1 ? "s" : ""} found
-        {totalPages > 1 && ` — Page ${safeCurrentPage} of ${totalPages}`}
+        {totalPages > 1 && ` \u2014 Page ${safeCurrentPage} of ${totalPages}`}
       </p>
 
       {/* Grid or empty state */}
@@ -253,21 +286,22 @@ export function ChampionIndex({
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={safeCurrentPage <= 1}
               aria-label="Previous page"
-              className="px-2 sm:px-3"
+              className="px-2 sm:px-3 min-w-[44px] min-h-[44px] sm:min-h-0"
             >
               <span className="hidden sm:inline">Previous</span>
               <span className="sm:hidden">&larr;</span>
             </Button>
-            {Array.from({ length: Math.min(totalPages, 7) }, (_, i) => {
+            {Array.from({ length: Math.min(totalPages, maxPageButtons) }, (_, i) => {
               let pageNum: number;
-              if (totalPages <= 7) {
+              const half = Math.floor(maxPageButtons / 2);
+              if (totalPages <= maxPageButtons) {
                 pageNum = i + 1;
-              } else if (safeCurrentPage <= 4) {
+              } else if (safeCurrentPage <= half + 1) {
                 pageNum = i + 1;
-              } else if (safeCurrentPage >= totalPages - 3) {
-                pageNum = totalPages - 6 + i;
+              } else if (safeCurrentPage >= totalPages - half) {
+                pageNum = totalPages - maxPageButtons + 1 + i;
               } else {
-                pageNum = safeCurrentPage - 3 + i;
+                pageNum = safeCurrentPage - half + i;
               }
               return (
                 <Button
@@ -277,6 +311,7 @@ export function ChampionIndex({
                   onClick={() => setPage(pageNum)}
                   aria-label={`Page ${pageNum}`}
                   aria-current={pageNum === safeCurrentPage ? "page" : undefined}
+                  className="min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0"
                 >
                   {pageNum}
                 </Button>
@@ -288,7 +323,7 @@ export function ChampionIndex({
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={safeCurrentPage >= totalPages}
               aria-label="Next page"
-              className="px-2 sm:px-3"
+              className="px-2 sm:px-3 min-w-[44px] min-h-[44px] sm:min-h-0"
             >
               <span className="hidden sm:inline">Next</span>
               <span className="sm:hidden">&rarr;</span>
