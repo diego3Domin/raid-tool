@@ -8,8 +8,8 @@ interface MasteryTreeDiagramProps {
 }
 
 const TREE_NAMES = ["Offense", "Defense", "Support"] as const;
-const TIERS = [6, 5, 4, 3, 2, 1] as const;
-const TIER_NUMERALS = ["VI", "V", "IV", "III", "II", "I"] as const;
+const TIERS = [1, 2, 3, 4, 5, 6] as const;
+const TIER_NUMERALS = ["I", "II", "III", "IV", "V", "VI"] as const;
 
 function MasteryNodeCell({
   node,
