@@ -128,7 +128,7 @@ export function getSimilarChampions(
   // Sort by score descending
   scored.sort((a, b) => b.score - a.score);
 
-  // Take top 20 candidates for diversification
+  // Take top 20 candidates for main pool
   const pool = scored.slice(0, 20);
   if (pool.length <= count) return pool;
 
@@ -137,6 +137,12 @@ export function getSimilarChampions(
   const lowerRarity = pool.filter(
     (r) => RARITY_ORDER.indexOf(r.champion.rarity) < targetRarityIdx
   );
+  // Best Rare from full scored list (not just top 20) for budget pick
+  const rareIdx = RARITY_ORDER.indexOf("Rare");
+  const bestRare =
+    targetRarityIdx > rareIdx
+      ? scored.find((r) => r.champion.rarity === "Rare")
+      : null;
 
   const selected = new Set<string>();
   const result: SimilarChampionResult[] = [];
@@ -156,7 +162,13 @@ export function getSimilarChampions(
     selected.add(r.champion.id);
   }
 
-  // Fill remaining from top scores
+  // Guarantee at least 1 Rare champion for budget accessibility
+  if (bestRare && !selected.has(bestRare.champion.id)) {
+    result.push(bestRare);
+    selected.add(bestRare.champion.id);
+  }
+
+  // Fill remaining from top scores (respect count limit)
   for (const r of pool) {
     if (result.length >= count) break;
     if (selected.has(r.champion.id)) continue;
@@ -164,7 +176,7 @@ export function getSimilarChampions(
     selected.add(r.champion.id);
   }
 
-  // Sort final result by score
+  // Sort final result by score, trim to count
   result.sort((a, b) => b.score - a.score);
-  return result;
+  return result.slice(0, count);
 }
