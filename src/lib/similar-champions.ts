@@ -69,8 +69,8 @@ function calculateSimilarity(a: Champion, b: Champion): number {
   // Role bonus: same role = 1.25x
   if (a.role === b.role) score *= 1.25;
 
-  // Affinity bonus: same affinity = 1.1x
-  if (a.affinity === b.affinity) score *= 1.1;
+  // Affinity bonus: light tiebreaker only
+  if (a.affinity === b.affinity) score *= 1.03;
 
   return score;
 }
@@ -174,6 +174,41 @@ export function getSimilarChampions(
     if (selected.has(r.champion.id)) continue;
     result.push(r);
     selected.add(r.champion.id);
+  }
+
+  // Soft affinity diversification: if one affinity dominates (>4 of 6),
+  // swap the weakest same-affinity pick for the best different-affinity
+  // alternative — but only if the replacement is close in quality.
+  const affinityCounts = new Map<string, number>();
+  for (const r of result) {
+    affinityCounts.set(r.champion.affinity, (affinityCounts.get(r.champion.affinity) ?? 0) + 1);
+  }
+  const maxAffinityCount = Math.max(...affinityCounts.values());
+  if (maxAffinityCount > 4) {
+    const dominantAffinity = [...affinityCounts.entries()].find(
+      ([, c]) => c === maxAffinityCount
+    )![0];
+
+    // Find best different-affinity candidate not already selected
+    const altCandidate = pool.find(
+      (r) => r.champion.affinity !== dominantAffinity && !selected.has(r.champion.id)
+    );
+
+    if (altCandidate) {
+      // Find weakest same-affinity champion in result
+      const sameAffinityResults = result
+        .filter((r) => r.champion.affinity === dominantAffinity)
+        .sort((a, b) => a.score - b.score);
+      const weakest = sameAffinityResults[0];
+
+      // Only swap if the replacement is within 85% of the score being dropped
+      if (weakest && altCandidate.score >= weakest.score * 0.85) {
+        const idx = result.indexOf(weakest);
+        selected.delete(weakest.champion.id);
+        result[idx] = altCandidate;
+        selected.add(altCandidate.champion.id);
+      }
+    }
   }
 
   // Sort final result by score, trim to count
