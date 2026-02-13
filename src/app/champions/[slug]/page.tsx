@@ -16,6 +16,7 @@ import { RARITY_COLORS, RARITY_BORDER_COLORS } from "@/lib/constants";
 import { AffinityIcon } from "@/components/affinity-icon";
 import { FactionIcon } from "@/components/faction-icon";
 import { MasteryTreeDiagram } from "@/components/mastery-tree-diagram";
+import { SimilarChampionsSection } from "@/components/similar-champions-section";
 
 export async function generateStaticParams() {
   return getAllChampions().map((c) => ({ slug: c.slug }));
@@ -544,6 +545,9 @@ export default async function ChampionDetailPage({
           </CardContent>
         </Card>
       )}
+
+      {/* Similar Champions */}
+      <SimilarChampionsSection champion={champion} />
 
       {/* JSON-LD Structured Data */}
       <script
