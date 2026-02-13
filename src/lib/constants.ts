@@ -32,3 +32,9 @@ export const AFFINITY_COLORS: Record<string, string> = {
   Spirit: "text-green-400",
   Void: "text-purple-400",
 };
+
+export const MASTERY_TREE_COLORS = {
+  Offense: "#C8963E",
+  Defense: "#4A5568",
+  Support: "#3B82F6",
+} as const;

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllChampions, getChampionBySlug } from "@/lib/champions";
-import { getGuidesForChampion } from "@/lib/guides";
+import { getFilteredGuidesForChampion } from "@/lib/guides";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -15,6 +15,7 @@ import {
 import { RARITY_COLORS, RARITY_BORDER_COLORS } from "@/lib/constants";
 import { AffinityIcon } from "@/components/affinity-icon";
 import { FactionIcon } from "@/components/faction-icon";
+import { MasteryTreeDiagram } from "@/components/mastery-tree-diagram";
 
 export async function generateStaticParams() {
   return getAllChampions().map((c) => ({ slug: c.slug }));
@@ -99,7 +100,7 @@ export default async function ChampionDetailPage({
   const champion = getChampionBySlug(slug);
   if (!champion) notFound();
 
-  const guides = getGuidesForChampion(slug);
+  const guides = getFilteredGuidesForChampion(slug, champion.ratings);
   const stats = champion.stats["6"];
   const rarityClass = RARITY_COLORS[champion.rarity] ?? "bg-zinc-600";
   const rarityBorderColor = RARITY_BORDER_COLORS[champion.rarity] ?? "#52525B";
@@ -474,6 +475,14 @@ export default async function ChampionDetailPage({
                       {guide.boots_main}
                     </p>
                   </div>
+                </div>
+
+                {/* Mastery Tree */}
+                <div>
+                  <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#7A7570]">
+                    Mastery Tree
+                  </h4>
+                  <MasteryTreeDiagram masteryTree={guide.mastery_tree} role={champion.role} />
                 </div>
 
                 {/* Skill Booking Order */}
