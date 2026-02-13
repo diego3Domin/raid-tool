@@ -1,107 +1,85 @@
-# Plan: Create Guide Data Schema for RAID Expert Agent
+# Plan: Filter Guides by Rating Threshold
 
 ## Context
 
-The champion detail pages currently show "No guides yet — be the first to submit one." We want the `raid-shadow-legends-expert` agent to pre-populate structured build guides for ~800+ champions using its game knowledge. This gives the site real value before community-written guides exist (Phase 3).
+The guide data layer is complete — 996 champions with 1,503 guides in `src/data/guides.json`, displayed on champion detail pages. However, guides currently show for every content area regardless of how the champion actually performs. A champion rated C-tier in Arena shouldn't show an Arena build guide — it's misleading.
 
-The data follows the MASTERPLAN guide schema (gear sets, stat priorities, skill booking order) plus strategy notes prose. It's stored as static JSON (like `champions.json`) and displayed on champion detail pages.
+**Decision**: Only show guides for content areas where the champion is rated **B-tier (≥2.5) or higher**. The standalone `/guides` page is redundant — guides only make sense in the context of individual champions — so it's being removed.
 
-## What We're Building
+## Rating-to-Content-Area Mapping
 
-1. **Guide schema + data file** — `src/data/guides.json` keyed by champion slug
-2. **TypeScript types** — `src/types/guide.ts` matching the schema
-3. **Data access layer** — `src/lib/guides.ts` with helper functions
-4. **Update champion detail page** — Replace "No guides yet" placeholder with actual build data
-5. **RAID expert instructions** — A template/prompt the agent follows when writing guides
+| Guide Content Area | Rating Field(s) | Filter Logic |
+|---|---|---|
+| General | *(none)* | **Always show** |
+| Clan Boss | `clan_boss` | Show if ≥ 2.5 |
+| Arena | `arena_offense`, `arena_defense` | Show if **max** of both ≥ 2.5 |
+| Dungeons | `dungeons` | Show if ≥ 2.5 |
+| Hydra | `hydra` | Show if ≥ 2.5 |
+| Doom Tower | `doom_tower` | Show if ≥ 2.5 |
+| Faction Wars | `faction_wars` | Show if ≥ 2.5 |
 
-## Schema Design
+Tier reference: S ≥ 4.5, A ≥ 3.5, **B ≥ 2.5**, C ≥ 1.5, D ≥ 0.5, F < 0.5
 
-Each guide entry follows the MASTERPLAN fields plus strategy notes:
+## Schema (unchanged)
 
 ```typescript
 interface ChampionGuide {
-  content_area: string;           // "General" | "Clan Boss" | "Arena" | "Dungeons" | "Hydra" | "Doom Tower" | "Faction Wars"
-  gear_sets: string[];            // e.g., ["Lifesteal", "Speed"] — from GEAR_SETS in gear.ts
-  stat_priorities: string[];      // Ordered: e.g., ["SPD", "DEF%", "HP%", "ACC"] — from STAT_PRIORITIES
-  gauntlets_main: string;         // Main stat for gauntlets slot
-  chestplate_main: string;        // Main stat for chestplate slot
-  boots_main: string;             // Main stat for boots slot
-  skill_booking_order?: number[]; // Skill indices to book first (0-indexed)
-  mastery_tree: string;           // "Offense + Support" | "Defense + Support" | etc.
-  notes: string;                  // Strategy prose: why this build, how to use, team synergies
+  content_area: GuideContentArea;
+  gear_sets: string[];
+  stat_priorities: string[];
+  gauntlets_main: string;
+  chestplate_main: string;
+  boots_main: string;
+  skill_booking_order?: number[];
+  mastery_tree: MasteryTree;
+  notes: string;
 }
 ```
 
-`guides.json` structure — keyed by champion slug, array of guides per champion:
+## Files to Modify
 
-```json
-{
-  "kael": [
-    {
-      "content_area": "General",
-      "gear_sets": ["Lifesteal", "Accuracy"],
-      "stat_priorities": ["SPD", "ATK%", "C.RATE", "ACC"],
-      "gauntlets_main": "C.RATE",
-      "chestplate_main": "ATK%",
-      "boots_main": "SPD",
-      "skill_booking_order": [2, 1],
-      "mastery_tree": "Offense + Support",
-      "notes": "Kael is one of the best starter champions..."
-    }
-  ]
-}
-```
+| File | Change |
+|---|---|
+| `src/lib/guides.ts` | Add `getFilteredGuidesForChampion()` + rating mapping const |
+| `src/app/champions/[slug]/page.tsx` | Use filtered function (~line 102) |
+| `src/app/guides/page.tsx` | Replace with redirect to `/champions` |
+| `src/components/navbar.tsx` | Remove Guides from `navLinks` (line 6) |
+| `src/app/page.tsx` | Change Build Guides `href` to `/champions` |
 
-## Files to Create/Modify
+## Implementation Details
 
-### 1. `src/types/guide.ts` (CREATE)
-- `ChampionGuide` interface
-- Export valid content areas, mastery tree options as const arrays
+### 1. `src/lib/guides.ts` — Add filtering function
 
-### 2. `src/data/guides.json` (CREATE)
-- Start empty: `{}`
-- RAID expert agent populates incrementally
+Add a `CONTENT_AREA_RATING_KEY` mapping and a new `getFilteredGuidesForChampion(slug, ratings)` function:
+- Calls existing `getGuidesForChampion(slug)` to get all guides
+- Filters out guides where the champion's rating for that content area is below 2.5
+- Always keeps "General" guides
+- For "Arena", uses `Math.max(ratings.arena_offense ?? 0, ratings.arena_defense ?? 0)`
 
-### 3. `src/lib/guides.ts` (MODIFY — replace prototype localStorage code)
-- `getGuidesForChampion(slug: string): ChampionGuide[]`
-- `getAllGuidedChampionSlugs(): string[]`
-- Reads from `src/data/guides.json`
+### 2. `src/app/champions/[slug]/page.tsx` — Use filtered guides
 
-### 4. `src/app/champions/[slug]/page.tsx` (MODIFY)
-- Import `getGuidesForChampion`
-- Replace "No guides yet" placeholder with guide cards when data exists
-- Show: gear sets, stat priorities, main stats, mastery tree, strategy notes
-- Keep placeholder for champions without guides
+- Import `getFilteredGuidesForChampion` instead of `getGuidesForChampion`
+- Pass the champion's `ratings` object (~line 102)
+- No rendering changes needed
 
-### 5. RAID Expert Agent Usage
-After the schema is built, the `raid-shadow-legends-expert` agent will be prompted with:
-- The schema and valid values (gear sets, stat priorities, main stats per slot)
-- Champion data (name, role, skills, ratings)
-- Instruction to write 1-2 guides per champion (General build + best content area)
-- Notes should be 2-4 sentences: why this build, how to use, key synergies
+### 3. `src/app/guides/page.tsx` — Redirect
 
-## Existing Code to Reuse
+Replace the full page with `redirect("/champions")` from `next/navigation`.
 
-| File | What to Reuse |
-|------|---------------|
-| `src/lib/gear.ts` | `GEAR_SETS` (55+ sets), `STAT_PRIORITIES`, `SLOT_MAIN_STATS` |
-| `src/lib/champions.ts` | `getChampionBySlug()`, `getAllChampions()` |
-| `src/lib/constants.ts` | `RARITY_COLORS`, `RARITY_BORDER_COLORS` |
-| `src/app/champions/[slug]/page.tsx` | Existing card layout pattern, `TIER_COLORS` |
+### 4. `src/components/navbar.tsx` — Remove link
 
-## Implementation Steps
+Remove `{ href: "/guides", label: "Guides" }` from `navLinks` array.
 
-1. Create `src/types/guide.ts` with `ChampionGuide` interface and const arrays
-2. Create `src/data/guides.json` (empty `{}`)
-3. Rewrite `src/lib/guides.ts` — replace localStorage prototype with JSON reader
-4. Update champion detail page to display guide cards when data exists
-5. Test with a few manually-added sample guides
-6. Use `raid-shadow-legends-expert` agent to batch-populate guides
+### 5. `src/app/page.tsx` — Update card href
+
+Change Build Guides card `href: "/guides"` → `href: "/champions"`.
 
 ## Verification
 
 - `npx tsc --noEmit` passes
 - `npx next build` passes
-- Champion detail pages show guide cards for champions with data
-- Champions without guides still show placeholder
-- RAID expert agent can write valid guide entries that display correctly
+- `/guides` redirects to `/champions`
+- Navbar shows only "Champions | Tier Lists"
+- Landing page Build Guides card links to `/champions`
+- Champion with mixed ratings (e.g. Abbess: overall 4, clan_boss 2.5, arena 4, dungeons 4, hydra 3.5) shows General + all B+ area guides
+- Champion with all low ratings shows only the General guide

@@ -3,7 +3,6 @@ import Link from "next/link";
 const navLinks = [
   { href: "/champions", label: "Champions" },
   { href: "/tier-lists", label: "Tier Lists" },
-  { href: "/guides", label: "Guides" },
 ];
 
 export function Navbar() {

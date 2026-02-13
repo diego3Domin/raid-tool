@@ -75,7 +75,7 @@ const ROLE_TEMPLATES: Record<string, {
     gear_sets: ["Speed", "Perception"],
     stat_priorities: ["SPD", "ACC", "HP%", "DEF%"],
     gauntlets_main: "HP%",
-    chestplate_main: "ACC",
+    chestplate_main: "HP%",
     boots_main: "SPD",
     mastery_tree: "Support + Defense",
   },
@@ -97,20 +97,20 @@ const CONTENT_BUILDS: Record<string, {
   note_suffix: string;
 }> = {
   "Clan Boss": {
-    gear_sets_atk: ["Lifesteal", "Speed"],
-    gear_sets_def: ["Lifesteal", "Speed"],
-    gear_sets_hp: ["Lifesteal", "Immortal"],
-    gear_sets_support: ["Lifesteal", "Perception"],
+    gear_sets_atk: ["Savage", "Cruel"],
+    gear_sets_def: ["Speed", "Accuracy"],
+    gear_sets_hp: ["Speed", "Immortal"],
+    gear_sets_support: ["Speed", "Perception"],
     stat_focus: ["SPD", "DEF%", "HP%", "ACC"],
-    note_suffix: "Speed-tune to your Clan Boss team composition. Lifesteal ensures survivability over long fights.",
+    note_suffix: "Speed-tune to your Clan Boss team composition — this is mandatory for advanced CB. Unkillable/Myth teams prioritize damage sets (Savage/Cruel) on DPS and Speed/Accuracy for debuffers. Traditional teams without unkillable may prefer Lifesteal for sustain.",
   },
   "Arena": {
-    gear_sets_atk: ["Savage", "Cruel"],
-    gear_sets_def: ["Stone Skin", "Resilience"],
-    gear_sets_hp: ["Swift Parry", "Immortal"],
+    gear_sets_atk: ["Lethal", "Cruel"],
+    gear_sets_def: ["Stoneskin", "Resilience"],
+    gear_sets_hp: ["Stoneskin", "Immortal"],
     gear_sets_support: ["Speed", "Perception"],
     stat_focus: ["SPD", "ATK%", "C.RATE", "C.DMG"],
-    note_suffix: "Speed is king in Arena — go first or build tanky enough to survive the opener.",
+    note_suffix: "Speed is king in Arena — go first or build tanky enough to survive the opener. Lethal/Savage sets maximize burst damage for nukers. Stoneskin dominates the defensive meta — build high resistance on defense teams.",
   },
   "Dungeons": {
     gear_sets_atk: ["Savage", "Speed"],
@@ -118,15 +118,15 @@ const CONTENT_BUILDS: Record<string, {
     gear_sets_hp: ["Regeneration", "Immortal"],
     gear_sets_support: ["Speed", "Perception"],
     stat_focus: ["SPD", "ACC", "HP%", "C.RATE"],
-    note_suffix: "Balance speed with survivability for consistent dungeon clears.",
+    note_suffix: "Balance speed with survivability for consistent dungeon clears. Spider benefits from HP Burn or Enemy MAX HP champions. Fire Knight rewards multi-hitters in Relentless. Ice Golem needs block buffs or buff removal.",
   },
   "Hydra": {
-    gear_sets_atk: ["Relentless", "Speed"],
-    gear_sets_def: ["Relentless", "Perception"],
+    gear_sets_atk: ["Savage", "Perception"],
+    gear_sets_def: ["Speed", "Perception"],
     gear_sets_hp: ["Regeneration", "Perception"],
     gear_sets_support: ["Relentless", "Perception"],
     stat_focus: ["SPD", "ACC", "HP%", "DEF%"],
-    note_suffix: "Accuracy is critical for landing debuffs on Hydra heads. Build tanky to survive head slams.",
+    note_suffix: "Accuracy is critical for landing debuffs on Hydra heads — aim for 350+ on Normal, 400+ on Hard. Relentless is strong for champions with key cooldowns or frequent debuffs. Build tanky to survive head slams and AoE damage.",
   },
   "Doom Tower": {
     gear_sets_atk: ["Savage", "Perception"],
@@ -134,15 +134,15 @@ const CONTENT_BUILDS: Record<string, {
     gear_sets_hp: ["Regeneration", "Perception"],
     gear_sets_support: ["Speed", "Perception"],
     stat_focus: ["SPD", "ACC", "HP%", "DEF%"],
-    note_suffix: "Doom Tower bosses require specific mechanics — adapt gear to the floor and rotation.",
+    note_suffix: "Doom Tower requires boss-specific builds. Bommal needs Destroy set. Celestial Griffin needs high resistance (300+). Frost Spider needs HP Burn immunity or strong healing. Waves benefit from crowd control and high accuracy.",
   },
   "Faction Wars": {
     gear_sets_atk: ["Lifesteal", "Speed"],
-    gear_sets_def: ["Lifesteal", "Speed"],
+    gear_sets_def: ["Speed", "Immortal"],
     gear_sets_hp: ["Lifesteal", "Immortal"],
     gear_sets_support: ["Speed", "Perception"],
     stat_focus: ["SPD", "HP%", "ACC", "DEF%"],
-    note_suffix: "Faction Wars limits your roster to one faction, so survivability and self-sustain are key.",
+    note_suffix: "Faction Wars limits your roster to one faction, so survivability and self-sustain are key. Having a reviver, healer, and crowd control matters more than gear sets. Damage dealers can use Savage/Cruel if survivability is covered by the team.",
   },
 };
 
@@ -154,26 +154,18 @@ function getRoleCategory(role: string): string {
   return ROLE_ALIASES[role] || role;
 }
 
-function getHighestContentArea(ratings: Record<string, number>): { area: string; rating: number } | null {
-  const areaMap: Record<string, string> = {
-    clan_boss: "Clan Boss",
-    arena_offense: "Arena",
-    dungeons: "Dungeons",
-    hydra: "Hydra",
-    doom_tower: "Doom Tower",
-    faction_wars: "Faction Wars",
-  };
+const MIN_RATING = 2.5; // B-tier threshold
 
-  let best: { area: string; rating: number } | null = null;
-  for (const [key, label] of Object.entries(areaMap)) {
-    const rating = ratings[key];
-    if (rating != null && rating >= 4.0) {
-      if (!best || rating > best.rating) {
-        best = { area: label, rating };
-      }
-    }
-  }
-  return best;
+/** Returns all content areas where the champion qualifies (rating >= B-tier) */
+function getQualifyingContentAreas(ratings: Record<string, number>): string[] {
+  const areas: string[] = [];
+  if ((ratings.clan_boss || 0) >= MIN_RATING) areas.push("Clan Boss");
+  if (Math.max(ratings.arena_offense || 0, ratings.arena_defense || 0) >= MIN_RATING) areas.push("Arena");
+  if ((ratings.dungeons || 0) >= MIN_RATING) areas.push("Dungeons");
+  if ((ratings.hydra || 0) >= MIN_RATING) areas.push("Hydra");
+  if ((ratings.doom_tower || 0) >= MIN_RATING) areas.push("Doom Tower");
+  if ((ratings.faction_wars || 0) >= MIN_RATING) areas.push("Faction Wars");
+  return areas;
 }
 
 function generateGeneralNote(champ: Champion): string {
@@ -267,71 +259,97 @@ function generateGuideForChampion(champ: Champion): ChampionGuide[] {
 
   guides.push(generalGuide);
 
-  // 2. Specialized content build (if they excel somewhere)
-  const bestArea = getHighestContentArea(champ.ratings);
-  if (bestArea) {
-    const contentBuild = CONTENT_BUILDS[bestArea.area];
-    if (contentBuild) {
-      const gearKey = `gear_sets_${role === "Attack" ? "atk" : role === "Defense" ? "def" : role === "HP" ? "hp" : "support"}` as keyof typeof contentBuild;
-      const gearSets = (contentBuild[gearKey] as string[]) || contentBuild.gear_sets_atk;
+  // 2. Specialized content builds — one per qualifying area (B-tier / ≥2.5)
+  const qualifyingAreas = getQualifyingContentAreas(champ.ratings);
+  for (const area of qualifyingAreas) {
+    const contentBuild = CONTENT_BUILDS[area];
+    if (!contentBuild) continue;
 
-      // Build stat priorities based on content area + role
-      let statPriorities: string[];
-      if (bestArea.area === "Arena" && role === "Attack") {
-        statPriorities = ["SPD", "ATK%", "C.RATE", "C.DMG"];
-      } else if (bestArea.area === "Clan Boss") {
-        if (role === "Attack") {
-          statPriorities = ["SPD", "DEF%", "HP%", "ACC"];
-        } else {
-          statPriorities = ["SPD", "DEF%", "HP%", "ACC"];
-        }
-      } else if (bestArea.area === "Hydra") {
-        statPriorities = ["SPD", "ACC", "HP%", "DEF%"];
+    const gearKey = `gear_sets_${role === "Attack" ? "atk" : role === "Defense" ? "def" : role === "HP" ? "hp" : "support"}` as keyof typeof contentBuild;
+    const gearSets = (contentBuild[gearKey] as string[]) || contentBuild.gear_sets_atk;
+
+    // Build stat priorities based on content area + role
+    let statPriorities: string[];
+    if (area === "Arena" && role === "Attack") {
+      statPriorities = ["SPD", "ATK%", "C.RATE", "C.DMG"];
+    } else if (area === "Clan Boss") {
+      if (role === "Attack") {
+        statPriorities = ["SPD", "ATK%", "C.RATE", "C.DMG", "DEF%"];
       } else {
-        statPriorities = [...(contentBuild.stat_focus as string[])];
+        statPriorities = ["SPD", "DEF%", "HP%", "ACC"];
       }
-
-      // Main stat adjustments for content area
-      let gauntlets = template.gauntlets_main;
-      let chestplate = template.chestplate_main;
-      const boots = "SPD"; // Always speed boots for specialized builds
-
-      if (bestArea.area === "Clan Boss") {
-        gauntlets = role === "Attack" ? "DEF%" : "HP%";
-        chestplate = role === "Attack" ? "DEF%" : "DEF%";
-      } else if (bestArea.area === "Arena" && role === "Attack") {
-        gauntlets = "C.DMG";
-        chestplate = "ATK%";
-      } else if (bestArea.area === "Hydra") {
-        gauntlets = role === "Attack" ? "C.RATE" : "HP%";
-        chestplate = "ACC";
+    } else if (area === "Hydra") {
+      if (role === "Attack") {
+        statPriorities = ["SPD", "ACC", "C.RATE", "C.DMG", "HP%"];
+      } else {
+        statPriorities = ["SPD", "ACC", "HP%", "DEF%"];
       }
-
-      // Mastery tree based on content area + role
-      let masteryTree = template.mastery_tree;
-      if (bestArea.area === "Clan Boss" && role === "Attack") {
-        masteryTree = "Offense + Defense";
-      } else if (bestArea.area === "Arena" && role === "Attack") {
-        masteryTree = "Offense + Support";
-      }
-
-      const contentGuide: ChampionGuide = {
-        content_area: bestArea.area,
-        gear_sets: gearSets as string[],
-        stat_priorities: statPriorities,
-        gauntlets_main: gauntlets,
-        chestplate_main: chestplate,
-        boots_main: boots,
-        mastery_tree: masteryTree,
-        notes: generateContentNote(champ, bestArea.area),
-      };
-      if (skillOrder) contentGuide.skill_booking_order = skillOrder;
-
-      guides.push(contentGuide);
+    } else {
+      statPriorities = [...(contentBuild.stat_focus as string[])];
     }
+
+    // Main stat adjustments for content area
+    let gauntlets = template.gauntlets_main;
+    let chestplate = template.chestplate_main;
+    const boots = "SPD"; // Always speed boots for specialized builds
+
+    if (area === "Clan Boss") {
+      gauntlets = role === "Attack" ? "C.RATE" : "HP%";
+      chestplate = role === "Attack" ? "ATK%" : "DEF%";
+    } else if (area === "Arena" && role === "Attack") {
+      gauntlets = "C.RATE";
+      chestplate = "ATK%";
+    } else if (area === "Hydra") {
+      gauntlets = role === "Attack" ? "C.RATE" : "HP%";
+      chestplate = role === "Attack" ? "ATK%" : "ACC";
+    } else if (area === "Dungeons") {
+      gauntlets = role === "Attack" ? "C.RATE" : template.gauntlets_main;
+      chestplate = role === "Support" ? "ACC" : template.chestplate_main;
+    }
+
+    // Mastery tree based on content area + role
+    let masteryTree = template.mastery_tree;
+    if (area === "Clan Boss" && role === "Attack") {
+      masteryTree = "Offense + Defense";
+    } else if (area === "Arena" && role === "Attack") {
+      masteryTree = "Offense + Support";
+    } else if (area === "Hydra") {
+      masteryTree = role === "Attack" ? "Offense + Support" : template.mastery_tree;
+    } else if (area === "Dungeons" && role === "Support") {
+      masteryTree = "Support + Defense";
+    }
+
+    const contentGuide: ChampionGuide = {
+      content_area: area,
+      gear_sets: gearSets as string[],
+      stat_priorities: statPriorities,
+      gauntlets_main: gauntlets,
+      chestplate_main: chestplate,
+      boots_main: boots,
+      mastery_tree: masteryTree,
+      notes: generateContentNote(champ, area),
+    };
+    if (skillOrder) contentGuide.skill_booking_order = skillOrder;
+
+    guides.push(contentGuide);
   }
 
-  return guides;
+  // Dedup: drop specialized builds that are identical to General (ignoring content_area and notes)
+  const generalGuideKey = guideBuildKey(guides[0]);
+  return guides.filter((g, i) => i === 0 || guideBuildKey(g) !== generalGuideKey);
+}
+
+/** Fingerprint for comparing build mechanics (ignores content_area and notes) */
+function guideBuildKey(g: ChampionGuide): string {
+  return JSON.stringify([
+    g.gear_sets,
+    g.stat_priorities,
+    g.gauntlets_main,
+    g.chestplate_main,
+    g.boots_main,
+    g.mastery_tree,
+    g.skill_booking_order ?? null,
+  ]);
 }
 
 // ---------------------------------------------------------------------------
@@ -353,9 +371,13 @@ console.log(`Generating guides for ${withRatings.length} champions...`);
 const guides: Record<string, ChampionGuide[]> = {};
 let totalGuides = 0;
 let withSpecialized = 0;
+let dedupRemoved = 0;
 
 for (const champ of withRatings) {
+  const qualifyingAreas = getQualifyingContentAreas(champ.ratings);
   const champGuides = generateGuideForChampion(champ);
+  // +1 for General, compare to qualifying areas to count deduped
+  dedupRemoved += (1 + qualifyingAreas.length) - champGuides.length;
   guides[champ.slug] = champGuides;
   totalGuides += champGuides.length;
   if (champGuides.length > 1) withSpecialized++;
@@ -368,4 +390,5 @@ console.log(`  Champions: ${Object.keys(guides).length}`);
 console.log(`  Total guides: ${totalGuides}`);
 console.log(`  With specialized build: ${withSpecialized}`);
 console.log(`  General only: ${Object.keys(guides).length - withSpecialized}`);
+console.log(`  Deduped (identical to General): ${dedupRemoved}`);
 console.log(`\nWritten to: ${guidesPath}`);
