@@ -128,87 +128,60 @@ export function getSimilarChampions(
   // Sort by score descending
   scored.sort((a, b) => b.score - a.score);
 
-  // Take top 20 candidates for main pool
-  const pool = scored.slice(0, 20);
+  // Take top 30 candidates as pool
+  const pool = scored.slice(0, 30);
   if (pool.length <= count) return pool;
 
-  // Rarity-aware diversification
-  const sameRarity = pool.filter((r) => r.champion.rarity === target.rarity);
-  const lowerRarity = pool.filter(
-    (r) => RARITY_ORDER.indexOf(r.champion.rarity) < targetRarityIdx
-  );
-  // Best Rare from full scored list (not just top 20) for budget pick
   const rareIdx = RARITY_ORDER.indexOf("Rare");
-  const bestRare =
-    targetRarityIdx > rareIdx
-      ? scored.find((r) => r.champion.rarity === "Rare")
-      : null;
-
   const selected = new Set<string>();
   const result: SimilarChampionResult[] = [];
 
-  // Pick up to 2 same-rarity peers
-  for (const r of sameRarity) {
+  function pick(r: SimilarChampionResult) {
+    result.push(r);
+    selected.add(r.champion.id);
+  }
+
+  function bestFrom(
+    predicate: (r: SimilarChampionResult) => boolean,
+    source = pool
+  ): SimilarChampionResult | undefined {
+    return source.find((r) => !selected.has(r.champion.id) && predicate(r));
+  }
+
+  // 1. Top 2 by score — always the best matches
+  for (const r of pool) {
     if (result.length >= 2) break;
-    result.push(r);
-    selected.add(r.champion.id);
+    pick(r);
   }
 
-  // Pick up to 2 lower-rarity budget alternatives
-  for (const r of lowerRarity) {
-    if (result.length >= 4) break;
-    if (selected.has(r.champion.id)) continue;
-    result.push(r);
-    selected.add(r.champion.id);
+  // 2. Best from a different affinity than those already picked
+  const pickedAffinities = new Set(result.map((r) => r.champion.affinity));
+  const diffAffinity = bestFrom((r) => !pickedAffinities.has(r.champion.affinity));
+  if (diffAffinity) pick(diffAffinity);
+
+  // 3. Best from a lower rarity than target (budget alternative)
+  const hasLowerRarity = result.some(
+    (r) => RARITY_ORDER.indexOf(r.champion.rarity) < targetRarityIdx
+  );
+  if (!hasLowerRarity) {
+    const budget = bestFrom(
+      (r) => RARITY_ORDER.indexOf(r.champion.rarity) < targetRarityIdx
+    );
+    if (budget) pick(budget);
   }
 
-  // Guarantee at least 1 Rare champion for budget accessibility
-  if (bestRare && !selected.has(bestRare.champion.id)) {
-    result.push(bestRare);
-    selected.add(bestRare.champion.id);
+  // 4. Guarantee a Rare champion if target is above Rare
+  const hasRare = result.some((r) => r.champion.rarity === "Rare");
+  if (targetRarityIdx > rareIdx && !hasRare) {
+    const rare = bestFrom((r) => r.champion.rarity === "Rare", scored);
+    if (rare) pick(rare);
   }
 
-  // Fill remaining from top scores (respect count limit)
+  // 5. Fill remaining slots from pool by score
   for (const r of pool) {
     if (result.length >= count) break;
     if (selected.has(r.champion.id)) continue;
-    result.push(r);
-    selected.add(r.champion.id);
-  }
-
-  // Soft affinity diversification: if one affinity dominates (>4 of 6),
-  // swap the weakest same-affinity pick for the best different-affinity
-  // alternative — but only if the replacement is close in quality.
-  const affinityCounts = new Map<string, number>();
-  for (const r of result) {
-    affinityCounts.set(r.champion.affinity, (affinityCounts.get(r.champion.affinity) ?? 0) + 1);
-  }
-  const maxAffinityCount = Math.max(...affinityCounts.values());
-  if (maxAffinityCount > 4) {
-    const dominantAffinity = [...affinityCounts.entries()].find(
-      ([, c]) => c === maxAffinityCount
-    )![0];
-
-    // Find best different-affinity candidate not already selected
-    const altCandidate = pool.find(
-      (r) => r.champion.affinity !== dominantAffinity && !selected.has(r.champion.id)
-    );
-
-    if (altCandidate) {
-      // Find weakest same-affinity champion in result
-      const sameAffinityResults = result
-        .filter((r) => r.champion.affinity === dominantAffinity)
-        .sort((a, b) => a.score - b.score);
-      const weakest = sameAffinityResults[0];
-
-      // Only swap if the replacement is within 85% of the score being dropped
-      if (weakest && altCandidate.score >= weakest.score * 0.85) {
-        const idx = result.indexOf(weakest);
-        selected.delete(weakest.champion.id);
-        result[idx] = altCandidate;
-        selected.add(altCandidate.champion.id);
-      }
-    }
+    pick(r);
   }
 
   // Sort final result by score, trim to count
