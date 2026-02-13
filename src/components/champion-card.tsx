@@ -54,8 +54,8 @@ export function ChampionCard({ champion }: { champion: Champion }) {
         {/* Top edge rarity accent */}
         <div className="absolute top-0 left-0 right-0 h-1 opacity-80" style={{ background: rarityBorderColor }} />
 
-        {/* Rarity badge — top-right */}
-        <div className="absolute top-2 right-2">
+        {/* Rarity badge — bottom-right */}
+        <div className="absolute bottom-2 right-2">
           <Badge
             variant="secondary"
             className={`text-[9px] font-bold uppercase tracking-wider border ${rarityClass}`}
@@ -74,10 +74,12 @@ export function ChampionCard({ champion }: { champion: Champion }) {
         <h3 className="truncate text-xs sm:text-sm font-bold uppercase tracking-tight text-[#E8E4DF] transition-colors group-hover:text-[#C8963E]">
           {champion.name}
         </h3>
-        <div className="mt-auto flex items-center gap-2 pt-1">
-          <AffinityIcon affinity={champion.affinity} size={20} />
-          <FactionIcon faction={champion.faction} size={20} />
-          <span className="text-[10px] font-semibold uppercase tracking-wide text-[#7A7570]">
+        <div className="mt-auto flex items-center justify-between pt-1">
+          <div className="flex items-center gap-2">
+            <AffinityIcon affinity={champion.affinity} size={20} />
+            <FactionIcon faction={champion.faction} size={20} />
+          </div>
+          <span className="text-xs font-bold uppercase tracking-wide text-[#7A7570] text-center">
             {champion.role}
           </span>
         </div>
