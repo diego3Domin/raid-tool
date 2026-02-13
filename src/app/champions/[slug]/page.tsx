@@ -95,12 +95,12 @@ function ratingToTier(rating: number | undefined): string | null {
 }
 
 const TIER_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  S: { bg: "bg-[#C8963E]/20", text: "text-[#E8C460]", border: "border-[#C8963E]" },
-  A: { bg: "bg-green-900/30", text: "text-green-400", border: "border-green-600" },
-  B: { bg: "bg-blue-900/30", text: "text-blue-400", border: "border-blue-600" },
-  C: { bg: "bg-purple-900/30", text: "text-purple-400", border: "border-purple-600" },
-  D: { bg: "bg-orange-900/30", text: "text-orange-400", border: "border-orange-600" },
-  F: { bg: "bg-red-900/30", text: "text-red-400", border: "border-red-600" },
+  S: { bg: "bg-[#8B1A1A]/20", text: "text-red-400", border: "border-[#8B1A1A]" },
+  A: { bg: "bg-[#C8963E]/20", text: "text-[#E8C460]", border: "border-[#C8963E]" },
+  B: { bg: "bg-purple-900/30", text: "text-purple-400", border: "border-purple-600" },
+  C: { bg: "bg-blue-900/30", text: "text-blue-400", border: "border-blue-600" },
+  D: { bg: "bg-green-900/30", text: "text-green-400", border: "border-green-600" },
+  F: { bg: "bg-zinc-800/30", text: "text-zinc-400", border: "border-zinc-600" },
 };
 
 export default async function ChampionDetailPage({
