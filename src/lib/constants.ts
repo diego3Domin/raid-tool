@@ -35,6 +35,6 @@ export const AFFINITY_COLORS: Record<string, string> = {
 
 export const MASTERY_TREE_COLORS = {
   Offense: "#DC2626",
-  Defense: "#DC2626",
+  Defense: "#16A34A",
   Support: "#3B82F6",
 } as const;
