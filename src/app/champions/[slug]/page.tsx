@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllChampions, getChampionBySlug } from "@/lib/champions";
+import { getGuidesForChampion } from "@/lib/guides";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -98,6 +99,7 @@ export default async function ChampionDetailPage({
   const champion = getChampionBySlug(slug);
   if (!champion) notFound();
 
+  const guides = getGuidesForChampion(slug);
   const stats = champion.stats["6"];
   const rarityClass = RARITY_COLORS[champion.rarity] ?? "bg-zinc-600";
   const rarityBorderColor = RARITY_BORDER_COLORS[champion.rarity] ?? "#52525B";
@@ -391,12 +393,124 @@ export default async function ChampionDetailPage({
         </CardContent>
       </Card>
 
-      {/* Recommended Build + Guides */}
-      <div className="mt-6 grid gap-6 lg:grid-cols-2">
-        <Card className="border-dashed">
+      {/* Build Guides */}
+      {guides.length > 0 ? (
+        <div className="mt-6 space-y-4">
+          <h2 className="text-xl font-bold uppercase tracking-wide text-[#E8E4DF]">
+            Build Guides
+          </h2>
+          {guides.map((guide, i) => (
+            <Card key={i}>
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-3">
+                  <span>{guide.content_area} Build</span>
+                  <Badge
+                    variant="outline"
+                    className="border-[#C8963E]/40 bg-[#C8963E]/10 text-[#C8963E] text-xs"
+                  >
+                    {guide.mastery_tree}
+                  </Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* Gear Sets */}
+                <div>
+                  <h4 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-[#7A7570]">
+                    Gear Sets
+                  </h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {guide.gear_sets.map((set) => (
+                      <Badge
+                        key={set}
+                        variant="secondary"
+                        className="bg-[#1A1A20] border border-[#2A2A30] text-[#E8E4DF] text-xs"
+                      >
+                        {set}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Stat Priorities */}
+                <div>
+                  <h4 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-[#7A7570]">
+                    Stat Priority
+                  </h4>
+                  <div className="flex flex-wrap items-center gap-1">
+                    {guide.stat_priorities.map((stat, j) => (
+                      <span key={stat} className="flex items-center gap-1">
+                        <span className="text-sm font-medium text-[#E8E4DF]">{stat}</span>
+                        {j < guide.stat_priorities.length - 1 && (
+                          <span className="text-[#3A3630] mx-0.5">&gt;</span>
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Main Stats */}
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="rounded-sm border border-[#2A2A30] bg-[#1A1A20] p-2.5 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-[#7A7570]">
+                      Gauntlets
+                    </p>
+                    <p className="mt-0.5 text-sm font-bold text-[#E8E4DF]">
+                      {guide.gauntlets_main}
+                    </p>
+                  </div>
+                  <div className="rounded-sm border border-[#2A2A30] bg-[#1A1A20] p-2.5 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-[#7A7570]">
+                      Chestplate
+                    </p>
+                    <p className="mt-0.5 text-sm font-bold text-[#E8E4DF]">
+                      {guide.chestplate_main}
+                    </p>
+                  </div>
+                  <div className="rounded-sm border border-[#2A2A30] bg-[#1A1A20] p-2.5 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-[#7A7570]">
+                      Boots
+                    </p>
+                    <p className="mt-0.5 text-sm font-bold text-[#E8E4DF]">
+                      {guide.boots_main}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Skill Booking Order */}
+                {guide.skill_booking_order && guide.skill_booking_order.length > 0 && (
+                  <div>
+                    <h4 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-[#7A7570]">
+                      Skill Book Priority
+                    </h4>
+                    <div className="flex flex-wrap gap-1.5">
+                      {guide.skill_booking_order.map((skillIdx, j) => (
+                        <Badge
+                          key={j}
+                          variant="outline"
+                          className="border-[#4A5568] text-[#E8E4DF] text-xs"
+                        >
+                          A{skillIdx + 1}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Strategy Notes */}
+                <div className="border-t border-[#2A2A30] pt-3">
+                  <p className="text-sm leading-relaxed text-[#7A7570]">
+                    {guide.notes}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <Card className="mt-6 border-dashed">
           <CardHeader>
             <CardTitle className="text-muted-foreground">
-              Recommended Build
+              Build Guides
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -404,27 +518,11 @@ export default async function ChampionDetailPage({
               No guides yet &mdash; be the first to submit one.
             </p>
             <p className="mt-2 text-xs text-[#7A7570]/60">
-              Gear sets, stat priorities, and mastery recommendations will appear here once community guides are available.
+              Gear sets, stat priorities, and mastery recommendations will appear here once guides are available.
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Guides</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-3 text-sm text-muted-foreground">
-              Community-written guides and strategies for {champion.name}.
-            </p>
-            <Link
-              href="/guides"
-              className="text-sm text-primary hover:underline"
-            >
-              Browse Guides &rarr;
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
+      )}
 
       {/* JSON-LD Structured Data */}
       <script
