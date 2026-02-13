@@ -27,7 +27,7 @@ const features = [
     title: "Build Guides",
     description: "Structured champion builds with gear sets, stat priorities, masteries, and skill booking order.",
     href: "/guides",
-    cta: "Coming Soon",
+    cta: "Browse Guides",
     icon: "\u{1F4D6}",
   },
 ];
