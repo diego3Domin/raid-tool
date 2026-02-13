@@ -28,7 +28,7 @@ export function getFilteredGuidesForChampion(slug: string, ratings: ChampionRati
     const ratingKey = CONTENT_AREA_TO_RATING[guide.content_area];
     if (ratingKey === null) return true; // Always show General
     if (ratingKey === "arena") {
-      return Math.max(ratings.arena_offense ?? 0, ratings.arena_defense ?? 0) >= MIN_RATING;
+      return (ratings.arena_offense ?? 0) >= MIN_RATING;
     }
     return (ratings[ratingKey] ?? 0) >= MIN_RATING;
   });

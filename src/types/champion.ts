@@ -23,14 +23,20 @@ export interface ChampionSkill {
 
 export interface ChampionRating {
   overall?: number;
-  campaign?: number;
   clan_boss?: number;
-  arena_offense?: number;
-  arena_defense?: number;
-  dungeons?: number;
   hydra?: number;
-  faction_wars?: number;
+  chimera?: number;
+  arena_offense?: number;
+  dungeons?: number;
+  spider?: number;
+  dragon?: number;
+  fire_knight?: number;
+  ice_golem?: number;
+  iron_twins?: number;
+  sand_devil?: number;
+  phantom_grove?: number;
   doom_tower?: number;
+  faction_wars?: number;
 }
 
 export interface Champion {

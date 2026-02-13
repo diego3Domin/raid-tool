@@ -50,8 +50,11 @@ interface HellHadesChampion {
   ice_golem?: number;
   iron_twins?: number;
   sand_devil?: number;
+  phantom_grove?: number;
+  doom_tower?: number;
   arena_rating?: number;
   dungeon_overall?: number;
+  fw_primary_rating?: number;
 }
 
 interface HellHadesSkill {
@@ -90,14 +93,20 @@ interface Champion {
   }[];
   ratings: {
     overall?: number;
-    campaign?: number;
     clan_boss?: number;
-    arena_offense?: number;
-    arena_defense?: number;
-    dungeons?: number;
     hydra?: number;
-    faction_wars?: number;
+    chimera?: number;
+    arena_offense?: number;
+    dungeons?: number;
+    spider?: number;
+    dragon?: number;
+    fire_knight?: number;
+    ice_golem?: number;
+    iron_twins?: number;
+    sand_devil?: number;
+    phantom_grove?: number;
     doom_tower?: number;
+    faction_wars?: number;
   };
 }
 
@@ -334,9 +343,19 @@ async function main() {
       ratings: {
         overall: hh?.overall_user ?? (it.rating_avg ? parseFloat(it.rating_avg) : undefined),
         clan_boss: hh?.clan_boss ?? undefined,
+        hydra: hh?.hydra ?? undefined,
+        chimera: hh?.chimera ?? undefined,
         arena_offense: hh?.arena_rating ?? undefined,
         dungeons: hh?.dungeon_overall ?? undefined,
-        hydra: hh?.hydra ?? undefined,
+        spider: hh?.spider ?? undefined,
+        dragon: hh?.dragon ?? undefined,
+        fire_knight: hh?.fire_knight ?? undefined,
+        ice_golem: hh?.ice_golem ?? undefined,
+        iron_twins: hh?.iron_twins ?? undefined,
+        sand_devil: hh?.sand_devil ?? undefined,
+        phantom_grove: hh?.phantom_grove ?? undefined,
+        doom_tower: hh?.doom_tower ?? undefined,
+        faction_wars: hh?.fw_primary_rating ?? undefined,
       },
     };
 
@@ -364,9 +383,19 @@ async function main() {
       ratings: {
         overall: hh.overall_user ?? undefined,
         clan_boss: hh.clan_boss ?? undefined,
+        hydra: hh.hydra ?? undefined,
+        chimera: hh.chimera ?? undefined,
         arena_offense: hh.arena_rating ?? undefined,
         dungeons: hh.dungeon_overall ?? undefined,
-        hydra: hh.hydra ?? undefined,
+        spider: hh.spider ?? undefined,
+        dragon: hh.dragon ?? undefined,
+        fire_knight: hh.fire_knight ?? undefined,
+        ice_golem: hh.ice_golem ?? undefined,
+        iron_twins: hh.iron_twins ?? undefined,
+        sand_devil: hh.sand_devil ?? undefined,
+        phantom_grove: hh.phantom_grove ?? undefined,
+        doom_tower: hh.doom_tower ?? undefined,
+        faction_wars: hh.fw_primary_rating ?? undefined,
       },
     };
 

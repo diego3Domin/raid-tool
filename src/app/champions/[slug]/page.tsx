@@ -50,25 +50,37 @@ export async function generateMetadata({
 
 const RATING_LABELS: Record<string, string> = {
   overall: "Overall",
-  campaign: "Campaign",
   clan_boss: "Clan Boss",
-  arena_offense: "Arena Offense",
-  arena_defense: "Arena Defense",
-  dungeons: "Dungeons",
   hydra: "Hydra",
-  faction_wars: "Faction Wars",
+  chimera: "Chimera",
+  arena_offense: "Arena",
+  dungeons: "Dungeons",
+  spider: "Spider",
+  dragon: "Dragon",
+  fire_knight: "Fire Knight",
+  ice_golem: "Ice Golem",
+  iron_twins: "Iron Twins",
+  sand_devil: "Sand Devil",
+  phantom_grove: "Phantom Shogun",
   doom_tower: "Doom Tower",
+  faction_wars: "Faction Wars",
 };
 
-/** Map 13 content areas for tier placements display */
+/** Content areas for tier placements display */
 const TIER_CONTENT_AREAS = [
   { key: "clan_boss", label: "Clan Boss" },
   { key: "hydra", label: "Hydra" },
+  { key: "chimera", label: "Chimera" },
   { key: "arena_offense", label: "Arena" },
-  { key: "dungeons", label: "Dungeons" },
+  { key: "spider", label: "Spider" },
+  { key: "dragon", label: "Dragon" },
+  { key: "fire_knight", label: "Fire Knight" },
+  { key: "ice_golem", label: "Ice Golem" },
+  { key: "iron_twins", label: "Iron Twins" },
+  { key: "sand_devil", label: "Sand Devil" },
+  { key: "phantom_grove", label: "Phantom Shogun" },
   { key: "doom_tower", label: "Doom Tower" },
   { key: "faction_wars", label: "Faction Wars" },
-  { key: "campaign", label: "Campaign" },
 ] as const;
 
 /** Convert a numeric rating (0-5) to a tier letter */
