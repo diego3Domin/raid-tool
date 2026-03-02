@@ -54154,6 +54154,106 @@
     }
   },
   {
+    "id": "bayek",
+    "name": "Bayek",
+    "slug": "bayek",
+    "faction": "Barbarians",
+    "affinity": "Void",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/bayek.png",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Khopesh Strike",
+        "description": "Attacks 1 enemy. Places a [Leech] debuff for 2 turns. Fills this Champion’s Turn Meter by 20%. Level 2: Damage +5% Level 3: Damage +5% Level 4: Damage +10%"
+      },
+      {
+        "name": "Desert Zephyr",
+        "description": "Attacks all enemies. Places a 50% [Decrease ACC] debuff and a 50% [Decrease RES] debuff for 2 turns. Also places a [Provoke] debuff on all enemies for 1 turn. If a target is under 3 or more debuffs, places a [Provoke] debuff for 2 turns instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Prayer Of The Medjay",
+        "description": "Places a 50% [Increase ACC] buff on all allies for 2 turns. Also places a [Perfect Veil] buff and a 60% [Increase DEF] buff on all allies except this Champion for 2 turns. Places a 60% [Increase DEF] buff on this Champion for 3 turns. Then grants an Extra Turn. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Siwa's Pride [P]",
+        "description": "This Champion and their allies cannot receive critical hits from enemies whose ACC is equal to or lower than their own ACC."
+      },
+      {
+        "name": "Everything Is Permitted [P]",
+        "description": "Whenever an enemy’s HP drops below 25% after receiving damage from any Assassin, they receive additional bonus damage proportional to this Champion’s DEF. This bonus damage will ignore 100% of the target’s DEF and cannot be critical."
+      }
+    ],
+    "ratings": {
+      "overall": 5,
+      "clan_boss": 4,
+      "hydra": 5,
+      "chimera": 4.5,
+      "arena_offense": 5,
+      "dungeons": 5,
+      "spider": 5,
+      "dragon": 5,
+      "fire_knight": 4.5,
+      "ice_golem": 5,
+      "iron_twins": 4.5,
+      "sand_devil": 3.5,
+      "phantom_grove": 4.5,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
+    "id": "pelops-the-victor",
+    "name": "Pelops The Victor",
+    "slug": "pelops-the-victor",
+    "faction": "Argonites",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Triumphant Blow",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a 50% [Decrease ATK] debuff for 2 turns. This debuff cannot be resisted or blocked if the target is under a [Hex] debuff. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Damage +15% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Gorgoa's Bane",
+        "description": "Attacks 1 enemy. Will ignore 50% of the target’s DEF if the target is under a [HP Burn] debuff. The damage inflicted by this skill increases by 10% for every turn remaining on any debuffs on this Champion and the target (stacks up to 200%). If the damage inflicted by this skill is less than 50% of the target’s MAX HP, steals all buffs from the target and places a [Stun] debuff on them for 2 turns. These effects cannot be resisted if the target is under a [HP Burn] debuff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Victor's Bounty",
+        "description": "[Active Effect] Places a 50% [Increase ATK] buff and a [Magma Shield] buff on all allies for 2 turns. The value of the [Magma Shield] is equal to 30% of this Champion’s MAX HP. Also places a [Taunt] buff on this Champion for 2 turns. [Passive Effect] Decreases the damage all allies receive by 20% while this Champion is not under a [Decrease DEF] debuff. Level 2: Shield +10% Level 3: Shield +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Master Of Games [P]",
+        "description": "This Champion is immune to [Stun], [HP Burn], and [Petrification] debuffs. Whenever an enemy attacks this Champion, has a 100% chance of placing a [HP Burn] debuff on that enemy for 2 turns. The chance decreases to 50% if this Champion is under a [Decrease DEF] debuff. Occurs once per enemy skill. Whenever an enemy attacks this Champion, also has a 50% chance of placing a [Petrification] debuff on that enemy for 1 turn. The chance decreases to 25% if this Champion is under a [Decrease DEF] debuff. Occurs once per enemy skill."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4.5,
+      "hydra": 4,
+      "chimera": 4.5,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 5,
+      "dragon": 4.5,
+      "fire_knight": 4,
+      "ice_golem": 4.5,
+      "iron_twins": 4,
+      "sand_devil": 3,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
     "id": "noldua-the-gloaming",
     "name": "Noldua The Gloaming",
     "slug": "noldua-the-gloaming",
@@ -54699,58 +54799,6 @@
       "iron_twins": 3.5,
       "sand_devil": 3,
       "phantom_grove": 3.5,
-      "doom_tower": 0,
-      "faction_wars": 5
-    }
-  },
-  {
-    "id": "bayek",
-    "name": "Bayek",
-    "slug": "bayek",
-    "faction": "Barbarians",
-    "affinity": "Void",
-    "rarity": "Legendary",
-    "role": "DEF",
-    "avatar_url": "/champions/bayek.png",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Khopesh Strike",
-        "description": "Attacks 1 enemy. Places a [Leech] debuff for 2 turns. Fills this Champion’s Turn Meter by 20%. Level 2: Damage +5% Level 3: Damage +5% Level 4: Damage +10%"
-      },
-      {
-        "name": "Desert Zephyr",
-        "description": "Attacks all enemies. Places a 50% [Decrease ACC] debuff and a 50% [Decrease RES] debuff for 2 turns. Also places a [Provoke] debuff on all enemies for 1 turn. If a target is under 3 or more debuffs, places a [Provoke] debuff for 2 turns instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Prayer Of The Medjay",
-        "description": "Places a 50% [Increase ACC] buff on all allies for 2 turns. Also places a [Perfect Veil] buff and a 60% [Increase DEF] buff on all allies except this Champion for 2 turns. Places a 60% [Increase DEF] buff on this Champion for 3 turns. Then grants an Extra Turn. Level 2: Cooldown -1 Level 3: Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Siwa's Pride [P]",
-        "description": "This Champion and their allies cannot receive critical hits from enemies whose ACC is equal to or lower than their own ACC."
-      },
-      {
-        "name": "Everything Is Permitted [P]",
-        "description": "Whenever an enemy’s HP drops below 25% after receiving damage from any Assassin, they receive additional bonus damage proportional to this Champion’s DEF. This bonus damage will ignore 100% of the target’s DEF and cannot be critical."
-      }
-    ],
-    "ratings": {
-      "overall": 4.5,
-      "clan_boss": 4,
-      "hydra": 5,
-      "chimera": 4.5,
-      "arena_offense": 4.5,
-      "dungeons": 4,
-      "spider": 4.5,
-      "dragon": 4.5,
-      "fire_knight": 4.5,
-      "ice_golem": 5,
-      "iron_twins": 4.5,
-      "sand_devil": 3.5,
-      "phantom_grove": 4.5,
       "doom_tower": 0,
       "faction_wars": 5
     }
