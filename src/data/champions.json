@@ -20151,21 +20151,21 @@
       }
     ],
     "ratings": {
-      "overall": 3,
-      "clan_boss": 2,
-      "hydra": 2,
-      "chimera": 2,
+      "overall": 4,
+      "clan_boss": 2.5,
+      "hydra": 4,
+      "chimera": 3.5,
       "arena_offense": 4,
       "dungeons": 3,
-      "spider": 3,
-      "dragon": 3,
+      "spider": 4,
+      "dragon": 3.5,
       "fire_knight": 4,
       "ice_golem": 4,
       "iron_twins": 2,
-      "sand_devil": 0.5,
-      "phantom_grove": 1,
+      "sand_devil": 4,
+      "phantom_grove": 2,
       "doom_tower": 0,
-      "faction_wars": 3.5
+      "faction_wars": 4
     }
   },
   {
@@ -55884,50 +55884,6 @@
     }
   },
   {
-    "id": "bladerider",
-    "name": "Bladerider",
-    "slug": "bladerider",
-    "faction": "Argonites",
-    "affinity": "Magic",
-    "rarity": "Rare",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Dual Slash",
-        "description": "Attacks 1 enemy 2 times. Each critical hit will ignore 5% of the target&#8217;s DEF. Level 2: Damage +5% Level 3: Damage +5% Level 4: Damage +10%"
-      },
-      {
-        "name": "Sword Plunge",
-        "description": "Attacks 1 enemy. Has a 50% chance of placing a [Stun] debuff for 1 turn. Will repeat the attack against all o ther enemies if this Champion is under an [Increase ATK] buff. Level 2: Damage +15% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1 Level 6: Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Enmeshing Barrage",
-        "description": "Attacks all enemies. Before attacking, places a 25% [Increase ATK] buff and a 15% [Increase C.DMG] buff on all allies for 2 turns. Each critical hit fills this Champion&#8217;s Turn Meter by 5%. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
-        "cooldown": 5
-      }
-    ],
-    "ratings": {
-      "overall": 3,
-      "clan_boss": 2,
-      "hydra": 2,
-      "chimera": 2,
-      "arena_offense": 2,
-      "dungeons": 2,
-      "spider": 3,
-      "dragon": 3,
-      "fire_knight": 2,
-      "ice_golem": 3,
-      "iron_twins": 1,
-      "sand_devil": 1,
-      "phantom_grove": 1,
-      "doom_tower": 0,
-      "faction_wars": 3
-    }
-  },
-  {
     "id": "gladewulf",
     "name": "Gladewulf",
     "slug": "gladewulf",
@@ -56072,6 +56028,50 @@
     }
   },
   {
+    "id": "bladerider",
+    "name": "Bladerider",
+    "slug": "bladerider",
+    "faction": "Argonites",
+    "affinity": "Magic",
+    "rarity": "Rare",
+    "role": "ATK",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Dual Slash",
+        "description": "Attacks 1 enemy 2 times. Each critical hit will ignore 5% of the target&#8217;s DEF. Level 2: Damage +5% Level 3: Damage +5% Level 4: Damage +10%"
+      },
+      {
+        "name": "Sword Plunge",
+        "description": "Attacks 1 enemy. Has a 50% chance of placing a [Stun] debuff for 1 turn. Will repeat the attack against all o ther enemies if this Champion is under an [Increase ATK] buff. Level 2: Damage +15% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1 Level 6: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Enmeshing Barrage",
+        "description": "Attacks all enemies. Before attacking, places a 25% [Increase ATK] buff and a 15% [Increase C.DMG] buff on all allies for 2 turns. Each critical hit fills this Champion&#8217;s Turn Meter by 5%. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 5
+      }
+    ],
+    "ratings": {
+      "overall": 2.5,
+      "clan_boss": 2,
+      "hydra": 2,
+      "chimera": 2,
+      "arena_offense": 2,
+      "dungeons": 2,
+      "spider": 3,
+      "dragon": 3,
+      "fire_knight": 2,
+      "ice_golem": 3,
+      "iron_twins": 1,
+      "sand_devil": 1,
+      "phantom_grove": 1,
+      "doom_tower": 0,
+      "faction_wars": 3
+    }
+  },
+  {
     "id": "sunken-sentinel",
     "name": "Sunken Sentinel",
     "slug": "sunken-sentinel",
@@ -56081,7 +56081,22 @@
     "role": "ATK",
     "avatar_url": "/champions/placeholder.svg",
     "stats": {},
-    "skills": [],
+    "skills": [
+      {
+        "name": "Restorative Slash",
+        "description": "Attacks 1 enemy. Places an extra hit if the target is under a [Decrease DEF] debuff. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Damage +5% Lv. 5 Damage +5%"
+      },
+      {
+        "name": "Sunken Swords",
+        "description": "Attacks all enemies. Has a 50% chance of placing a 60% [Decrease DEF] debuff for 2 turns. The chance increases by 5% for each alive ally. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Damage +10% Lv. 5 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Defender of Agaris",
+        "description": "Attacks 1 enemy. Heals this Champion by 20% of the damage inflicted. Heals this Champion by 30% instead if the target is under a [Decrease DEF] debuff. Destroys the target’s MAX HP by 20% of the damage inflicted. Destroys the target’s MAX HP by 30% instead if the target is under a [Decrease DEF] debuff. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Damage +10% Lv. 5 Cooldown -1",
+        "cooldown": 4
+      }
+    ],
     "ratings": {
       "overall": 2.5,
       "clan_boss": 2,
@@ -56147,10 +56162,10 @@
     "id": "silvain-the-paramour",
     "name": "Silvain The Paramour",
     "slug": "silvain-the-paramour",
-    "faction": "High Elves",
+    "faction": "Banner Lords",
     "affinity": "Void",
-    "rarity": "Common",
-    "role": "TBC",
+    "rarity": "Rare",
+    "role": "ATK",
     "avatar_url": "/champions/silvain-the-paramour.png",
     "stats": {},
     "skills": [
