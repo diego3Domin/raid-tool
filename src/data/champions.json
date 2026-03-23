@@ -28381,19 +28381,19 @@
       }
     ],
     "ratings": {
-      "overall": 3.5,
+      "overall": 4,
       "clan_boss": 4.5,
-      "hydra": 4,
-      "chimera": 2.5,
-      "arena_offense": 3.5,
+      "hydra": 3,
+      "chimera": 3.5,
+      "arena_offense": 4,
       "dungeons": 3,
-      "spider": 3,
+      "spider": 3.5,
       "dragon": 4,
-      "fire_knight": 3,
+      "fire_knight": 4,
       "ice_golem": 4,
-      "iron_twins": 3.5,
-      "sand_devil": 1,
-      "phantom_grove": 1,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 2,
       "doom_tower": 0,
       "faction_wars": 4
     }
@@ -56109,7 +56109,7 @@
       "fire_knight": 2.5,
       "ice_golem": 2.5,
       "iron_twins": 2,
-      "sand_devil": 0,
+      "sand_devil": 1,
       "phantom_grove": 2,
       "doom_tower": 0,
       "faction_wars": 3
