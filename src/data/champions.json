@@ -9925,19 +9925,19 @@
       }
     ],
     "ratings": {
-      "overall": 3.5,
-      "clan_boss": 3,
-      "hydra": 2,
+      "overall": 4.5,
+      "clan_boss": 3.5,
+      "hydra": 3,
       "chimera": 4,
-      "arena_offense": 4,
-      "dungeons": 3,
-      "spider": 2,
-      "dragon": 4,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 2.5,
+      "dragon": 4.5,
       "fire_knight": 5,
       "ice_golem": 4.5,
-      "iron_twins": 2,
+      "iron_twins": 3.5,
       "sand_devil": 2,
-      "phantom_grove": 3.5,
+      "phantom_grove": 4.5,
       "doom_tower": 0,
       "faction_wars": 4.5
     }
@@ -35948,20 +35948,20 @@
       }
     ],
     "ratings": {
-      "overall": 4,
+      "overall": 3.5,
       "clan_boss": 2,
-      "hydra": 4,
+      "hydra": 3,
       "chimera": 2.5,
       "arena_offense": 3.5,
       "dungeons": 3,
-      "spider": 5,
-      "dragon": 4,
+      "spider": 4.5,
+      "dragon": 3,
       "fire_knight": 4,
-      "ice_golem": 5,
+      "ice_golem": 4,
       "iron_twins": 3.5,
       "sand_devil": 1,
       "phantom_grove": 1,
-      "doom_tower": 4.5,
+      "doom_tower": 0,
       "faction_wars": 4
     }
   },
@@ -46440,19 +46440,19 @@
       }
     ],
     "ratings": {
-      "overall": 3.5,
+      "overall": 4,
       "clan_boss": 4,
       "hydra": 3.5,
       "chimera": 3,
-      "arena_offense": 3.5,
+      "arena_offense": 4,
       "dungeons": 3,
-      "spider": 3,
-      "dragon": 3.5,
-      "fire_knight": 3,
-      "ice_golem": 3.5,
-      "iron_twins": 2,
-      "sand_devil": 1,
-      "phantom_grove": 1.5,
+      "spider": 3.5,
+      "dragon": 4,
+      "fire_knight": 3.5,
+      "ice_golem": 4,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 2,
       "doom_tower": 0,
       "faction_wars": 4.5
     }
@@ -53957,102 +53957,6 @@
     }
   },
   {
-    "id": "glorious-pallas",
-    "name": "Glorious Pallas",
-    "slug": "glorious-pallas",
-    "faction": "Argonites",
-    "affinity": "Magic",
-    "rarity": "Legendary",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Spear of Serenity",
-        "description": "Attacks 1 enemy with 1 random ally from the Argonites Faction. The ally joining the attack will use their default skill. Heals all allies by 10% of this Champion’s MAX HP. Lv. 2 Damage +10% Lv. 3 Heal +10% Lv. 4 Damage +10% Lv. 5 Heal +10%"
-      },
-      {
-        "name": "Gift of Thalass",
-        "description": "Removes all debuffs from all allies and places a [Block Debuffs] buff and a [Fervor] buff on all allies for 2 turns. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Glorious Revival",
-        "description": "Revives all dead allies with 50% HP and 50% Turn Meter. Places a 25% [Strengthen] buff and a 30% [Increase SPD] buff on all allies for 2 turns. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1 Lv. 4 Cooldown -1",
-        "cooldown": 7
-      },
-      {
-        "name": "Shield of the Argolades [P]",
-        "description": "Whenever an ally receives a debuff, places a [Shield] buff on that ally equal to 20% of their MAX HP for 1 turn. Fills the Turn Meters of all allies by 15% at the end of this Champion’s turn."
-      }
-    ],
-    "ratings": {
-      "overall": 5,
-      "clan_boss": 3.5,
-      "hydra": 5,
-      "chimera": 5,
-      "arena_offense": 4.5,
-      "dungeons": 5,
-      "spider": 5,
-      "dragon": 5,
-      "fire_knight": 4.5,
-      "ice_golem": 5,
-      "iron_twins": 5,
-      "sand_devil": 3,
-      "phantom_grove": 5,
-      "doom_tower": 0,
-      "faction_wars": 5
-    }
-  },
-  {
-    "id": "storm-herald-hekaton",
-    "name": "Storm Herald Hekaton",
-    "slug": "storm-herald-hekaton",
-    "faction": "Argonites",
-    "affinity": "Void",
-    "rarity": "Legendary",
-    "role": "DEF",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Fulminant Rupture",
-        "description": "Attacks 1 enemy. Has a 75% chance of placing a [Provoke] debuff and an [Enfeeble] debuff on the target for 1 turn. Also has a 25% chance that these debuffs cannot be resisted. If each enemy has a number of buffs that is equal to or less than this Champion&#8217;s, attacks all enemies instead. This attack is always critical. Has a 75% chance of placing a [Provoke] debuff and an [Enfeeble] debuff on all enemies for 1 turn. Also has a 25% that these debuffs cannot be resisted. Level 2: Damage +15% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
-      },
-      {
-        "name": "Eye of the Storm",
-        "description": "Attacks 1 enemy. Before attacking, places a 60% [Increase DEF] buff and 1 [Stormcall] stack on all allies. This attack is always critical if the number of buffs on the target is equal to or less than this Champion&#8217;s. Will ignore [Stone Skin] buff and 50% of the target&#8217;s DEF if this number of buffs on the target is equal to or less than this Champion&#8217;s. If this attack kills the target, decreases the Turn Meters of all other enemies by an amount equal to the Turn Meter that the target had. Level 2: Damage +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Sky-Father's Boon",
-        "description": "Places a 30% [Increase C.RATE] buff, a [Block Damage] buff, and a [Counterattack] buff on a target ally for 2 turns. Fills the Turn Meters of all allies by 25%. Level 2: Cooldown -1 Level 3: Cooldown -1 Level 4: Cooldown -1",
-        "cooldown": 6
-      },
-      {
-        "name": "Boltmaster [P]",
-        "description": "Whenever an ally under a [Stormcall] stack placed by this Champion lands a critical hit, this Champion deals additional pure damage to the target. If the target is not a Boss or a minion, the pure damage dealt is equal to 2% of the target&#8217;s MAX HP for each buff on this Champion (stacks up to 10%). If the target is a Boss or a minion, the pure damage dealt is equal to 3% of the target&#8217;s MAX HP. This damage cannot be critical. Occurs once per skill and once per target. Does not count as an extra hit. This pure damage ignores [Shield], [Block Damage], and [Strengthen] buffs. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
-      }
-    ],
-    "ratings": {
-      "overall": 5,
-      "clan_boss": 4,
-      "hydra": 5,
-      "chimera": 5,
-      "arena_offense": 4.5,
-      "dungeons": 5,
-      "spider": 5,
-      "dragon": 5,
-      "fire_knight": 4,
-      "ice_golem": 5,
-      "iron_twins": 5,
-      "sand_devil": 4,
-      "phantom_grove": 5,
-      "doom_tower": 0,
-      "faction_wars": 4.5
-    }
-  },
-  {
     "id": "arachoa-moonspinner",
     "name": "Arachoa Moonspinner",
     "slug": "arachoa-moonspinner",
@@ -54302,254 +54206,99 @@
     }
   },
   {
-    "id": "pelops-the-victor",
-    "name": "Pelops The Victor",
-    "slug": "pelops-the-victor",
+    "id": "glorious-pallas",
+    "name": "Glorious Pallas",
+    "slug": "glorious-pallas",
     "faction": "Argonites",
-    "affinity": "Spirit",
-    "rarity": "Legendary",
-    "role": "HP",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Triumphant Blow",
-        "description": "Attacks 1 enemy. Has a 75% chance of placing a 50% [Decrease ATK] debuff for 2 turns. This debuff cannot be resisted or blocked if the target is under a [Hex] debuff. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Damage +15% Level 5: Buff/Debuff Chance +15%"
-      },
-      {
-        "name": "Gorgoa's Bane",
-        "description": "Attacks 1 enemy. Will ignore 50% of the target’s DEF if the target is under a [HP Burn] debuff. The damage inflicted by this skill increases by 10% for every turn remaining on any debuffs on this Champion and the target (stacks up to 200%). If the damage inflicted by this skill is less than 50% of the target’s MAX HP, steals all buffs from the target and places a [Stun] debuff on them for 2 turns. These effects cannot be resisted if the target is under a [HP Burn] debuff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Victor's Bounty",
-        "description": "[Active Effect] Places a 50% [Increase ATK] buff and a [Magma Shield] buff on all allies for 2 turns. The value of the [Magma Shield] is equal to 30% of this Champion’s MAX HP. Also places a [Taunt] buff on this Champion for 2 turns. [Passive Effect] Decreases the damage all allies receive by 20% while this Champion is not under a [Decrease DEF] debuff. Level 2: Shield +10% Level 3: Shield +10% Level 4: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Master Of Games [P]",
-        "description": "This Champion is immune to [Stun], [HP Burn], and [Petrification] debuffs. Whenever an enemy attacks this Champion, has a 100% chance of placing a [HP Burn] debuff on that enemy for 2 turns. The chance decreases to 50% if this Champion is under a [Decrease DEF] debuff. Occurs once per enemy skill. Whenever an enemy attacks this Champion, also has a 50% chance of placing a [Petrification] debuff on that enemy for 1 turn. The chance decreases to 25% if this Champion is under a [Decrease DEF] debuff. Occurs once per enemy skill."
-      }
-    ],
-    "ratings": {
-      "overall": 4.5,
-      "clan_boss": 4.5,
-      "hydra": 4,
-      "chimera": 4.5,
-      "arena_offense": 4.5,
-      "dungeons": 4,
-      "spider": 5,
-      "dragon": 4.5,
-      "fire_knight": 4,
-      "ice_golem": 4.5,
-      "iron_twins": 4,
-      "sand_devil": 3,
-      "phantom_grove": 4,
-      "doom_tower": 0,
-      "faction_wars": 4.5
-    }
-  },
-  {
-    "id": "blood-marchioness-mina",
-    "name": "Blood Marchioness Mina",
-    "slug": "blood-marchioness-mina",
-    "faction": "Undead Hordes",
     "affinity": "Magic",
-    "rarity": "Mythical",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/glorious-pallas.jpg",
     "stats": {},
     "skills": [
       {
-        "name": "Song of Steel",
-        "description": "Attacks 1 enemy 2 times. Will repeat the attack against the enemy with the highest Turn Meter if the initial target is under a [Leech] debuff. Level 2: Damage +20%"
+        "name": "Spear of Serenity",
+        "description": "Attacks 1 enemy with 1 random ally from the Argonites Faction. The ally joining the attack will use their default skill. Heals all allies by 10% of this Champion’s MAX HP. Lv. 2 Damage +10% Lv. 3 Heal +10% Lv. 4 Damage +10% Lv. 5 Heal +10%"
       },
       {
-        "name": "White-Hot Rage",
-        "description": "Attacks all enemies. Places a [Stun] debuff for 1 turn, and decreases the Turn Meters of all enemies by 50%. These effects cannot be resisted by targets whose ATK is lower than this Champion&#8217;s. Level 2: Damage +20% Level 3: Cooldown -1",
-        "cooldown": 4
+        "name": "Gift of Thalass",
+        "description": "Removes all debuffs from all allies and places a [Block Debuffs] buff and a [Fervor] buff on all allies for 2 turns. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
+        "cooldown": 5
       },
       {
-        "name": "Arctic Howl",
-        "description": "Attacks all enemies. Before attacking, removes all buffs from enemies. This effect cannot be resisted by targets whose ATK is lower than this Champion&#8217;s. Places a [Leech] debuff and a 50% [Decrease ATK] debuff on all enemies for 2 turns. These debuffs cannot be resisted by targets whose ATK is lower than this Champion&#8217;s. Level 2: Damage +20% Level 3: Cooldown -1",
-        "cooldown": 4
+        "name": "Glorious Revival",
+        "description": "Revives all dead allies with 50% HP and 50% Turn Meter. Places a 25% [Strengthen] buff and a 30% [Increase SPD] buff on all allies for 2 turns. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1 Lv. 4 Cooldown -1",
+        "cooldown": 7
       },
       {
-        "name": "Metamorph",
-        "description": "Transforms this Champion into their Alternate Form whenever this Champion is revived by a skill, effect, or [Revive On Death] buff. Then grants an Extra Turn.",
-        "cooldown": 4
-      },
-      {
-        "name": "Will Of The Tundra [P]",
-        "description": "Whenever an enemy has their Turn Meter filled, this Champion inflicts pure damage on that enemy equal to 3% of their MAX HP for every 10% Turn Meter filled. Will inflict 6% of their MAX HP as pure damage instead, if the enemy is under a [Leech] debuff. This damage cannot be critical and will ignore [Stone Skin], [Ally Protection], [Shield], [Strengthen], and [Fervor] buffs, [Bone Armor] stacks, and any damage modifying skills or effects. If the enemy is a Boss, the damage cannot exceed 50,000 per hit. Whenever an enemy has their Turn Meter filled, also destroys their SPD by 3 for every 10% Turn Meter filled (stacks up to 100). Will destroy 6 SPD for every 10% Turn Meter filled instead, if the enemy is under a [Leech] debuff. This effect does not work against bosses. Revives this Champion with 100% HP every 2 turns if at least one ally is alive. Once per Round, instantly revives this Champion with 100% HP if all allies are dead."
+        "name": "Shield of the Argolades [P]",
+        "description": "Whenever an ally receives a debuff, places a [Shield] buff on that ally equal to 20% of their MAX HP for 1 turn. Fills the Turn Meters of all allies by 15% at the end of this Champion’s turn."
       }
     ],
     "ratings": {
-      "overall": 4.5,
-      "clan_boss": 4,
-      "hydra": 4,
-      "chimera": 4,
+      "overall": 5,
+      "clan_boss": 3.5,
+      "hydra": 5,
+      "chimera": 5,
       "arena_offense": 4.5,
-      "dungeons": 4,
+      "dungeons": 5,
       "spider": 5,
       "dragon": 5,
       "fire_knight": 4.5,
       "ice_golem": 5,
-      "iron_twins": 4,
+      "iron_twins": 5,
       "sand_devil": 3,
-      "phantom_grove": 4,
+      "phantom_grove": 5,
       "doom_tower": 0,
       "faction_wars": 5
     }
   },
   {
-    "id": "noldua-the-gloaming",
-    "name": "Noldua The Gloaming",
-    "slug": "noldua-the-gloaming",
-    "faction": "Dark Elves",
-    "affinity": "Force",
+    "id": "storm-herald-hekaton",
+    "name": "Storm Herald Hekaton",
+    "slug": "storm-herald-hekaton",
+    "faction": "Argonites",
+    "affinity": "Void",
     "rarity": "Legendary",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
+    "role": "DEF",
+    "avatar_url": "/champions/storm-herald-hekaton.jpg",
     "stats": {},
     "skills": [
       {
-        "name": "Shadestrike",
-        "description": "Attacks 1 enemy. Has a 50% chance of placing an [Enfeeble] debuff for 2 turns. If the target is a Boss, places a 25% [Weaken] debuff for 2 turns instead. This debuff cannot be resisted if Solanar the Gleaming is on the same team. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
+        "name": "Fulminant Rupture",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a [Provoke] debuff and an [Enfeeble] debuff on the target for 1 turn. Also has a 25% chance that these debuffs cannot be resisted. If each enemy has a number of buffs that is equal to or less than this Champion&#8217;s, attacks all enemies instead. This attack is always critical. Has a 75% chance of placing a [Provoke] debuff and an [Enfeeble] debuff on all enemies for 1 turn. Also has a 25% that these debuffs cannot be resisted. Level 2: Damage +15% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
       },
       {
-        "name": "Umbral Purge",
-        "description": "Has a 75% chance of removing all buffs from all enemies. This effect cannot be resisted if Solanar the Gleaming is on the same team. Then has a 75% chance of placing a 60% [Decrease DEF] debuff on all enemies for 2 turns. This debuff cannot be resisted if Solanar the Gleaming is on the same team. If Solanar the Gleaming is on the same team, also places a 50% [Increase ATK] buff on all allies for 2 turns. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +15% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "name": "Eye of the Storm",
+        "description": "Attacks 1 enemy. Before attacking, places a 60% [Increase DEF] buff and 1 [Stormcall] stack on all allies. This attack is always critical if the number of buffs on the target is equal to or less than this Champion&#8217;s. Will ignore [Stone Skin] buff and 50% of the target&#8217;s DEF if this number of buffs on the target is equal to or less than this Champion&#8217;s. If this attack kills the target, decreases the Turn Meters of all other enemies by an amount equal to the Turn Meter that the target had. Level 2: Damage +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
         "cooldown": 5
       },
       {
-        "name": "Moonbloom's Blessing",
-        "description": "Revives all dead allies with 50% HP and 50% Turn Meter. If Solanar the Gleaming is on the same team and is dead, revives them with 100% Turn Meter instead. Places a [Shield] buff on all allies equal to 30% of this Champion’s MAX HP for 2 turns. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "name": "Sky-Father's Boon",
+        "description": "Places a 30% [Increase C.RATE] buff, a [Block Damage] buff, and a [Counterattack] buff on a target ally for 2 turns. Fills the Turn Meters of all allies by 25%. Level 2: Cooldown -1 Level 3: Cooldown -1 Level 4: Cooldown -1",
         "cooldown": 6
       },
       {
-        "name": "Scholar Of Shadows [P]",
-        "description": "All Turn Meter fill effects used by enemies are 30% less effective. If Solanar the Gleaming is on the same team, fills this Champion’s Turn Meter by 30% of the enemy’s Turn Meter fill effect. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Only counts Turn Meter fill effects from skills."
+        "name": "Boltmaster [P]",
+        "description": "Whenever an ally under a [Stormcall] stack placed by this Champion lands a critical hit, this Champion deals additional pure damage to the target. If the target is not a Boss or a minion, the pure damage dealt is equal to 2% of the target&#8217;s MAX HP for each buff on this Champion (stacks up to 10%). If the target is a Boss or a minion, the pure damage dealt is equal to 3% of the target&#8217;s MAX HP. This damage cannot be critical. Occurs once per skill and once per target. Does not count as an extra hit. This pure damage ignores [Shield], [Block Damage], and [Strengthen] buffs. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
       }
     ],
     "ratings": {
-      "overall": 4.5,
-      "clan_boss": 3.5,
-      "hydra": 4,
-      "chimera": 4,
-      "arena_offense": 4,
-      "dungeons": 4,
-      "spider": 4.5,
-      "dragon": 4.5,
+      "overall": 5,
+      "clan_boss": 4,
+      "hydra": 5,
+      "chimera": 5,
+      "arena_offense": 4.5,
+      "dungeons": 5,
+      "spider": 5,
+      "dragon": 5,
       "fire_knight": 4,
-      "ice_golem": 4.5,
-      "iron_twins": 4,
-      "sand_devil": 2.5,
-      "phantom_grove": 4,
-      "doom_tower": 0,
-      "faction_wars": 4.5
-    }
-  },
-  {
-    "id": "solanar-the-gleaming",
-    "name": "Solanar The Gleaming",
-    "slug": "solanar-the-gleaming",
-    "faction": "High Elves",
-    "affinity": "Void",
-    "rarity": "Legendary",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Solar Surge",
-        "description": "Attacks all enemies. This attack is always critical if Noluda the Gloaming is on the same team. Has a 60% chance of placing a [Fatigue] debuff on all enemies for 1 turn. [Passive Effect] Has an 80% chance to counterattack with this skill whenever an enemy gets an Extra Turn or has an Instant Turn effect activated. Has a 15% chance to counterattack with this skill whenever an enemy has their Turn Meter increased. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Damage +10% Level 5: Buff/Debuff Chance +10%"
-      },
-      {
-        "name": "Blazing Force",
-        "description": "Attacks 1 enemy. This attack is always critical if Noluda the Gloaming is on the same team. Will ignore 10% of the target’s DEF for each buff on this Champion. This Champion is immune to all debuffs while this skill is not on cooldown. Whenever an enemy attempts to place a debuff on this Champion while this skill is not on cooldown, this Champion gains a random buff instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Unfettered Radiance",
-        "description": "Attacks 1 enemy. Before attacking, steals all buffs and 100% Turn Meter from the target if they are not under a [Stone Skin] buff. This effect cannot be resisted. This attack is always critical if Noluda the Gloaming is on the same team. Will ignore [Stone Skin] buffs. This Champion receives 75% less damage on enemy Extra Turns or Instant Turns while this skill is not on cooldown. While this skill is on cooldown, reduces the cooldown by 1 whenever an enemy receives an Extra Turn, has an Instant Turn effect activated on them, or has their Turn Meter increased. Occurs once per turn. Level 2: Damage +10% Level 3: Damage +10% Level 4: Damage +20%",
-        "cooldown": 4
-      },
-      {
-        "name": "Scholar Of Sun [P]",
-        "description": "Whenever an enemy receives healing, has a 100% chance to reduce the amount of healing received to zero. This Champion will receive that healing instead. If Noluda the Gloaming is on the same team, enemies will receive damage equal to the amount of healing instead. Once per Round, if this Champion is dead, revives this Champion with 100% HP and 100% Turn Meter when their last living ally is killed. Then places a [Magma Shield] buff on this Champion for 2 turns. The value of the [Magma Shield] is equal to 300% of this Champion’s MAX HP. If Noluda the Gloaming is on the same team, this buff is protected."
-      }
-    ],
-    "ratings": {
-      "overall": 4.5,
-      "clan_boss": 4,
-      "hydra": 3.5,
-      "chimera": 4,
-      "arena_offense": 5,
-      "dungeons": 4,
-      "spider": 4,
-      "dragon": 4.5,
-      "fire_knight": 5,
-      "ice_golem": 4,
-      "iron_twins": 3.5,
-      "sand_devil": 3,
-      "phantom_grove": 4.5,
-      "doom_tower": 0,
-      "faction_wars": 4.5
-    }
-  },
-  {
-    "id": "arne-the-white",
-    "name": "Arne The White",
-    "slug": "arne-the-white",
-    "faction": "Barbarians",
-    "affinity": "Magic",
-    "rarity": "Mythical",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Song of Steel",
-        "description": "Attacks 1 enemy. Places an extra hit if the target is under a [Deathbrand] debuff. Decreases the target’s HP and DEF by 10% (stacks up to 30%). This effect does not work against Bosses. Level 2: Damage +20%"
-      },
-      {
-        "name": "White-Hot Rage",
-        "description": "Attacks 1 enemy. Before attacking, places a [Block Passive Skills] debuff for 1 turn. Will ignore 50% of the target’s DEF, as well as [Block Damage] and [Unkillable] buffs. If the initial target is killed, will repeat the attack against all enemies and ignore 25% of each target’s DEF. Will also decrease the cooldown of the Arctic Howl skill by 2 turns if the initial target is killed while under a [Deathbrand] debuff. Level 2: Damage +20% Level 3: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Arcitc Howl",
-        "description": "Places a 50% [Increase ATK] buff and a 50% [Increase ACC] buff on all allies for 3 turns. Places a [Deathbrand] debuff on all enemies for 2 turns. Then grants an Extra Turn. Level 2: Ignore RES +20% Level 3: Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Metamorph",
-        "description": "Transforms this Champion into their Alternate Form. Then grants an Extra Turn.",
-        "cooldown": 4
-      },
-      {
-        "name": "Will Of The Tundra [P]",
-        "description": "[Passive Effect] Enemies under a [Deathbrand] debuff receive 20% more damage and inflict 20% less damage. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. This Champion is immune to [Freeze], [Stun], and [Provoke] debuffs. [Active Effect] Whenever this Champion is killed, revives them with 50% HP, 100% Turn Meter, and places a [Block Damage] buff on them for 1 turn.",
-        "cooldown": 5
-      }
-    ],
-    "ratings": {
-      "overall": 4.5,
-      "clan_boss": 4,
-      "hydra": 4,
-      "chimera": 4,
-      "arena_offense": 5,
-      "dungeons": 4,
-      "spider": 4,
-      "dragon": 4.5,
-      "fire_knight": 3.5,
       "ice_golem": 5,
-      "iron_twins": 3,
-      "sand_devil": 3,
-      "phantom_grove": 4.5,
+      "iron_twins": 5,
+      "sand_devil": 4,
+      "phantom_grove": 5,
       "doom_tower": 0,
-      "faction_wars": 5
+      "faction_wars": 4.5
     }
   },
   {
@@ -55005,100 +54754,254 @@
     }
   },
   {
-    "id": "keberon-the-underflame",
-    "name": "Keberon the Underflame",
-    "slug": "keberon-the-underflame",
-    "faction": "Argonites",
-    "affinity": "Force",
-    "rarity": "Legendary",
+    "id": "arne-the-white",
+    "name": "Arne The White",
+    "slug": "arne-the-white",
+    "faction": "Barbarians",
+    "affinity": "Magic",
+    "rarity": "Mythical",
     "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
+    "avatar_url": "/champions/arne-the-white.png",
     "stats": {},
     "skills": [
       {
-        "name": "Fiery Rend",
-        "description": "Attacks 1 enemy 2 times. Has a 75% chance of placing a 60% [Decrease DEF] debuff for 2 turns. Has a 50% chance of attacking with this skill whenever an enemy has a [HP Burn] debuff activated on them. Occurs once per turn. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Damage +5% Lv. 5 Damage +5%"
+        "name": "Song of Steel",
+        "description": "Attacks 1 enemy. Places an extra hit if the target is under a [Deathbrand] debuff. Decreases the target’s HP and DEF by 10% (stacks up to 30%). This effect does not work against Bosses. Level 2: Damage +20%"
       },
       {
-        "name": "Searing Brand",
-        "description": "Attacks 1 enemy 2 times. Before attacking, places a [Deathbrand] debuff on the target for 2 turns. Will ignore [Unkillable] and [Shield] buffs, as well as 25% of the target’s DEF. Activates this Champion’s Pyrenei Power skill if the target is killed. If the target survives, fills this Champion’s Turn Meter by 50% instead. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Cooldown -1",
+        "name": "White-Hot Rage",
+        "description": "Attacks 1 enemy. Before attacking, places a [Block Passive Skills] debuff for 1 turn. Will ignore 50% of the target’s DEF, as well as [Block Damage] and [Unkillable] buffs. If the initial target is killed, will repeat the attack against all enemies and ignore 25% of each target’s DEF. Will also decrease the cooldown of the Arctic Howl skill by 2 turns if the initial target is killed while under a [Deathbrand] debuff. Level 2: Damage +20% Level 3: Cooldown -1",
         "cooldown": 4
       },
       {
-        "name": "Pyrenei Power",
-        "description": "Attacks all enemies. Before attacking, places a 50% [Increase ACC] buff on all allies for 2 turns. Has a 75% chance of placing a [HP Burn] debuff on all enemies for 2 turns. Fills this Champion’s Turn Meter by 20% for each [HP Burn] debuff placed on enemies, and fills this Champion’s Turn Meter by 10% for each [HP Burn] debuff resisted by enemies. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15% Lv. 6 Cooldown -1",
+        "name": "Arcitc Howl",
+        "description": "Places a 50% [Increase ATK] buff and a 50% [Increase ACC] buff on all allies for 3 turns. Places a [Deathbrand] debuff on all enemies for 2 turns. Then grants an Extra Turn. Level 2: Ignore RES +20% Level 3: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Metamorph",
+        "description": "Transforms this Champion into their Alternate Form. Then grants an Extra Turn.",
         "cooldown": 4
       },
       {
-        "name": "Underflame’s Protection [P]",
-        "description": "[Active Effect] Activates a [Delay] effect on this Champion whenever they receive a fatal hit. [Passive Effect] Heals this Champion by 20% of their MAX HP whenever a [HP Burn] debuff is activated on an enemy. Whenever a [HP Burn] debuff on an enemy expires or is removed, places a [True Fear] debuff on that enemy for 1 turn.",
-        "cooldown": 4
+        "name": "Will Of The Tundra [P]",
+        "description": "[Passive Effect] Enemies under a [Deathbrand] debuff receive 20% more damage and inflict 20% less damage. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. This Champion is immune to [Freeze], [Stun], and [Provoke] debuffs. [Active Effect] Whenever this Champion is killed, revives them with 50% HP, 100% Turn Meter, and places a [Block Damage] buff on them for 1 turn.",
+        "cooldown": 5
       }
     ],
     "ratings": {
-      "overall": 4,
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 4,
+      "chimera": 4,
+      "arena_offense": 5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4.5,
+      "fire_knight": 3.5,
+      "ice_golem": 5,
+      "iron_twins": 3,
+      "sand_devil": 3,
+      "phantom_grove": 4.5,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
+    "id": "noldua-the-gloaming",
+    "name": "Noldua The Gloaming",
+    "slug": "noldua-the-gloaming",
+    "faction": "Dark Elves",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/noldua-the-gloaming.png",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Shadestrike",
+        "description": "Attacks 1 enemy. Has a 50% chance of placing an [Enfeeble] debuff for 2 turns. If the target is a Boss, places a 25% [Weaken] debuff for 2 turns instead. This debuff cannot be resisted if Solanar the Gleaming is on the same team. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Umbral Purge",
+        "description": "Has a 75% chance of removing all buffs from all enemies. This effect cannot be resisted if Solanar the Gleaming is on the same team. Then has a 75% chance of placing a 60% [Decrease DEF] debuff on all enemies for 2 turns. This debuff cannot be resisted if Solanar the Gleaming is on the same team. If Solanar the Gleaming is on the same team, also places a 50% [Increase ATK] buff on all allies for 2 turns. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +15% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Moonbloom's Blessing",
+        "description": "Revives all dead allies with 50% HP and 50% Turn Meter. If Solanar the Gleaming is on the same team and is dead, revives them with 100% Turn Meter instead. Places a [Shield] buff on all allies equal to 30% of this Champion’s MAX HP for 2 turns. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Scholar Of Shadows [P]",
+        "description": "All Turn Meter fill effects used by enemies are 30% less effective. If Solanar the Gleaming is on the same team, fills this Champion’s Turn Meter by 30% of the enemy’s Turn Meter fill effect. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Only counts Turn Meter fill effects from skills."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
       "clan_boss": 3.5,
       "hydra": 4,
       "chimera": 4,
       "arena_offense": 4,
       "dungeons": 4,
-      "spider": 5,
-      "dragon": 4,
-      "fire_knight": 3.5,
+      "spider": 4.5,
+      "dragon": 4.5,
+      "fire_knight": 4,
       "ice_golem": 4.5,
-      "iron_twins": 3.5,
-      "sand_devil": 3,
-      "phantom_grove": 3.5,
+      "iron_twins": 4,
+      "sand_devil": 2.5,
+      "phantom_grove": 4,
       "doom_tower": 0,
       "faction_wars": 4.5
     }
   },
   {
-    "id": "vestele-riverthorn",
-    "name": "Vestele Riverthorn",
-    "slug": "vestele-riverthorn",
-    "faction": "Sylvan Watchers",
-    "affinity": "Magic",
+    "id": "solanar-the-gleaming",
+    "name": "Solanar The Gleaming",
+    "slug": "solanar-the-gleaming",
+    "faction": "High Elves",
+    "affinity": "Void",
     "rarity": "Legendary",
     "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
+    "avatar_url": "/champions/solanar-the-gleaming.png",
     "stats": {},
     "skills": [
       {
-        "name": "Raging River",
-        "description": "Attacks 1 enemy 2 times. Before attacking, has a 50% chance of removing all buffs from the target. Has a 100% chance to steal all buffs instead if this skill is used not on this Champion’s turn. This effect cannot be resisted by targets whose ATK is equal to or lower than this Champion’s. Will ignore 5% of the target’s DEF for each buff on this Champion. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
+        "name": "Solar Surge",
+        "description": "Attacks all enemies. This attack is always critical if Noluda the Gloaming is on the same team. Has a 60% chance of placing a [Fatigue] debuff on all enemies for 1 turn. [Passive Effect] Has an 80% chance to counterattack with this skill whenever an enemy gets an Extra Turn or has an Instant Turn effect activated. Has a 15% chance to counterattack with this skill whenever an enemy has their Turn Meter increased. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Damage +10% Level 5: Buff/Debuff Chance +10%"
       },
       {
-        "name": "Erosive Force",
-        "description": "Attacks 1 enemy. Before attacking, places a 50% [Increase ATK] buff and a 15% [Shatter] buff on this Champion for 2 turns. Will ignore [Block Damage] and [Stone Skin] buffs. Grants an Extra Turn if this attack kills an enemy. If the target survives, fills the Turn Meters of all allies by 30% instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 5
+        "name": "Blazing Force",
+        "description": "Attacks 1 enemy. This attack is always critical if Noluda the Gloaming is on the same team. Will ignore 10% of the target’s DEF for each buff on this Champion. This Champion is immune to all debuffs while this skill is not on cooldown. Whenever an enemy attempts to place a debuff on this Champion while this skill is not on cooldown, this Champion gains a random buff instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 4
       },
       {
-        "name": "Meltwater Flood",
-        "description": "Attacks all enemies. Before attacking, has a 75% chance of placing a 25% [Weaken] debuff on all enemies for 2 turns. This debuff cannot be resisted by targets whose ATK is equal to or lower than this Champion’s. Will ignore 25% of each target’s DEF. Places an extra hit on enemies whose ATK is equal to or lower than this Champion’s. Places an [Unkillable] buff and a [Counterattack] buff on this Champion for 2 turns. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1 Level 6: Cooldown -1",
-        "cooldown": 6
+        "name": "Unfettered Radiance",
+        "description": "Attacks 1 enemy. Before attacking, steals all buffs and 100% Turn Meter from the target if they are not under a [Stone Skin] buff. This effect cannot be resisted. This attack is always critical if Noluda the Gloaming is on the same team. Will ignore [Stone Skin] buffs. This Champion receives 75% less damage on enemy Extra Turns or Instant Turns while this skill is not on cooldown. While this skill is on cooldown, reduces the cooldown by 1 whenever an enemy receives an Extra Turn, has an Instant Turn effect activated on them, or has their Turn Meter increased. Occurs once per turn. Level 2: Damage +10% Level 3: Damage +10% Level 4: Damage +20%",
+        "cooldown": 4
       },
       {
-        "name": "Student Of Glaicad [P]",
-        "description": "Has a 50% chance to deal 100% more damage against enemies whose ATK is equal to or lower than this Champion’s. This Champion receives 30% less damage from enemies whose ATK is equal to or lower than this Champion’s."
+        "name": "Scholar Of Sun [P]",
+        "description": "Whenever an enemy receives healing, has a 100% chance to reduce the amount of healing received to zero. This Champion will receive that healing instead. If Noluda the Gloaming is on the same team, enemies will receive damage equal to the amount of healing instead. Once per Round, if this Champion is dead, revives this Champion with 100% HP and 100% Turn Meter when their last living ally is killed. Then places a [Magma Shield] buff on this Champion for 2 turns. The value of the [Magma Shield] is equal to 300% of this Champion’s MAX HP. If Noluda the Gloaming is on the same team, this buff is protected."
       }
     ],
     "ratings": {
-      "overall": 4,
-      "clan_boss": 3,
-      "hydra": 3,
-      "chimera": 3,
-      "arena_offense": 4.5,
-      "dungeons": 3,
-      "spider": 3,
-      "dragon": 3.5,
-      "fire_knight": 3,
-      "ice_golem": 3.5,
-      "iron_twins": 3,
-      "sand_devil": 2,
-      "phantom_grove": 3,
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 3.5,
+      "chimera": 4,
+      "arena_offense": 5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4.5,
+      "fire_knight": 5,
+      "ice_golem": 4,
+      "iron_twins": 3.5,
+      "sand_devil": 3,
+      "phantom_grove": 4.5,
       "doom_tower": 0,
-      "faction_wars": 4
+      "faction_wars": 4.5
+    }
+  },
+  {
+    "id": "blood-marchioness-mina",
+    "name": "Blood Marchioness Mina",
+    "slug": "blood-marchioness-mina",
+    "faction": "Undead Hordes",
+    "affinity": "Magic",
+    "rarity": "Mythical",
+    "role": "ATK",
+    "avatar_url": "/champions/blood-marchioness-mina.png",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Song of Steel",
+        "description": "Attacks 1 enemy 2 times. Will repeat the attack against the enemy with the highest Turn Meter if the initial target is under a [Leech] debuff. Level 2: Damage +20%"
+      },
+      {
+        "name": "White-Hot Rage",
+        "description": "Attacks all enemies. Places a [Stun] debuff for 1 turn, and decreases the Turn Meters of all enemies by 50%. These effects cannot be resisted by targets whose ATK is lower than this Champion&#8217;s. Level 2: Damage +20% Level 3: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Arctic Howl",
+        "description": "Attacks all enemies. Before attacking, removes all buffs from enemies. This effect cannot be resisted by targets whose ATK is lower than this Champion&#8217;s. Places a [Leech] debuff and a 50% [Decrease ATK] debuff on all enemies for 2 turns. These debuffs cannot be resisted by targets whose ATK is lower than this Champion&#8217;s. Level 2: Damage +20% Level 3: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Metamorph",
+        "description": "Transforms this Champion into their Alternate Form whenever this Champion is revived by a skill, effect, or [Revive On Death] buff. Then grants an Extra Turn.",
+        "cooldown": 4
+      },
+      {
+        "name": "Will Of The Tundra [P]",
+        "description": "Whenever an enemy has their Turn Meter filled, this Champion inflicts pure damage on that enemy equal to 3% of their MAX HP for every 10% Turn Meter filled. Will inflict 6% of their MAX HP as pure damage instead, if the enemy is under a [Leech] debuff. This damage cannot be critical and will ignore [Stone Skin], [Ally Protection], [Shield], [Strengthen], and [Fervor] buffs, [Bone Armor] stacks, and any damage modifying skills or effects. If the enemy is a Boss, the damage cannot exceed 50,000 per hit. Whenever an enemy has their Turn Meter filled, also destroys their SPD by 3 for every 10% Turn Meter filled (stacks up to 100). Will destroy 6 SPD for every 10% Turn Meter filled instead, if the enemy is under a [Leech] debuff. This effect does not work against bosses. Revives this Champion with 100% HP every 2 turns if at least one ally is alive. Once per Round, instantly revives this Champion with 100% HP if all allies are dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 4,
+      "chimera": 4,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 5,
+      "dragon": 5,
+      "fire_knight": 4.5,
+      "ice_golem": 5,
+      "iron_twins": 4,
+      "sand_devil": 3,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
+    "id": "pelops-the-victor",
+    "name": "Pelops The Victor",
+    "slug": "pelops-the-victor",
+    "faction": "Argonites",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/pelops-the-victor.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Triumphant Blow",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a 50% [Decrease ATK] debuff for 2 turns. This debuff cannot be resisted or blocked if the target is under a [Hex] debuff. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Damage +15% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Gorgoa's Bane",
+        "description": "Attacks 1 enemy. Will ignore 50% of the target’s DEF if the target is under a [HP Burn] debuff. The damage inflicted by this skill increases by 10% for every turn remaining on any debuffs on this Champion and the target (stacks up to 200%). If the damage inflicted by this skill is less than 50% of the target’s MAX HP, steals all buffs from the target and places a [Stun] debuff on them for 2 turns. These effects cannot be resisted if the target is under a [HP Burn] debuff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Victor's Bounty",
+        "description": "[Active Effect] Places a 50% [Increase ATK] buff and a [Magma Shield] buff on all allies for 2 turns. The value of the [Magma Shield] is equal to 30% of this Champion’s MAX HP. Also places a [Taunt] buff on this Champion for 2 turns. [Passive Effect] Decreases the damage all allies receive by 20% while this Champion is not under a [Decrease DEF] debuff. Level 2: Shield +10% Level 3: Shield +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Master Of Games [P]",
+        "description": "This Champion is immune to [Stun], [HP Burn], and [Petrification] debuffs. Whenever an enemy attacks this Champion, has a 100% chance of placing a [HP Burn] debuff on that enemy for 2 turns. The chance decreases to 50% if this Champion is under a [Decrease DEF] debuff. Occurs once per enemy skill. Whenever an enemy attacks this Champion, also has a 50% chance of placing a [Petrification] debuff on that enemy for 1 turn. The chance decreases to 25% if this Champion is under a [Decrease DEF] debuff. Occurs once per enemy skill."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4.5,
+      "hydra": 4,
+      "chimera": 4.5,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 5,
+      "dragon": 4.5,
+      "fire_knight": 4,
+      "ice_golem": 4.5,
+      "iron_twins": 4,
+      "sand_devil": 3,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 4.5
     }
   },
   {
@@ -55599,92 +55502,43 @@
     }
   },
   {
-    "id": "tidemaster-dexikos",
-    "name": "Tidemaster Dexikos",
-    "slug": "tidemaster-dexikos",
-    "faction": "Argonites",
+    "id": "vestele-riverthorn",
+    "name": "Vestele Riverthorn",
+    "slug": "vestele-riverthorn",
+    "faction": "Sylvan Watchers",
     "affinity": "Magic",
-    "rarity": "Epic",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/vestele-riverthorn.png",
     "stats": {},
     "skills": [
       {
-        "name": "Aqueuos Bolt",
-        "description": "Attacks 1 enemy 2 times. Each hit heals the ally with the lowest HP by 5% of this Champion’s MAX HP. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Heal +5% Lv. 5 Heal +5%"
+        "name": "Raging River",
+        "description": "Attacks 1 enemy 2 times. Before attacking, has a 50% chance of removing all buffs from the target. Has a 100% chance to steal all buffs instead if this skill is used not on this Champion’s turn. This effect cannot be resisted by targets whose ATK is equal to or lower than this Champion’s. Will ignore 5% of the target’s DEF for each buff on this Champion. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
       },
       {
-        "name": "Tidemaster’s Wrath",
-        "description": "Attacks all enemies. Places a 60% [Increase DEF] buff on all allies for 2 turns. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
+        "name": "Erosive Force",
+        "description": "Attacks 1 enemy. Before attacking, places a 50% [Increase ATK] buff and a 15% [Shatter] buff on this Champion for 2 turns. Will ignore [Block Damage] and [Stone Skin] buffs. Grants an Extra Turn if this attack kills an enemy. If the target survives, fills the Turn Meters of all allies by 30% instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
         "cooldown": 5
       },
       {
-        "name": "Rejuvenating Waters",
-        "description": "Revives 2 random allies with 40% HP and 20% Turn Meter. Heals all allies by 15% of this Champion’s MAX HP. Will heal all allies even if no allies were revived. Places a [Perfect Veil] buff on all allies except this Champion for 1 turn. Will place the buff even if no allies were revived. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
+        "name": "Meltwater Flood",
+        "description": "Attacks all enemies. Before attacking, has a 75% chance of placing a 25% [Weaken] debuff on all enemies for 2 turns. This debuff cannot be resisted by targets whose ATK is equal to or lower than this Champion’s. Will ignore 25% of each target’s DEF. Places an extra hit on enemies whose ATK is equal to or lower than this Champion’s. Places an [Unkillable] buff and a [Counterattack] buff on this Champion for 2 turns. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1 Level 6: Cooldown -1",
         "cooldown": 6
       },
       {
-        "name": "Safety of the Waves [P]",
-        "description": "At the start of this Champion’s turn, places a [Shield] buff for 1 turn on all allies whose HP is less than 100%. The value of the [Shield] is equal to 15% of the receiving Champion’s MAX HP."
+        "name": "Student Of Glaicad [P]",
+        "description": "Has a 50% chance to deal 100% more damage against enemies whose ATK is equal to or lower than this Champion’s. This Champion receives 30% less damage from enemies whose ATK is equal to or lower than this Champion’s."
       }
     ],
     "ratings": {
-      "overall": 3.5,
-      "clan_boss": 4,
-      "hydra": 3.5,
-      "chimera": 3.5,
-      "arena_offense": 3,
-      "dungeons": 3,
-      "spider": 4,
-      "dragon": 4,
-      "fire_knight": 4,
-      "ice_golem": 4,
-      "iron_twins": 3,
-      "sand_devil": 2,
-      "phantom_grove": 3,
-      "doom_tower": 0,
-      "faction_wars": 4
-    }
-  },
-  {
-    "id": "deephook-nagis",
-    "name": "Deephook Nagis",
-    "slug": "deephook-nagis",
-    "faction": "Argonites",
-    "affinity": "Void",
-    "rarity": "Epic",
-    "role": "DEF",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Catching Prey",
-        "description": "Attacks 1 enemy. Has a 40% chance of placing a [Provoke] debuff for 1 turn. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Damage +10% Lv. 5 Buff/Debuff Chance +10%"
-      },
-      {
-        "name": "Tidal Cleanse",
-        "description": "Removes all debuffs from this Champion and a single target ally. Places a 50% [Ally Protection] buff, a 25% [Strengthen] buff, and a 50% [Increase ATK] buff on that target ally for 2 turns. Then fills the Turn Meters of this Champion and the target ally by 15%. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1 Lv. 4 Cooldown -1",
-        "cooldown": 6
-      },
-      {
-        "name": "Sea Snake Surge",
-        "description": "Attacks all enemies. Has an 80% chance of placing a 25% [Weaken] debuff for 2 turns. Also has a 40% chance of placing a [Stun] debuff for 1 turn. Lv. 2 Buff/Debuff Chance +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
-        "cooldown": 6
-      },
-      {
-        "name": "Tritonean Might [P]",
-        "description": "[Active Effect] Whenever an enemy attacks this Champion, heals all allies by 10% of their MAX HP and fills their Turn Meters by 10%. Whenever an enemy attacks this Champion, also places a 30% [Increase SPD] buff on all allies for 1 turn. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
-        "cooldown": 3
-      }
-    ],
-    "ratings": {
-      "overall": 3.5,
-      "clan_boss": 2.5,
+      "overall": 4,
+      "clan_boss": 3,
       "hydra": 3,
-      "chimera": 2.5,
-      "arena_offense": 3,
+      "chimera": 3,
+      "arena_offense": 4.5,
       "dungeons": 3,
-      "spider": 4,
+      "spider": 3,
       "dragon": 3.5,
       "fire_knight": 3,
       "ice_golem": 3.5,
@@ -55692,99 +55546,56 @@
       "sand_devil": 2,
       "phantom_grove": 3,
       "doom_tower": 0,
-      "faction_wars": 3.5
-    }
-  },
-  {
-    "id": "lionsguard-galatea",
-    "name": "Lionsguard Galatea",
-    "slug": "lionsguard-galatea",
-    "faction": "Argonites",
-    "affinity": "Spirit",
-    "rarity": "Epic",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Pride Strike",
-        "description": "Attacks 1 enemy. Places an extra hit if the target is under a [Decrease DEF] debuff. Decreases the target&#8217;s Turn Meter by 10%. Level 2: Damage +5% Level 3: Damage +5% Level 4: Damage +10%"
-      },
-      {
-        "name": "Apex Slice",
-        "description": "Attacks 1 enemy. Places a [Block Revive] debuff if the target is killed. Fills this Champion&#8217;s Turn Meter by 30%. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Aspirant of Theosomi",
-        "description": "Attacks all enemies. Will ignore 15% of the target&#8217;s DEF if they are Spirit Affinity. Will ignore 25% of the target&#8217;s DEF if they are any other Affinity. Activates the Apex Slice skill on a random enemy whose HP was decreased by more than 50% from this skill. Occurs once per skill.",
-        "cooldown": 6
-      },
-      {
-        "name": "Lionsguard Lessons [P]",
-        "description": "Before attacking, has a 25% chance of removing any [Decrease ATK] debuffs on this Champion and replacing them with their mirrored buff equivalent. Also has a 25% chance of removing any [Increase DEF] buffs on enemies and replacing them with their mirrored buff equivelant. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +15%"
-      }
-    ],
-    "ratings": {
-      "overall": 3.5,
-      "clan_boss": 2.5,
-      "hydra": 2.5,
-      "chimera": 2.5,
-      "arena_offense": 4,
-      "dungeons": 3,
-      "spider": 3,
-      "dragon": 3,
-      "fire_knight": 3,
-      "ice_golem": 3,
-      "iron_twins": 2,
-      "sand_devil": 2,
-      "phantom_grove": 3.5,
-      "doom_tower": 0,
       "faction_wars": 4
     }
   },
   {
-    "id": "acolyte-of-the-slither",
-    "name": "Acolyte Of The Slither",
-    "slug": "acolyte-of-the-slither",
+    "id": "keberon-the-underflame",
+    "name": "Keberon the Underflame",
+    "slug": "keberon-the-underflame",
     "faction": "Argonites",
-    "affinity": "Spirit",
-    "rarity": "Rare",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/keberon-the-underflame.jpg",
     "stats": {},
     "skills": [
       {
-        "name": "Darklight Spears",
-        "description": "Attacks 1 enemy 3 times. Each hit has a 35% chance of decreasing the target’s Turn Meter by 5%. If the target is under a [Decrease SPD] debuff, each hit has a 35% chance of decreasing the target’s Turn Meter by 10% instead. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15%"
+        "name": "Fiery Rend",
+        "description": "Attacks 1 enemy 2 times. Has a 75% chance of placing a 60% [Decrease DEF] debuff for 2 turns. Has a 50% chance of attacking with this skill whenever an enemy has a [HP Burn] debuff activated on them. Occurs once per turn. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Damage +5% Lv. 5 Damage +5%"
       },
       {
-        "name": "Reduce To Ash",
-        "description": "Attacks all enemies. Has a 50% chance of placing a 15% [Decrease SPD] debuff for 2 turns. Heals all allies by 15% of their MAX HP. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1 Lv. 6 Cooldown -1",
-        "cooldown": 5
+        "name": "Searing Brand",
+        "description": "Attacks 1 enemy 2 times. Before attacking, places a [Deathbrand] debuff on the target for 2 turns. Will ignore [Unkillable] and [Shield] buffs, as well as 25% of the target’s DEF. Activates this Champion’s Pyrenei Power skill if the target is killed. If the target survives, fills this Champion’s Turn Meter by 50% instead. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Cooldown -1",
+        "cooldown": 4
       },
       {
-        "name": "Rite of Flame",
-        "description": "Places a 30% [Increase SPD] buff on all allies for 2 turns. Fills the Turn Meters of all allies by 15%. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
-        "cooldown": 5
+        "name": "Pyrenei Power",
+        "description": "Attacks all enemies. Before attacking, places a 50% [Increase ACC] buff on all allies for 2 turns. Has a 75% chance of placing a [HP Burn] debuff on all enemies for 2 turns. Fills this Champion’s Turn Meter by 20% for each [HP Burn] debuff placed on enemies, and fills this Champion’s Turn Meter by 10% for each [HP Burn] debuff resisted by enemies. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15% Lv. 6 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Underflame’s Protection [P]",
+        "description": "[Active Effect] Activates a [Delay] effect on this Champion whenever they receive a fatal hit. [Passive Effect] Heals this Champion by 20% of their MAX HP whenever a [HP Burn] debuff is activated on an enemy. Whenever a [HP Burn] debuff on an enemy expires or is removed, places a [True Fear] debuff on that enemy for 1 turn.",
+        "cooldown": 4
       }
     ],
     "ratings": {
-      "overall": 3.5,
+      "overall": 4,
       "clan_boss": 3.5,
-      "hydra": 3.5,
-      "chimera": 3,
-      "arena_offense": 3,
-      "dungeons": 3,
-      "spider": 4,
+      "hydra": 4,
+      "chimera": 4,
+      "arena_offense": 4,
+      "dungeons": 4,
+      "spider": 5,
       "dragon": 4,
-      "fire_knight": 4.5,
-      "ice_golem": 4,
+      "fire_knight": 3.5,
+      "ice_golem": 4.5,
       "iron_twins": 3.5,
-      "sand_devil": 2,
-      "phantom_grove": 2,
+      "sand_devil": 3,
+      "phantom_grove": 3.5,
       "doom_tower": 0,
-      "faction_wars": 3.5
+      "faction_wars": 4.5
     }
   },
   {
@@ -55836,6 +55647,50 @@
     }
   },
   {
+    "id": "acolyte-of-the-slither",
+    "name": "Acolyte Of The Slither",
+    "slug": "acolyte-of-the-slither",
+    "faction": "Argonites",
+    "affinity": "Spirit",
+    "rarity": "Rare",
+    "role": "Support",
+    "avatar_url": "/champions/acolyte-of-the-slither.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Darklight Spears",
+        "description": "Attacks 1 enemy 3 times. Each hit has a 35% chance of decreasing the target’s Turn Meter by 5%. If the target is under a [Decrease SPD] debuff, each hit has a 35% chance of decreasing the target’s Turn Meter by 10% instead. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Reduce To Ash",
+        "description": "Attacks all enemies. Has a 50% chance of placing a 15% [Decrease SPD] debuff for 2 turns. Heals all allies by 15% of their MAX HP. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1 Lv. 6 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Rite of Flame",
+        "description": "Places a 30% [Increase SPD] buff on all allies for 2 turns. Fills the Turn Meters of all allies by 15%. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
+        "cooldown": 5
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 3.5,
+      "hydra": 3.5,
+      "chimera": 3,
+      "arena_offense": 3,
+      "dungeons": 3,
+      "spider": 4,
+      "dragon": 4,
+      "fire_knight": 4.5,
+      "ice_golem": 4,
+      "iron_twins": 3.5,
+      "sand_devil": 2,
+      "phantom_grove": 2,
+      "doom_tower": 0,
+      "faction_wars": 3.5
+    }
+  },
+  {
     "id": "galapo-the-recluse",
     "name": "Galapo The Recluse",
     "slug": "galapo-the-recluse",
@@ -55881,6 +55736,151 @@
       "phantom_grove": 2.5,
       "doom_tower": 0,
       "faction_wars": 3.5
+    }
+  },
+  {
+    "id": "deephook-nagis",
+    "name": "Deephook Nagis",
+    "slug": "deephook-nagis",
+    "faction": "Argonites",
+    "affinity": "Void",
+    "rarity": "Epic",
+    "role": "DEF",
+    "avatar_url": "/champions/deephook-nagis.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Catching Prey",
+        "description": "Attacks 1 enemy. Has a 40% chance of placing a [Provoke] debuff for 1 turn. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Damage +10% Lv. 5 Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "Tidal Cleanse",
+        "description": "Removes all debuffs from this Champion and a single target ally. Places a 50% [Ally Protection] buff, a 25% [Strengthen] buff, and a 50% [Increase ATK] buff on that target ally for 2 turns. Then fills the Turn Meters of this Champion and the target ally by 15%. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1 Lv. 4 Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Sea Snake Surge",
+        "description": "Attacks all enemies. Has an 80% chance of placing a 25% [Weaken] debuff for 2 turns. Also has a 40% chance of placing a [Stun] debuff for 1 turn. Lv. 2 Buff/Debuff Chance +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Tritonean Might [P]",
+        "description": "[Active Effect] Whenever an enemy attacks this Champion, heals all allies by 10% of their MAX HP and fills their Turn Meters by 10%. Whenever an enemy attacks this Champion, also places a 30% [Increase SPD] buff on all allies for 1 turn. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
+        "cooldown": 3
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 2.5,
+      "hydra": 3,
+      "chimera": 2.5,
+      "arena_offense": 3,
+      "dungeons": 3,
+      "spider": 4,
+      "dragon": 3.5,
+      "fire_knight": 3,
+      "ice_golem": 3.5,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 3,
+      "doom_tower": 0,
+      "faction_wars": 3.5
+    }
+  },
+  {
+    "id": "tidemaster-dexikos",
+    "name": "Tidemaster Dexikos",
+    "slug": "tidemaster-dexikos",
+    "faction": "Argonites",
+    "affinity": "Magic",
+    "rarity": "Epic",
+    "role": "Support",
+    "avatar_url": "/champions/tidemaster-dexikos.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Aqueuos Bolt",
+        "description": "Attacks 1 enemy 2 times. Each hit heals the ally with the lowest HP by 5% of this Champion’s MAX HP. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Heal +5% Lv. 5 Heal +5%"
+      },
+      {
+        "name": "Tidemaster’s Wrath",
+        "description": "Attacks all enemies. Places a 60% [Increase DEF] buff on all allies for 2 turns. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Rejuvenating Waters",
+        "description": "Revives 2 random allies with 40% HP and 20% Turn Meter. Heals all allies by 15% of this Champion’s MAX HP. Will heal all allies even if no allies were revived. Places a [Perfect Veil] buff on all allies except this Champion for 1 turn. Will place the buff even if no allies were revived. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Safety of the Waves [P]",
+        "description": "At the start of this Champion’s turn, places a [Shield] buff for 1 turn on all allies whose HP is less than 100%. The value of the [Shield] is equal to 15% of the receiving Champion’s MAX HP."
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 4,
+      "hydra": 3.5,
+      "chimera": 3.5,
+      "arena_offense": 3,
+      "dungeons": 3,
+      "spider": 4,
+      "dragon": 4,
+      "fire_knight": 4,
+      "ice_golem": 4,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 3,
+      "doom_tower": 0,
+      "faction_wars": 4
+    }
+  },
+  {
+    "id": "lionsguard-galatea",
+    "name": "Lionsguard Galatea",
+    "slug": "lionsguard-galatea",
+    "faction": "Argonites",
+    "affinity": "Spirit",
+    "rarity": "Epic",
+    "role": "ATK",
+    "avatar_url": "/champions/lionsguard-galatea.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Pride Strike",
+        "description": "Attacks 1 enemy. Places an extra hit if the target is under a [Decrease DEF] debuff. Decreases the target&#8217;s Turn Meter by 10%. Level 2: Damage +5% Level 3: Damage +5% Level 4: Damage +10%"
+      },
+      {
+        "name": "Apex Slice",
+        "description": "Attacks 1 enemy. Places a [Block Revive] debuff if the target is killed. Fills this Champion&#8217;s Turn Meter by 30%. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Aspirant of Theosomi",
+        "description": "Attacks all enemies. Will ignore 15% of the target&#8217;s DEF if they are Spirit Affinity. Will ignore 25% of the target&#8217;s DEF if they are any other Affinity. Activates the Apex Slice skill on a random enemy whose HP was decreased by more than 50% from this skill. Occurs once per skill.",
+        "cooldown": 6
+      },
+      {
+        "name": "Lionsguard Lessons [P]",
+        "description": "Before attacking, has a 25% chance of removing any [Decrease ATK] debuffs on this Champion and replacing them with their mirrored buff equivalent. Also has a 25% chance of removing any [Increase DEF] buffs on enemies and replacing them with their mirrored buff equivelant. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +15%"
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 2.5,
+      "hydra": 2.5,
+      "chimera": 2.5,
+      "arena_offense": 4,
+      "dungeons": 3,
+      "spider": 3,
+      "dragon": 3,
+      "fire_knight": 3,
+      "ice_golem": 3,
+      "iron_twins": 2,
+      "sand_devil": 2,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 4
     }
   },
   {
@@ -56035,7 +56035,7 @@
     "affinity": "Magic",
     "rarity": "Rare",
     "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
+    "avatar_url": "/champions/bladerider.jpg",
     "stats": {},
     "skills": [
       {
@@ -56079,7 +56079,7 @@
     "affinity": "Void",
     "rarity": "Rare",
     "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
+    "avatar_url": "/champions/sunken-sentinel.jpg",
     "stats": {},
     "skills": [
       {
@@ -56113,49 +56113,6 @@
       "phantom_grove": 2,
       "doom_tower": 0,
       "faction_wars": 3
-    }
-  },
-  {
-    "id": "crimson-pegason",
-    "name": "Crimson Pegason",
-    "slug": "crimson-pegason",
-    "faction": "Argonites",
-    "affinity": "Force",
-    "rarity": "Rare",
-    "role": "HP",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Staggering Strike",
-        "description": "Attacks 1 enemy. Has a 15% chance of placing a [Stun] debuff for 1 turn. Level 2: Damage +10% Level 3: Buff/Debuff Chance +5% Level 4: Damage +10% Level 5: Buff/Debuff Chance +10%"
-      },
-      {
-        "name": "Stance of Steel",
-        "description": "Places a [Taunt] buff on this Champion for 1 turn. Also places a [Shield] buff on all allies for 2 turns, equal to 15% of this Champion&#8217;s MAX HP. Level 2: Shield +10% Level 3: Shield +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
-        "cooldown": 6
-      },
-      {
-        "name": "Military Discipline [P]",
-        "description": "Whenever this Champion is attacked, has a 5% chance of decreasing all incoming damage to zero. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +10%"
-      }
-    ],
-    "ratings": {
-      "overall": 2,
-      "clan_boss": 2,
-      "hydra": 1.5,
-      "chimera": 1.5,
-      "arena_offense": 1.5,
-      "dungeons": 2,
-      "spider": 3,
-      "dragon": 2,
-      "fire_knight": 2,
-      "ice_golem": 2,
-      "iron_twins": 1,
-      "sand_devil": 1,
-      "phantom_grove": 3,
-      "doom_tower": 0,
-      "faction_wars": 2.5
     }
   },
   {
@@ -56198,6 +56155,49 @@
       "iron_twins": 1.5,
       "sand_devil": 1,
       "phantom_grove": 2,
+      "doom_tower": 0,
+      "faction_wars": 2.5
+    }
+  },
+  {
+    "id": "crimson-pegason",
+    "name": "Crimson Pegason",
+    "slug": "crimson-pegason",
+    "faction": "Argonites",
+    "affinity": "Force",
+    "rarity": "Rare",
+    "role": "HP",
+    "avatar_url": "/champions/crimson-pegason.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Staggering Strike",
+        "description": "Attacks 1 enemy. Has a 15% chance of placing a [Stun] debuff for 1 turn. Level 2: Damage +10% Level 3: Buff/Debuff Chance +5% Level 4: Damage +10% Level 5: Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "Stance of Steel",
+        "description": "Places a [Taunt] buff on this Champion for 1 turn. Also places a [Shield] buff on all allies for 2 turns, equal to 15% of this Champion&#8217;s MAX HP. Level 2: Shield +10% Level 3: Shield +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Military Discipline [P]",
+        "description": "Whenever this Champion is attacked, has a 5% chance of decreasing all incoming damage to zero. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +10%"
+      }
+    ],
+    "ratings": {
+      "overall": 2,
+      "clan_boss": 2,
+      "hydra": 1.5,
+      "chimera": 1.5,
+      "arena_offense": 1.5,
+      "dungeons": 2,
+      "spider": 3,
+      "dragon": 2,
+      "fire_knight": 2,
+      "ice_golem": 2,
+      "iron_twins": 1,
+      "sand_devil": 1,
+      "phantom_grove": 3,
       "doom_tower": 0,
       "faction_wars": 2.5
     }
