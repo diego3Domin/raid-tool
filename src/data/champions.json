@@ -56201,5 +56201,57 @@
       "doom_tower": 0,
       "faction_wars": 2.5
     }
+  },
+  {
+    "id": "mavara-the-web-diviner",
+    "name": "Mavara The Web Diviner",
+    "slug": "mavara-the-web-diviner",
+    "faction": "Dark Elves",
+    "affinity": "Magic",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Strike on My Mark",
+        "description": "Attacks 1 enemy. Places a [Fervor] buff for 2 turns on a random ally except this Champion. If the randomly selected ally is already under a [Fervor] buff, places it on another randomly selected ally. [Passive Effect] Allies under a [Fervor] buff have a 50% chance of joining the attacks of other allies under a [Fervor] buff. This Champion will not join in any attacks. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Lv.2 Damage +5% Lv.3 Damage +5% Lv.4 Damage +5% Lv.5 Damage +5%"
+      },
+      {
+        "name": "Nexus of Silk",
+        "description": "Places a 25% [Strengthen] buff and a 50% [Increase RES] buff on all allies for 2 turns. Also equalizes the HP levels of all allies. The HP levels of all allies will be brought up to the level of the ally with the highest HP. Lv.2 Cooldown -1 Lv.3 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "The Webs Whisper",
+        "description": "Revives an ally with 50% HP and 50% Turn Meter. Then places a [Perfect Veil] buff on all allies except this Champion for 2 turns. Also places an [Unkillable] buff on this Champion for 2 turns. These buffs will be placed even if no allies were revived. Lv.2 Cooldown -1 Lv.3 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Theridine Visions [Passive]",
+        "description": "For every 8 buffs the enemy team receives, increases the Turn Meters of all allies by 20%. For every 16 buffs this Champion and their allies receive, heals all allies for 20% of their MAX HP."
+      },
+      {
+        "name": "Aura",
+        "description": ""
+      }
+    ],
+    "ratings": {
+      "overall": 0,
+      "clan_boss": 0,
+      "hydra": 0,
+      "chimera": 0,
+      "arena_offense": 0,
+      "dungeons": 0,
+      "spider": 0,
+      "dragon": 0,
+      "fire_knight": 0,
+      "ice_golem": 0,
+      "iron_twins": 0,
+      "sand_devil": 0,
+      "phantom_grove": 0,
+      "doom_tower": 0,
+      "faction_wars": 0
+    }
   }
 ]
