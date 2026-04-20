@@ -54302,111 +54302,6 @@
     }
   },
   {
-    "id": "mavara-the-web-diviner",
-    "name": "Mavara The Web Diviner",
-    "slug": "mavara-the-web-diviner",
-    "faction": "Dark Elves",
-    "affinity": "Magic",
-    "rarity": "Legendary",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Strike on My Mark",
-        "description": "Attacks 1 enemy. Places a [Fervor] buff for 2 turns on a random ally except this Champion. If the randomly selected ally is already under a [Fervor] buff, places it on another randomly selected ally. [Passive Effect] Allies under a [Fervor] buff have a 50% chance of joining the attacks of other allies under a [Fervor] buff. This Champion will not join in any attacks. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Lv.2 Damage +5% Lv.3 Damage +5% Lv.4 Damage +5% Lv.5 Damage +5%"
-      },
-      {
-        "name": "Nexus of Silk",
-        "description": "Places a 25% [Strengthen] buff and a 50% [Increase RES] buff on all allies for 2 turns. Also equalizes the HP levels of all allies. The HP levels of all allies will be brought up to the level of the ally with the highest HP. Lv.2 Cooldown -1 Lv.3 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "The Webs Whisper",
-        "description": "Revives an ally with 50% HP and 50% Turn Meter. Then places a [Perfect Veil] buff on all allies except this Champion for 2 turns. Also places an [Unkillable] buff on this Champion for 2 turns. These buffs will be placed even if no allies were revived. Lv.2 Cooldown -1 Lv.3 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Theridine Visions [Passive]",
-        "description": "For every 8 buffs the enemy team receives, increases the Turn Meters of all allies by 20%. For every 16 buffs this Champion and their allies receive, heals all allies for 20% of their MAX HP."
-      },
-      {
-        "name": "Aura",
-        "description": ""
-      }
-    ],
-    "ratings": {
-      "overall": 4.5,
-      "clan_boss": 4,
-      "hydra": 4.5,
-      "chimera": 4,
-      "arena_offense": 4.5,
-      "dungeons": 4,
-      "spider": 4.5,
-      "dragon": 4.5,
-      "fire_knight": 4,
-      "ice_golem": 4.5,
-      "iron_twins": 3.5,
-      "sand_devil": 3,
-      "phantom_grove": 3.5,
-      "doom_tower": 0,
-      "faction_wars": 4.5
-    }
-  },
-  {
-    "id": "sabrael-the-distant",
-    "name": "Sabrael the Distant",
-    "slug": "sabrael-the-distant",
-    "faction": "High Elves",
-    "affinity": "Spirit",
-    "rarity": "Mythical",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Hypnotic Bladework",
-        "description": "Attacks 1 enemy. Places a [Sleep] debuff on the target for 1 turn. Instantly activates this skill against the enemy with the highest Turn Meter whenever an enemy&#8217;s Turn Meter is increased by a skill. Occurs once per turn. Lv. 2 Ignore RES +20%"
-      },
-      {
-        "name": "Perfection in Motion",
-        "description": "Attacks all enemies 2 times. Each hit steals all buffs from all enemies. Then applies a [Buff Spread] effect, taking all buffs from this Champion and placing them on all allies. Lv. 2 Ignore RES +20% Lv. 3 Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Sneer of Disdain",
-        "description": "Attacks all enemies 2 times. Each hit increases the cooldown of 1 of each enemy&#8217;s skills to the maximum. Also decreases the Turn Meters of all enemies by 30%. Then grants an Extra Turn. Lv. 2 Ignore RES +20% Lv. 3 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Metamorph",
-        "description": "Changes this Champion into their Alternative Form.",
-        "cooldown": 3
-      },
-      {
-        "name": "Is That... It?",
-        "description": "This Champion receives no damage when attacked by enemies, including Bosses and their minions, out of their active turn. All allies except this Champion deal 3% more damage for each enemy skill that has had its cooldown increased by this Champion (stacks up to 25%). If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
-      }
-    ],
-    "ratings": {
-      "overall": 4.5,
-      "clan_boss": 3,
-      "hydra": 3,
-      "chimera": 3,
-      "arena_offense": 5,
-      "dungeons": 4,
-      "spider": 4.5,
-      "dragon": 4,
-      "fire_knight": 4.5,
-      "ice_golem": 4,
-      "iron_twins": 2.5,
-      "sand_devil": 4.5,
-      "phantom_grove": 2.5,
-      "doom_tower": 0,
-      "faction_wars": 5
-    }
-  },
-  {
     "id": "nais-the-shadowthief",
     "name": "Nais the Shadowthief",
     "slug": "nais-the-shadowthief",
@@ -55110,193 +55005,106 @@
     }
   },
   {
-    "id": "stonebound-thisbe",
-    "name": "Stonebound Thisbe",
-    "slug": "stonebound-thisbe",
-    "faction": "Argonites",
+    "id": "sabrael-the-distant",
+    "name": "Sabrael the Distant",
+    "slug": "sabrael-the-distant",
+    "faction": "High Elves",
     "affinity": "Spirit",
-    "rarity": "Epic",
+    "rarity": "Mythical",
     "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
+    "avatar_url": "/champions/sabrael-the-distant.jpg",
     "stats": {},
     "skills": [
       {
-        "name": "Eyes of Granite",
-        "description": "Attacks 1 enemy. Has a 25% chance of placing a 50% [Decrease ATK] debuff for 2 turns. Steals 10% of the target’s Turn Meter. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15%"
+        "name": "Hypnotic Bladework",
+        "description": "Attacks 1 enemy. Places a [Sleep] debuff on the target for 1 turn. Instantly activates this skill against the enemy with the highest Turn Meter whenever an enemy&#8217;s Turn Meter is increased by a skill. Occurs once per turn. Lv. 2 Ignore RES +20%"
       },
       {
-        "name": "Fangs of Quarts",
-        "description": "Attacks all enemies. Has a 75% chance of placing a [Hex] debuff and a [Block Buffs] debuff on all enemies for 2 turns. Lv. 2 Damage +20% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1 Lv. 6 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Heart of Flint",
-        "description": "Decreases the duration of all ally debuffs by 1 turn. Heals all allies by 15% of their MAX HP. Fills the Turn Meters of all allies by 20%. Lv. 2 Heal +5% Lv. 3 Heal +5% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Heir of the Gorgoa [P]",
-        "description": "Allies deal 10% more damage to enemies under debuffs placed by this Champion. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion if this particular Champion is dead."
-      }
-    ],
-    "ratings": {
-      "overall": 4,
-      "clan_boss": 3,
-      "hydra": 4.5,
-      "chimera": 3.5,
-      "arena_offense": 3,
-      "dungeons": 3,
-      "spider": 3,
-      "dragon": 3.5,
-      "fire_knight": 3,
-      "ice_golem": 3.5,
-      "iron_twins": 2,
-      "sand_devil": 2.5,
-      "phantom_grove": 3,
-      "doom_tower": 0,
-      "faction_wars": 4
-    }
-  },
-  {
-    "id": "phemo-the-shepherd",
-    "name": "Phemo the Shepherd",
-    "slug": "phemo-the-shepherd",
-    "faction": "Argonites",
-    "affinity": "Magic",
-    "rarity": "Legendary",
-    "role": "DEF",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Hammer of Stone",
-        "description": "Attacks 1 enemy. Has an 80% chance of decreasing the target’s Turn Meter by 15%. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +10%"
-      },
-      {
-        "name": "Good Shepherd",
-        "description": "[Active Effect] Places a 60% [Increase DEF] buff and a [Shield] buff on all allies for 2 turns. The value of the [Shield] is proportional to this Champion&#8217;s DEF. These buffs are protected if there are any dead allies when this skill is used. [Passive Effect] Instantly activates this skill whenever an ally is killed. Instantly activating this skill will not put it on cooldown and will work even when this skill is on cooldown. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Smash and Stomp",
-        "description": "Attacks 1 enemy. Has a 75% chance of placing a [Stun] debuff for 2 turns. Also has a 75% chance of fully decreasing the target&#8217;s Turn Meter. If the [Stun] debuff was successfully placed on the initial target, then attacks all enemies except the initial target. Has a 75% chance of placing a [Stun] debuff on all enemies for 1 turn. Also has a 75% chance of decreasing all enemies&#8217; Turn Meters by 25%. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15% Lv. 6 Cooldown -1",
+        "name": "Perfection in Motion",
+        "description": "Attacks all enemies 2 times. Each hit steals all buffs from all enemies. Then applies a [Buff Spread] effect, taking all buffs from this Champion and placing them on all allies. Lv. 2 Ignore RES +20% Lv. 3 Cooldown -1",
         "cooldown": 4
       },
       {
-        "name": "Vengeful Quest [P]",
-        "description": "Increases this Champion&#8217;s DEF by 3% (stacks up to 30%) and MAX HP by 5% (stacks up to 50%) for each [Stun] debuff successfully landed by this Champion. Allies are immune to [Stun] debuffs while under a [Shield] buff placed by this Champion&#8217;s Good Shepherd skill."
+        "name": "Sneer of Disdain",
+        "description": "Attacks all enemies 2 times. Each hit increases the cooldown of 1 of each enemy&#8217;s skills to the maximum. Also decreases the Turn Meters of all enemies by 30%. Then grants an Extra Turn. Lv. 2 Ignore RES +20% Lv. 3 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Metamorph",
+        "description": "Changes this Champion into their Alternative Form.",
+        "cooldown": 3
+      },
+      {
+        "name": "Is That... It?",
+        "description": "This Champion receives no damage when attacked by enemies, including Bosses and their minions, out of their active turn. All allies except this Champion deal 3% more damage for each enemy skill that has had its cooldown increased by this Champion (stacks up to 25%). If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
       }
     ],
     "ratings": {
-      "overall": 4,
-      "clan_boss": 4,
+      "overall": 4.5,
+      "clan_boss": 3,
       "hydra": 3,
-      "chimera": 3.5,
-      "arena_offense": 3.5,
+      "chimera": 3,
+      "arena_offense": 5,
       "dungeons": 4,
-      "spider": 5,
+      "spider": 4.5,
       "dragon": 4,
       "fire_knight": 4.5,
       "ice_golem": 4,
-      "iron_twins": 3.5,
-      "sand_devil": 2.5,
-      "phantom_grove": 3.5,
+      "iron_twins": 2.5,
+      "sand_devil": 4.5,
+      "phantom_grove": 2.5,
       "doom_tower": 0,
       "faction_wars": 5
     }
   },
   {
-    "id": "baerd-the-broad",
-    "name": "Baerd the Broad",
-    "slug": "baerd-the-broad",
-    "faction": "Sylvan Watchers",
+    "id": "mavara-the-web-diviner",
+    "name": "Mavara The Web Diviner",
+    "slug": "mavara-the-web-diviner",
+    "faction": "Dark Elves",
     "affinity": "Magic",
     "rarity": "Legendary",
-    "role": "DEF",
-    "avatar_url": "/champions/placeholder.svg",
+    "role": "Support",
+    "avatar_url": "/champions/mavara-the-web-diviner.jpg",
     "stats": {},
     "skills": [
       {
-        "name": "Fierce Friend",
-        "description": "Attacks 1 enemy. Places one 15% [Continuous Heal] buff on this Champion and the ally with the lowest HP, excluding this Champion, for 1 turn.Lv. 2 Damage +5%Lv. 3 Damage +5%Lv. 4 Damage +10%"
+        "name": "Strike on My Mark",
+        "description": "Attacks 1 enemy. Places a [Fervor] buff for 2 turns on a random ally except this Champion. If the randomly selected ally is already under a [Fervor] buff, places it on another randomly selected ally. [Passive Effect] Allies under a [Fervor] buff have a 50% chance of joining the attacks of other allies under a [Fervor] buff. This Champion will not join in any attacks. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Lv.2 Damage +5% Lv.3 Damage +5% Lv.4 Damage +5% Lv.5 Damage +5%"
       },
       {
-        "name": "Theiving Axeman",
-        "description": "Attacks 1 enemy 3 times. The first hit has a 75% chance of stealing all buffs from the target. The second hit transfers all debuffs from this Champion to the target. The third hit applies a [Debuff Spread] effect, taking all debuffs from the target and placing them on all other enemies. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Bucklan's Strength",
-        "description": "Attacks all enemies. Places a [Provoke] debuff on all enemies for 1 turn. Has 75% chance to place a [Pain Link] debuff on all enemies for 2 turns. The [Pain Link] debuff reflects 45% of the inflicted damage. Also places a [Counterattack] buff on this Champion and the ally with the highest C. DMG for 2 turns. Lv. 2 Buff/Debuff Chance +10% Lv. 3 Buff/Debuff Chance +15% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
+        "name": "Nexus of Silk",
+        "description": "Places a 25% [Strengthen] buff and a 50% [Increase RES] buff on all allies for 2 turns. Also equalizes the HP levels of all allies. The HP levels of all allies will be brought up to the level of the ally with the highest HP. Lv.2 Cooldown -1 Lv.3 Cooldown -1",
         "cooldown": 5
       },
       {
-        "name": "Disciple of Padraig",
-        "description": "Heals all allies by 40% of any damage dealt to this Champion. At the end of this Champion’s turn, places a 60% [Increase DEF] buff on this Champion for 1 turn."
+        "name": "The Webs Whisper",
+        "description": "Revives an ally with 50% HP and 50% Turn Meter. Then places a [Perfect Veil] buff on all allies except this Champion for 2 turns. Also places an [Unkillable] buff on this Champion for 2 turns. These buffs will be placed even if no allies were revived. Lv.2 Cooldown -1 Lv.3 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Theridine Visions [Passive]",
+        "description": "For every 8 buffs the enemy team receives, increases the Turn Meters of all allies by 20%. For every 16 buffs this Champion and their allies receive, heals all allies for 20% of their MAX HP."
+      },
+      {
+        "name": "Aura",
+        "description": ""
       }
     ],
     "ratings": {
-      "overall": 4,
-      "clan_boss": 2.5,
-      "hydra": 4,
-      "chimera": 3.5,
-      "arena_offense": 3.5,
-      "dungeons": 4,
-      "spider": 5,
-      "dragon": 4,
-      "fire_knight": 4,
-      "ice_golem": 4,
-      "iron_twins": 3,
-      "sand_devil": 2.5,
-      "phantom_grove": 3,
-      "doom_tower": 0,
-      "faction_wars": 4.5
-    }
-  },
-  {
-    "id": "kosk-of-two-skins",
-    "name": "Kosk of Two Skins",
-    "slug": "kosk-of-two-skins",
-    "faction": "Lizardmen",
-    "affinity": "Force",
-    "rarity": "Legendary",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Envenomed Sickles",
-        "description": "Attacks 1 enemy 2 times. Each hit has a 15% chance of increasing the duration of all enemy debuffs by 1 turn. If the 2nd hit does not increase the duration of any enemy debuffs, instantly activates all [Poison] debuffs on the target instead. Lv. 2 Damage +20% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15%"
-      },
-      {
-        "name": "They Will Regret...",
-        "description": "Attacks 1 enemy 2 times. Before attacking, places a 50% [Increase ACC] buff on this Champion for 2 turns. The first hit has a 75% chance of placing a 25% [Poison Sensitivity] debuff and two 5% [Poison] debuffs for 2 turns. The second hit applies a [Debuff Spread] effect, taking all [Poison] debuffs and the [Poison Sensitivity] debuff from the target and placing them on all other enemies. Lv. 2 Damage +20% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Toxic Vitriol",
-        "description": "Attacks all enemies. Places a 50% [Decrease ATK] debuff on all enemies for 2 turns. Increases this Champion&#8217;s Turn Meter by 20% for each [Decrease ATK] debuff placed. Instantly activates all [Poison] debuffs on all enemies. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Imbibed Immunity [P]",
-        "description": "This Champion is immune to [Poison], [Stun], and [Decrease SPD] debuffs. Increases this Champion&#8217;s damage dealt by 5% (stacks up to 50%) and Ignore DEF effect by 3% (stacks up to 30%) for each active debuff on the enemy team. Whenever this Champion is attacked by an enemy under a debuff placed by this Champion, counterattacks using their default skill."
-      }
-    ],
-    "ratings": {
-      "overall": 4,
+      "overall": 4.5,
       "clan_boss": 4,
-      "hydra": 3,
-      "chimera": 3.5,
-      "arena_offense": 4,
+      "hydra": 4.5,
+      "chimera": 4,
+      "arena_offense": 4.5,
       "dungeons": 4,
-      "spider": 4,
-      "dragon": 5,
-      "fire_knight": 3.5,
-      "ice_golem": 5,
-      "iron_twins": 2.5,
-      "sand_devil": 2.5,
-      "phantom_grove": 3,
+      "spider": 4.5,
+      "dragon": 4.5,
+      "fire_knight": 4,
+      "ice_golem": 4.5,
+      "iron_twins": 3.5,
+      "sand_devil": 3,
+      "phantom_grove": 3.5,
       "doom_tower": 0,
       "faction_wars": 4.5
     }
@@ -55896,51 +55704,195 @@
     }
   },
   {
-    "id": "knosson-the-bronze-bull",
-    "name": "Knosson the Bronze Bull",
-    "slug": "knosson-the-bronze-bull",
+    "id": "phemo-the-shepherd",
+    "name": "Phemo the Shepherd",
+    "slug": "phemo-the-shepherd",
     "faction": "Argonites",
-    "affinity": "Force",
+    "affinity": "Magic",
     "rarity": "Legendary",
-    "role": "HP",
-    "avatar_url": "/champions/placeholder.svg",
+    "role": "DEF",
+    "avatar_url": "/champions/phemo-the-shepherd.jpg",
     "stats": {},
     "skills": [
       {
-        "name": "Strength of Lakon",
-        "description": "Attacks 1 enemy. Destroys 10% of the target’s MAX HP. Destroys 20% of the target’s MAX HP instead if the target is under a [Provoke] debuff (stacks up to 50%). Increases this Champion’s Turn Meter by 20%. Increases this Champion’s Turn Meter by 40% instead if the target is under a [Provoke] debuff. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Damage +15%"
+        "name": "Hammer of Stone",
+        "description": "Attacks 1 enemy. Has an 80% chance of decreasing the target’s Turn Meter by 15%. Lv. 2 Damage +5% Lv. 3 Damage +5% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +10%"
       },
       {
-        "name": "By The Horns",
-        "description": "Attacks 1 enemy. Will ignore 50% of the target’s DEF and any [Stone Skin] buffs if this Champion’s MAX HP is greater than the target’s. If the target is killed, instantly activates the Hard-earned Confidence skill. If the target survives, heals all allies by an amount equal to the difference between the target’s current HP and MAX HP. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Damage +15% Lv. 5 Cooldown -1",
+        "name": "Good Shepherd",
+        "description": "[Active Effect] Places a 60% [Increase DEF] buff and a [Shield] buff on all allies for 2 turns. The value of the [Shield] is proportional to this Champion&#8217;s DEF. These buffs are protected if there are any dead allies when this skill is used. [Passive Effect] Instantly activates this skill whenever an ally is killed. Instantly activating this skill will not put it on cooldown and will work even when this skill is on cooldown. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Lv. 2 Cooldown -1 Lv. 3 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Smash and Stomp",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a [Stun] debuff for 2 turns. Also has a 75% chance of fully decreasing the target&#8217;s Turn Meter. If the [Stun] debuff was successfully placed on the initial target, then attacks all enemies except the initial target. Has a 75% chance of placing a [Stun] debuff on all enemies for 1 turn. Also has a 75% chance of decreasing all enemies&#8217; Turn Meters by 25%. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15% Lv. 6 Cooldown -1",
         "cooldown": 4
       },
       {
-        "name": "Hard-Earned Confidence",
-        "description": "Attacks all enemies. Has an 80% chance of placing a [Provoke] debuff on all enemies for 1 turn. Will ignore 50% RES against targets whose MAX HP is lower than this Champion’s. Places a [Counterattack] buff on this Champion for 2 turns. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Damage +10% Lv. 5 Buff/Debuff Chance +10%",
-        "cooldown": 4
-      },
-      {
-        "name": "Is That All You've Got? [P]",
-        "description": "Enemies under [Provoke] debuffs deal 50% less damage. Allies deal 20% more damage against enemies under [Provoke] debuffs. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion if this particular Champion is dead."
+        "name": "Vengeful Quest [P]",
+        "description": "Increases this Champion&#8217;s DEF by 3% (stacks up to 30%) and MAX HP by 5% (stacks up to 50%) for each [Stun] debuff successfully landed by this Champion. Allies are immune to [Stun] debuffs while under a [Shield] buff placed by this Champion&#8217;s Good Shepherd skill."
       }
     ],
     "ratings": {
-      "overall": 3.5,
-      "clan_boss": 2,
-      "hydra": 3.5,
-      "chimera": 2.5,
+      "overall": 4,
+      "clan_boss": 4,
+      "hydra": 3,
+      "chimera": 3.5,
+      "arena_offense": 3.5,
+      "dungeons": 4,
+      "spider": 5,
+      "dragon": 4,
+      "fire_knight": 4.5,
+      "ice_golem": 4,
+      "iron_twins": 3.5,
+      "sand_devil": 2.5,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
+    "id": "kosk-of-two-skins",
+    "name": "Kosk of Two Skins",
+    "slug": "kosk-of-two-skins",
+    "faction": "Lizardmen",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/kosk-of-two-skins.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Envenomed Sickles",
+        "description": "Attacks 1 enemy 2 times. Each hit has a 15% chance of increasing the duration of all enemy debuffs by 1 turn. If the 2nd hit does not increase the duration of any enemy debuffs, instantly activates all [Poison] debuffs on the target instead. Lv. 2 Damage +20% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "They Will Regret...",
+        "description": "Attacks 1 enemy 2 times. Before attacking, places a 50% [Increase ACC] buff on this Champion for 2 turns. The first hit has a 75% chance of placing a 25% [Poison Sensitivity] debuff and two 5% [Poison] debuffs for 2 turns. The second hit applies a [Debuff Spread] effect, taking all [Poison] debuffs and the [Poison Sensitivity] debuff from the target and placing them on all other enemies. Lv. 2 Damage +20% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Toxic Vitriol",
+        "description": "Attacks all enemies. Places a 50% [Decrease ATK] debuff on all enemies for 2 turns. Increases this Champion&#8217;s Turn Meter by 20% for each [Decrease ATK] debuff placed. Instantly activates all [Poison] debuffs on all enemies. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Imbibed Immunity [P]",
+        "description": "This Champion is immune to [Poison], [Stun], and [Decrease SPD] debuffs. Increases this Champion&#8217;s damage dealt by 5% (stacks up to 50%) and Ignore DEF effect by 3% (stacks up to 30%) for each active debuff on the enemy team. Whenever this Champion is attacked by an enemy under a debuff placed by this Champion, counterattacks using their default skill."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 4,
+      "hydra": 3,
+      "chimera": 3.5,
       "arena_offense": 4,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 5,
+      "fire_knight": 3.5,
+      "ice_golem": 5,
+      "iron_twins": 2.5,
+      "sand_devil": 2.5,
+      "phantom_grove": 3,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
+    "id": "baerd-the-broad",
+    "name": "Baerd the Broad",
+    "slug": "baerd-the-broad",
+    "faction": "Sylvan Watchers",
+    "affinity": "Magic",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/baerd-the-broad.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Fierce Friend",
+        "description": "Attacks 1 enemy. Places one 15% [Continuous Heal] buff on this Champion and the ally with the lowest HP, excluding this Champion, for 1 turn.Lv. 2 Damage +5%Lv. 3 Damage +5%Lv. 4 Damage +10%"
+      },
+      {
+        "name": "Theiving Axeman",
+        "description": "Attacks 1 enemy 3 times. The first hit has a 75% chance of stealing all buffs from the target. The second hit transfers all debuffs from this Champion to the target. The third hit applies a [Debuff Spread] effect, taking all debuffs from the target and placing them on all other enemies. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Bucklan's Strength",
+        "description": "Attacks all enemies. Places a [Provoke] debuff on all enemies for 1 turn. Has 75% chance to place a [Pain Link] debuff on all enemies for 2 turns. The [Pain Link] debuff reflects 45% of the inflicted damage. Also places a [Counterattack] buff on this Champion and the ally with the highest C. DMG for 2 turns. Lv. 2 Buff/Debuff Chance +10% Lv. 3 Buff/Debuff Chance +15% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Disciple of Padraig",
+        "description": "Heals all allies by 40% of any damage dealt to this Champion. At the end of this Champion’s turn, places a 60% [Increase DEF] buff on this Champion for 1 turn."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 2.5,
+      "hydra": 4,
+      "chimera": 3.5,
+      "arena_offense": 3.5,
+      "dungeons": 4,
+      "spider": 5,
+      "dragon": 4,
+      "fire_knight": 4,
+      "ice_golem": 4,
+      "iron_twins": 3,
+      "sand_devil": 2.5,
+      "phantom_grove": 3,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
+    "id": "stonebound-thisbe",
+    "name": "Stonebound Thisbe",
+    "slug": "stonebound-thisbe",
+    "faction": "Argonites",
+    "affinity": "Spirit",
+    "rarity": "Epic",
+    "role": "Support",
+    "avatar_url": "/champions/stonebound-thisbe.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Eyes of Granite",
+        "description": "Attacks 1 enemy. Has a 25% chance of placing a 50% [Decrease ATK] debuff for 2 turns. Steals 10% of the target’s Turn Meter. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Buff/Debuff Chance +10% Lv. 5 Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Fangs of Quarts",
+        "description": "Attacks all enemies. Has a 75% chance of placing a [Hex] debuff and a [Block Buffs] debuff on all enemies for 2 turns. Lv. 2 Damage +20% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Buff/Debuff Chance +15% Lv. 5 Cooldown -1 Lv. 6 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Heart of Flint",
+        "description": "Decreases the duration of all ally debuffs by 1 turn. Heals all allies by 15% of their MAX HP. Fills the Turn Meters of all allies by 20%. Lv. 2 Heal +5% Lv. 3 Heal +5% Lv. 4 Cooldown -1 Lv. 5 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Heir of the Gorgoa [P]",
+        "description": "Allies deal 10% more damage to enemies under debuffs placed by this Champion. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 3,
+      "hydra": 4.5,
+      "chimera": 3.5,
+      "arena_offense": 3,
       "dungeons": 3,
-      "spider": 4.5,
+      "spider": 3,
       "dragon": 3.5,
       "fire_knight": 3,
       "ice_golem": 3.5,
       "iron_twins": 2,
-      "sand_devil": 0,
-      "phantom_grove": 2,
+      "sand_devil": 2.5,
+      "phantom_grove": 3,
       "doom_tower": 0,
-      "faction_wars": 4.5
+      "faction_wars": 4
     }
   },
   {
@@ -56226,6 +56178,54 @@
       "phantom_grove": 3.5,
       "doom_tower": 0,
       "faction_wars": 4
+    }
+  },
+  {
+    "id": "knosson-the-bronze-bull",
+    "name": "Knosson the Bronze Bull",
+    "slug": "knosson-the-bronze-bull",
+    "faction": "Argonites",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/knosson-the-bronze-bull.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Strength of Lakon",
+        "description": "Attacks 1 enemy. Destroys 10% of the target’s MAX HP. Destroys 20% of the target’s MAX HP instead if the target is under a [Provoke] debuff (stacks up to 50%). Increases this Champion’s Turn Meter by 20%. Increases this Champion’s Turn Meter by 40% instead if the target is under a [Provoke] debuff. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Damage +15%"
+      },
+      {
+        "name": "By The Horns",
+        "description": "Attacks 1 enemy. Will ignore 50% of the target’s DEF and any [Stone Skin] buffs if this Champion’s MAX HP is greater than the target’s. If the target is killed, instantly activates the Hard-earned Confidence skill. If the target survives, heals all allies by an amount equal to the difference between the target’s current HP and MAX HP. Lv. 2 Damage +10% Lv. 3 Damage +10% Lv. 4 Damage +15% Lv. 5 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Hard-Earned Confidence",
+        "description": "Attacks all enemies. Has an 80% chance of placing a [Provoke] debuff on all enemies for 1 turn. Will ignore 50% RES against targets whose MAX HP is lower than this Champion’s. Places a [Counterattack] buff on this Champion for 2 turns. Lv. 2 Damage +10% Lv. 3 Buff/Debuff Chance +10% Lv. 4 Damage +10% Lv. 5 Buff/Debuff Chance +10%",
+        "cooldown": 4
+      },
+      {
+        "name": "Is That All You've Got? [P]",
+        "description": "Enemies under [Provoke] debuffs deal 50% less damage. Allies deal 20% more damage against enemies under [Provoke] debuffs. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 2,
+      "hydra": 3.5,
+      "chimera": 2.5,
+      "arena_offense": 4,
+      "dungeons": 3,
+      "spider": 4.5,
+      "dragon": 3.5,
+      "fire_knight": 3,
+      "ice_golem": 3.5,
+      "iron_twins": 2,
+      "sand_devil": 0,
+      "phantom_grove": 2,
+      "doom_tower": 0,
+      "faction_wars": 4.5
     }
   },
   {
