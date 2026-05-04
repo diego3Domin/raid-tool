@@ -1962,6 +1962,54 @@
     }
   },
   {
+    "id": "masahiro-the-bell-monk",
+    "name": "Masahiro the bell monk",
+    "slug": "masahiro-the-bell-monk",
+    "faction": "Shadowkin",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Ring Of Dissonance",
+        "description": "Attacks all enemies. Has a 50% chance of placing a 30% [Decrease C. RATE] debuff for 1 turn. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Redemptive Fervor",
+        "description": "Attacks 1 enemy. Before attacking, has a 75% chance of transferring all debuffs from all allies to the target. Heals all allies by 25% of this Champion’s MAX HP and places a 25% [Strengthen] buff on all allies for 2 turns. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Humble Savior",
+        "description": "Attacks all enemies. Before attacking, revives all dead allies with 50% HP and 50% Turn Meter. This skill can be used even if there are no dead allies. Has a 75% chance of placing a [Stun] debuff for 1 turn and a [Block Buffs] debuff for 2 turns. Has a 75% chance of placing a 30% [Decrease SPD] debuff and a [Block Buffs] debuff for 2 turns instead, if the target is a Boss. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "For My Sins [P]",
+        "description": "All allies receive 1% less damage for each turn taken by enemies and allies while they remain alive (stacks up to 15%). Each Champion’s damage reduction resets when they die, or between Rounds. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Allies revived by this Champion are immune to [Stun], [Freeze], [Sleep], [Provoke], [Fear], [True Fear], and [Petrification] debuffs until the start of their turn. Prevents the revived ally’s turn meter from being reduced before they take their turn, or between Rounds. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 4.5,
+      "chimera": 4.5,
+      "arena_offense": 3.5,
+      "dungeons": 4,
+      "spider": 5,
+      "dragon": 5,
+      "fire_knight": 4,
+      "ice_golem": 5,
+      "iron_twins": 4.5,
+      "sand_devil": 3,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
     "id": "baron",
     "name": "Baron",
     "slug": "baron",
