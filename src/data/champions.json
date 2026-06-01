@@ -2365,21 +2365,21 @@
       }
     ],
     "ratings": {
-      "overall": 3.5,
-      "clan_boss": 2,
+      "overall": 4.5,
+      "clan_boss": 3,
       "hydra": 4,
       "chimera": 3,
-      "arena_offense": 4,
-      "dungeons": 3,
+      "arena_offense": 4.5,
+      "dungeons": 4,
       "spider": 4,
-      "dragon": 4,
-      "fire_knight": 4,
+      "dragon": 4.5,
+      "fire_knight": 3,
       "ice_golem": 4.5,
-      "iron_twins": 2,
+      "iron_twins": 3,
       "sand_devil": 2.5,
-      "phantom_grove": 3,
+      "phantom_grove": 4,
       "doom_tower": 0,
-      "faction_wars": 4
+      "faction_wars": 5
     }
   },
   {
@@ -25261,19 +25261,19 @@
       }
     ],
     "ratings": {
-      "overall": 4,
-      "clan_boss": 3.5,
-      "hydra": 4.5,
-      "chimera": 3.5,
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 4,
+      "chimera": 4,
       "arena_offense": 4,
       "dungeons": 4,
-      "spider": 3.5,
-      "dragon": 4,
+      "spider": 3,
+      "dragon": 5,
       "fire_knight": 3,
       "ice_golem": 5,
       "iron_twins": 3.5,
-      "sand_devil": 1,
-      "phantom_grove": 4.5,
+      "sand_devil": 3,
+      "phantom_grove": 4,
       "doom_tower": 0,
       "faction_wars": 4.5
     }
@@ -54599,6 +54599,102 @@
     }
   },
   {
+    "id": "rhaia-the-mourned",
+    "name": "Rhaia The Mourned",
+    "slug": "rhaia-the-mourned",
+    "faction": "Sylvan Watchers",
+    "affinity": "Void",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Anguish & Agony",
+        "description": "Attacks 1 enemy 2 times. Each hit will ignore 15% of the target’s DEF. Heals this Champion by 30% of the damage inflicted. Grants an Extra Turn if this attack kills the target. Level 2: Damage +10% Level 3: Damage +10%"
+      },
+      {
+        "name": "Legacy Of Despair",
+        "description": "Attacks 1 enemy 2 times. Before attacking, has a 75% chance of placing a 25% [Weaken] debuff on the target for 2 turns. Will ignore 15% of the target’s DEF and any [Block Damage] buffs. Will also ignore an additional 5% of the target’s DEF for each buff on this Champion (stacks up to 35%). Reduces the cooldown of this Champion’s Discordant Fury skill by 1 turn and places a [Stun] debuff on all enemies for 1 turn if this attack kills the target. This debuff cannot be resisted or blocked. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Discordant Fury",
+        "description": "Attacks all enemies 3 times. Before attacking, places a 50% [Increase ATK] buff on this Champion for 2 turns. Each hit has a 75% chance of stealing 1 random buff from each enemy. Fills this Champion’s Turn Meter by 10% for each buff stolen. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1 Level 6: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Corrupted Magesty [P]",
+        "description": "This Champion deals 30% more damage while they’re under 3 or more buffs. While this Champion is under an [Increase ATK] buff, a [Block Debuffs] buff, and a [Veil] or [Perfect Veil] buff at the same time, prevents this Champion’s death and their debuffs and instant effects also cannot be resisted."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 3.5,
+      "hydra": 4,
+      "chimera": 3.5,
+      "arena_offense": 5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4.5,
+      "fire_knight": 4.5,
+      "ice_golem": 4,
+      "iron_twins": 3,
+      "sand_devil": 3,
+      "phantom_grove": 4.5,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
+    "id": "talenna-soulseer",
+    "name": "Talenna Soulseer",
+    "slug": "talenna-soulseer",
+    "faction": "High Elves",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Withering Invocation",
+        "description": "Attacks 1 enemy. Has a 30% chance of instantly activating two [Poison] debuffs on the target. Instantly activates all [Poison] debuffs on the target, if the target has any of their skills on cooldown. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "I See Your Evil",
+        "description": "Attacks all enemies. Has a 75% chance of placing two 5% [Poison] debuffs on all enemies for 3 turns. Then increases all allies’ Turn Meters by 20%. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Quell The Darkness",
+        "description": "Attacks all enemies. Before attacking, places a 50% [Increase ACC] buff on all allies for 2 turns. Has a 75% chance of decreasing the duration of all enemy buffs by 2 turns. Has also a 75% chance of increasing the cooldowns of all enemy skills by 2 turns. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Evil Wanes Before Her [P]",
+        "description": "Increases all allies’ Turn Meters by 2% whenever a [Poison] debuff is activated on an enemy. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Decreases enemies’ C. RATE by 5% and C. DMG by 10% for each [Poison] debuff on them. This effect does not work against Bosses."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 3,
+      "chimera": 3,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 3,
+      "dragon": 5,
+      "fire_knight": 3,
+      "ice_golem": 5,
+      "iron_twins": 3,
+      "sand_devil": 3,
+      "phantom_grove": 3,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
     "id": "cinda-forgeheart",
     "name": "Cinda Forgeheart",
     "slug": "cinda-forgeheart",
@@ -55446,6 +55542,102 @@
       "iron_twins": 3.5,
       "sand_devil": 2.5,
       "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 4
+    }
+  },
+  {
+    "id": "folan-silverhart",
+    "name": "Folan Silverhart",
+    "slug": "folan-silverhart",
+    "faction": "Sylvan Watchers",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Puncture Wounds",
+        "description": "Attacks 1 enemy 3 times. Each hit has a 30% chance of increasing the duration of a random debuff on the target by 1 turn. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "Bind & Break",
+        "description": "Attacks all enemies 2 times. Deals 10% more damage to each enemy for each debuff on them. Will ignore [Unkillable] and [Block Damage] buffs. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "A Son's Wrath",
+        "description": "Attacks 1 enemy 2 times. The first hit has a 75% chance of placing a 60% [Decrease DEF] debuff for 2 turns. The second hit has a 75% chance of placing a [Block Passive Skills] debuff for 2 turns. Then, applies a [Debuff Spread] effect, taking all debuffs from the target and placing them on all enemies. Finally, attacks all enemies 1 time. This attack will ignore 20% of each target’s DEF. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +15% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Malignant Might [P]",
+        "description": "For each Sylvan Watcher ally on the team (including this Champion), this Champion receives 10% less damage from AoE attacks and Ignore DEF effects against this Champion are 10% less effective. Whenever this Champion attacks, has a 30% chance to turn weak hits into normal hits. This chance increases by 10% for each debuff on the target."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 4,
+      "hydra": 4,
+      "chimera": 4,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4,
+      "fire_knight": 4.5,
+      "ice_golem": 3,
+      "iron_twins": 3,
+      "sand_devil": 3,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 4
+    }
+  },
+  {
+    "id": "varkos-headsplitter",
+    "name": "Varkos Headsplitter",
+    "slug": "varkos-headsplitter",
+    "faction": "Dark Elves",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Hulking Killer",
+        "description": "Attacks 1 enemy 2 times. Will ignore [Unkillable] buffs. When counterattacking, will attack 3 times instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Damage +10%"
+      },
+      {
+        "name": "Murderous Fighter",
+        "description": "Attacks 1 enemy 2 times. Will ignore [Block Damage] and [Shield] buffs. Whenever this Champion teams up with an ally to attack an enemy, they will use this skill. When joining an ally&#8217;s attack, will attack 3 times instead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Damage +10% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Brutish Dominance",
+        "description": "Places a 60% [Increase DEF] buff, a [Counterattack] buff, and a 15% [Shatter] buff on this Champion for 3 turns. Then grants an Extra Turn. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Instrument Of Power [P]",
+        "description": "Has a 15% chance to join an attack whenever an ally attacks an enemy. The chance increases to 25% when an ally from the Dark Elves Faction attacks. Enemies killed by this Champion whenever they counterattack or join in an ally’s attack cannot be revived."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 4,
+      "hydra": 3.5,
+      "chimera": 4,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 3,
+      "dragon": 4,
+      "fire_knight": 4.5,
+      "ice_golem": 4,
+      "iron_twins": 3.5,
+      "sand_devil": 3,
+      "phantom_grove": 4,
       "doom_tower": 0,
       "faction_wars": 4
     }
