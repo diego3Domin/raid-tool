@@ -56381,6 +56381,103 @@
     }
   },
   {
+    "id": "haggibah-the-nestmaid",
+    "name": "Haggibah the Nestmaid",
+    "slug": "haggibah-the-nestmaid",
+    "faction": "Dark Elves",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Blast Of Purification",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a [HP Burn] debuff for 2 turns. Then places a [Perfect Veil] buff on this Champion for 1 turn. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Insidious Eruption",
+        "description": "Attacks all enemies. Instantly detonates all [Bomb] debuffs and activates one tick of all [HP Burn] debuffs on all enemies. Has a 75% chance of placing a [Leech] debuff for 2 turns. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Larval Consumption",
+        "description": "Steals all buffs from all enemies. Then has a 75% chance of placing two [Bomb] debuffs on all enemies that detonate after 2 turns. Will place [Bomb] debuffs that detonate after 1 turn instead against enemies with no buffs. Level 2: Buff/Debuff Chance +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Insect Lord's Vessel [P]",
+        "description": "This Champion is immune to [HP Burn] and [Bomb] debuffs, and will not receive any damage from [HP Burn] debuffs. Whenever an enemy tries to place a [Stun], [Freeze], [Sleep], [Provoke], [Fear], [True Fear], or [Petrification] debuff on this Champion or increase the cooldown of their skills, places a [Bomb] debuff on that enemy that detonates after 1 turn. These debuffs will ignore any [Block Debuffs] buffs."
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 2,
+      "hydra": 3,
+      "chimera": 2.5,
+      "arena_offense": 3.5,
+      "dungeons": 3,
+      "spider": 4,
+      "dragon": 3,
+      "fire_knight": 2,
+      "ice_golem": 3,
+      "iron_twins": 2.5,
+      "sand_devil": 2.5,
+      "phantom_grove": 2.5,
+      "doom_tower": 0,
+      "faction_wars": 4
+    }
+  },
+  {
+    "id": "vallaryn-the-equalizer",
+    "name": "Vallaryn the Equalizer",
+    "slug": "vallaryn-the-equalizer",
+    "faction": "Undead Hordes",
+    "affinity": "Magic",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Violent Harmony",
+        "description": "Attacks 1 enemy 2 times. Each hit heals this Champion by 20% of the damage inflicted. Each hit also has a 50% chance of placing a 100% [Heal Reduction] debuff for 2 turns. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Precise Intervention",
+        "description": "Attacks all enemies. Has a 75% chance of placing a 25% [Weaken] debuff and a [Leech] debuff on all enemies for 2 turns. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Outcome Assured",
+        "description": "Attacks 1 enemy 2 times. Before attacking, removes all debuffs from this Champion &amp; swaps HP with the target. Will ignore 15% of the target’s DEF. Will ignore 30% of the target’s DEF and any [Shield] buffs instead, if this Champion’s current HP is greater than the target’s. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "My True Purpose [P]",
+        "description": "[Active Effect] Decreases the cooldown of one of this Champion’s skills by 2 turns whenever this Champion loses 30% or more HP from an enemy skill in a single turn. [Passive Effect] This Champion counterattacks with their default skill each time an enemy is healed by a skill. Occurs once per turn.",
+        "cooldown": 3
+      }
+    ],
+    "ratings": {
+      "overall": 3.5,
+      "clan_boss": 3.5,
+      "hydra": 3.5,
+      "chimera": 3.5,
+      "arena_offense": 3.5,
+      "dungeons": 3,
+      "spider": 3,
+      "dragon": 4,
+      "fire_knight": 4,
+      "ice_golem": 3.5,
+      "iron_twins": 2.5,
+      "sand_devil": 3,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 4
+    }
+  },
+  {
     "id": "hilda-arnorndottr",
     "name": "Hilda Arnorndottr",
     "slug": "hilda-arnorndottr",
