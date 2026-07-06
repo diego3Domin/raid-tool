@@ -12730,17 +12730,17 @@
       }
     ],
     "ratings": {
-      "overall": 4,
-      "clan_boss": 3.5,
+      "overall": 4.5,
+      "clan_boss": 4,
       "hydra": 4,
-      "chimera": 3.5,
-      "arena_offense": 4,
-      "dungeons": 3,
-      "spider": 3.5,
-      "dragon": 4,
-      "fire_knight": 3.5,
-      "ice_golem": 4,
-      "iron_twins": 3,
+      "chimera": 4,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 5,
+      "fire_knight": 4,
+      "ice_golem": 4.5,
+      "iron_twins": 3.5,
       "sand_devil": 2,
       "phantom_grove": 3,
       "doom_tower": 0,
@@ -35512,18 +35512,18 @@
     ],
     "ratings": {
       "overall": 4.5,
-      "clan_boss": 4,
-      "hydra": 4,
-      "chimera": 4,
+      "clan_boss": 4.5,
+      "hydra": 4.5,
+      "chimera": 4.5,
       "arena_offense": 4.5,
       "dungeons": 4,
       "spider": 5,
-      "dragon": 4.5,
+      "dragon": 5,
       "fire_knight": 4,
       "ice_golem": 4.5,
-      "iron_twins": 3,
+      "iron_twins": 3.5,
       "sand_devil": 2,
-      "phantom_grove": 3,
+      "phantom_grove": 4,
       "doom_tower": 0,
       "faction_wars": 5
     }
@@ -40111,19 +40111,19 @@
       }
     ],
     "ratings": {
-      "overall": 4,
-      "clan_boss": 3,
+      "overall": 4.5,
+      "clan_boss": 3.5,
       "hydra": 5,
-      "chimera": 3,
-      "arena_offense": 3,
+      "chimera": 4,
+      "arena_offense": 3.5,
       "dungeons": 4,
       "spider": 5,
-      "dragon": 3,
+      "dragon": 4,
       "fire_knight": 4,
-      "ice_golem": 4,
+      "ice_golem": 4.5,
       "iron_twins": 4,
       "sand_devil": 3,
-      "phantom_grove": 2,
+      "phantom_grove": 3,
       "doom_tower": 0,
       "faction_wars": 3.5
     }
@@ -54503,6 +54503,204 @@
     }
   },
   {
+    "id": "aria-the-golden-hope",
+    "name": "Aria the Golden Hope",
+    "slug": "aria-the-golden-hope",
+    "faction": "Argonites",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Blazing Glory",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a 100% [Heal Reduction] debuff for 2 turns. [Passive Effect] Activates this skill on an enemy whenever their HP drops below 50%. The 100% [Heal Reduction] debuff cannot be removed, resisted, or blocked when this skill is activated in this way. Occurs once per turn. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Halcyon Boons",
+        "description": "Attacks all enemies. Before attacking, has a 75% chance of transferring all debuffs from all allies to all enemies. Places a 25% [Fortify] buff and a 25% [Strengthen] buff on all allies for 2 turns. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Avatar Of Victory",
+        "description": "Attacks all enemies. Has a 75% chance of stealing all buffs from all enemies. Also has a 75% chance of placing a [True Fear] debuff for 1 turn, and a [Block Passive Skills] debuff for 2 turns. Level 2: Damage +20% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Surefire Success [P]",
+        "description": "Before the start of each enemy’s turn, decreases the Turn Meters of all enemies by 5%. Does not work against Bosses and their minions. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Enemy Ignore DEF effects against this Champion are decreased by 50%."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 3,
+      "hydra": 3,
+      "chimera": 3,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4.5,
+      "dragon": 5,
+      "fire_knight": 4,
+      "ice_golem": 4,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
+    "id": "celendiel-the-opal-guardian",
+    "name": "Celendiel the Opal Guardian",
+    "slug": "celendiel-the-opal-guardian",
+    "faction": "High Elves",
+    "affinity": "Void",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Opal Thrust",
+        "description": "Attacks 1 enemy. When counterattacking, will repeat this attack against a random enemy. Has a 50% chance of placing a [Stun] debuff for 1 turn. This debuff cannot be resisted. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Agent Of Light",
+        "description": "Attacks 1 enemy. Before attacking, places a 60% [Increase DEF] buff on all allies for 2 turns, and a 15% [Shatter] buff on this Champion for 2 turns. Will ignore 25% of the target’s DEF, as well as [Unkillable] and [Block Damage] buffs. Will ignore 50% of the target’s DEF instead, if the target is under any [Increase DEF], [Decrease DEF], [Strengthen], [Stun], [Fear] or [True Fear] debuffs. Level 2: Damage +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Eternal Defender",
+        "description": "Attacks all enemies. Places an extra hit on enemies under any [Increase DEF], [Decrease DEF], [Strengthen], [Stun] or [Fear] debuffs. Will ignore any [Increase DEF] and [Strengthen] buffs. Increases the damage each enemy receives by 5% for each buff and debuff on them. (Stacks up to 100%). Places an [Unkillable] buff on all allies for 1 turn, and a [Counterattack] buff on all allies for 2 turns. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Glittering Guardian [P]",
+        "description": "[Passive Effect] This Champion is immune to [Decrease DEF], [Fear] and [Stun] debuffs. [Active Effect] Activates this Champion’s Agent Of Light skill whenever an enemy tries to place a [Decrease DEF], [Fear] or [Stun] debuff on this Champion. Does not set the Agent Of Light skill on cooldown.",
+        "cooldown": 1
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4.5,
+      "hydra": 4.5,
+      "chimera": 4.5,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 5,
+      "fire_knight": 5,
+      "ice_golem": 4.5,
+      "iron_twins": 4,
+      "sand_devil": 3.5,
+      "phantom_grove": 4.5,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
+    "id": "holguk-of-the-hallowsights",
+    "name": "Holguk of the Hallowsights",
+    "slug": "holguk-of-the-hallowsights",
+    "faction": "Orcs",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Skull Staff Pummel",
+        "description": "Attacks 1 enemy. Has an 80% chance of placing a 30% [Decrease C. RATE] debuff for 2 turns. Also places a 25% [Decrease C. DMG] debuff for 2 turns, if the target is under a [Hex] debuff. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "Hallowhex",
+        "description": "Attacks all enemies. Has a 75% chance of decreasing the duration of all buffs on all enemies by 2 turns. Also has a 75% chance of placing a [Block Buffs] debuff and a [Hex] debuff on all enemies for 2 turns. The [Hex] debuff cannot be removed, stolen, or transferred. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15% Level 5: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Spirit-Speaker",
+        "description": "Revives all dead allies with 50% HP and 50% Turn Meter. Places a [Revive on Death] buff on all allies for 1 turn, and a [Shield] buff equal to 30% of this Champion’s MAX HP on all allies for 2 turns. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Leader Of Exiles [P]",
+        "description": "Whenever an ally is revived by a [Revive on Death] buff, fills that ally’s Turn Meter by 50%. Whenever an enemy under a [Hex] debuff is killed, decreases the Turn Meters of all enemies by 25%. Enemies under [Hex] debuffs will have their C. RATE decreased by 20%. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 3,
+      "hydra": 4.5,
+      "chimera": 4.5,
+      "arena_offense": 4,
+      "dungeons": 4,
+      "spider": 4.5,
+      "dragon": 4.5,
+      "fire_knight": 4,
+      "ice_golem": 4.5,
+      "iron_twins": 3.5,
+      "sand_devil": 3.5,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
+    "id": "heinrik-demondoom",
+    "name": "Heinrik Demondoom",
+    "slug": "heinrik-demondoom",
+    "faction": "The Sacred Order",
+    "affinity": "Spirit",
+    "rarity": "Mythical",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Sanctified Mace",
+        "description": "Attacks 1 enemy 2 times. Each hit decreases the target’s Turn Meter by 10%. Each hit will decrease the target’s Turn Meter by 20% instead if the target is under a [Stun], [Sleep], [Sheep], [Fear], [True Fear], [Provoke], [Freeze] or [Petrification] debuff. Level 2: Ignore RES +20%"
+      },
+      {
+        "name": "Evil Begone!",
+        "description": "Attacks all enemies. Places a [Stun] debuff on each enemy for 1 turn, and a 30% [Decrease SPD] debuff on each enemy for 2 turns. If a target’s Turn Meter is equal to or greater than 50%, these debuffs will ignore [Block Debuffs] buffs. Level 2: Ignore RES +20% Level 3: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Hateful Orator",
+        "description": "Places a 30% [Increase SPD] buff and a 50% [Increase ACC] buff on all allies for 2 turns. Steals 50% of each enemy’s Turn Meter. Level 2: Ignore RES +20% Level 3: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Metamorph",
+        "description": "Transforms this Champion into their Alternate Form. Then grants an Extra Turn.",
+        "cooldown": 4
+      },
+      {
+        "name": "Renewed Purpose [P]",
+        "description": "Whenever an enemy receives a [Stun], [Sleep], [Sheep], [Fear], [True Fear], [Provoke], [Freeze] or [Petrification] debuff, fills this Champion’s Turn Meter by 10%. Whenever an ally attacks an enemy under a [Stun], [Sleep], [Sheep], [Fear], [True Fear], [Provoke], [Freeze] or [Petrification] debuff, also fills that ally’s Turn Meter by 10%."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4.5,
+      "hydra": 4,
+      "chimera": 4.5,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4.5,
+      "dragon": 5,
+      "fire_knight": 4.5,
+      "ice_golem": 5,
+      "iron_twins": 3.5,
+      "sand_devil": 3,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
     "id": "nais-the-shadowthief",
     "name": "Nais the Shadowthief",
     "slug": "nais-the-shadowthief",
@@ -55494,6 +55692,54 @@
       "iron_twins": 3,
       "sand_devil": 3,
       "phantom_grove": 3,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
+    "id": "xalgaze-fangwall",
+    "name": "Xalgaze Fangwall",
+    "slug": "xalgaze-fangwall",
+    "faction": "Demonspawn",
+    "affinity": "Magic",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Unsettling Warrior",
+        "description": "Attacks 1 enemy 1 time. Has a 50% chance to place a [True Fear] debuff for 1 turn. Also has a 50% chance to place a [Block Active Skills] debuff for 1 turn, if the target is under a [Leech] debuff. Level 2: Damage +10% Level 3: Buff/Debuff Chance +10% Level 4: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Horrific Mission",
+        "description": "Attacks all enemies 2 times. Each hit will ignore 15% of each target’s DEF. The first hit has a 75% chance of placing a [Leech] debuff for 2 turns. The second hit has a 75% chance of placing a 50% [Decrease RES] debuff for 2 turns. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Unholy Resilience",
+        "description": "Places a 60% [Increase DEF] buff, a 50% [Increase ACC] buff, and a 30% [Reflect Damage] buff on all allies for 2 turns. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Contruct Of Siroth [P]",
+        "description": "All [Reflect Damage] buffs on this Champion and their allies reflect 30% more damage. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Whenever this Champion is attacked, reflects 50% of the damage this Champion receives back to the attacker. Heals this Champion by 50% of any damage received from enemy skills while under a [Reflect Damage] buff."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 3.5,
+      "hydra": 4,
+      "chimera": 5,
+      "arena_offense": 4,
+      "dungeons": 4,
+      "spider": 3.5,
+      "dragon": 4.5,
+      "fire_knight": 4.5,
+      "ice_golem": 3.5,
+      "iron_twins": 3,
+      "sand_devil": 3.5,
+      "phantom_grove": 3.5,
       "doom_tower": 0,
       "faction_wars": 4.5
     }
@@ -56859,6 +57105,54 @@
     }
   },
   {
+    "id": "xanthe-seaflower",
+    "name": "Xanthe Seaflower",
+    "slug": "xanthe-seaflower",
+    "faction": "Argonites",
+    "affinity": "Force",
+    "rarity": "Epic",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Arrow Of Languor",
+        "description": "Attacks 1 enemy. Has a 50% chance of placing a [Block Buffs] debuff for 2 turns. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "Passionroot Volley",
+        "description": "Attacks all enemies. Has a 75% chance of placing a 50% [Decrease ATK] debuff for 2 turns. Heals all allies by 5% of this Champion’s MAX HP for each debuff placed. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Generous Friend",
+        "description": "Places a 50% [Increase RES] buff and a protected 15% [Continuous Heal] buff on all allies for 2 turns. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Natural Remedy [P]",
+        "description": "Removes 1 random debuff from this Champion at the start of their turn. Whenever a debuff is removed this way, places a 7.5% [Continuous Heal] buff on this Champion for 2 turns."
+      }
+    ],
+    "ratings": {
+      "overall": 3,
+      "clan_boss": 3,
+      "hydra": 3,
+      "chimera": 3.5,
+      "arena_offense": 2.5,
+      "dungeons": 3,
+      "spider": 4,
+      "dragon": 4,
+      "fire_knight": 2.5,
+      "ice_golem": 3.5,
+      "iron_twins": 2,
+      "sand_devil": 2,
+      "phantom_grove": 2,
+      "doom_tower": 0,
+      "faction_wars": 3.5
+    }
+  },
+  {
     "id": "gladewulf",
     "name": "Gladewulf",
     "slug": "gladewulf",
@@ -57088,6 +57382,49 @@
       "phantom_grove": 2,
       "doom_tower": 0,
       "faction_wars": 3
+    }
+  },
+  {
+    "id": "horned-viper",
+    "name": "Horned Viper",
+    "slug": "horned-viper",
+    "faction": "Argonites",
+    "affinity": "Void",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Viper's Bite",
+        "description": "Attacks 1 enemy. Has a 30% chance of removing 1 random debuff from a random ally. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +10%"
+      },
+      {
+        "name": "Below The Belt",
+        "description": "Attacks 1 enemy 2 times. The first hit has a 75% chance of placing a [Provoke] debuff for 1 turn. The second hit has a 75% chance of placing a 25% [Decrease ACC] debuff for 2 turns. Then places a [Shield] buff equal to 20% of this Champion&#8217;s MAX HP on this Champion for 2 turns. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1 Level 7: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Warrior Society",
+        "description": "Places a [Block Debuffs] buff on all allies for 1 turn, and a 25% [Increase ACC] buff on all allies for 2 turns. Level 2: Cooldown -1 Level 3: Cooldown -1"
+      }
+    ],
+    "ratings": {
+      "overall": 2,
+      "clan_boss": 2,
+      "hydra": 2,
+      "chimera": 2,
+      "arena_offense": 1,
+      "dungeons": 2,
+      "spider": 2,
+      "dragon": 2.5,
+      "fire_knight": 1,
+      "ice_golem": 2,
+      "iron_twins": 1.5,
+      "sand_devil": 1,
+      "phantom_grove": 1.5,
+      "doom_tower": 0,
+      "faction_wars": 2.5
     }
   },
   {
