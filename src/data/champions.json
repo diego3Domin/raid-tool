@@ -55697,6 +55697,55 @@
     }
   },
   {
+    "id": "vallaryn-the-equalizer",
+    "name": "Vallaryn the Equalizer",
+    "slug": "vallaryn-the-equalizer",
+    "faction": "Undead Hordes",
+    "affinity": "Magic",
+    "rarity": "Legendary",
+    "role": "ATK",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Violent Harmony",
+        "description": "Attacks 1 enemy 2 times. Each hit heals this Champion by 20% of the damage inflicted. Each hit also has a 50% chance of placing a 100% [Heal Reduction] debuff for 2 turns. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Precise Intervention",
+        "description": "Attacks all enemies. Has a 75% chance of placing a 25% [Weaken] debuff and a [Leech] debuff on all enemies for 2 turns. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Outcome Assured",
+        "description": "Attacks 1 enemy 2 times. Before attacking, removes all debuffs from this Champion &amp; swaps HP with the target. Will ignore 15% of the target’s DEF. Will ignore 30% of the target’s DEF and any [Shield] buffs instead, if this Champion’s current HP is greater than the target’s. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "My True Purpose [P]",
+        "description": "[Active Effect] Decreases the cooldown of one of this Champion’s skills by 2 turns whenever this Champion loses 30% or more HP from an enemy skill in a single turn. [Passive Effect] This Champion counterattacks with their default skill each time an enemy is healed by a skill. Occurs once per turn.",
+        "cooldown": 3
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 4,
+      "hydra": 3.5,
+      "chimera": 4,
+      "arena_offense": 4,
+      "dungeons": 4,
+      "spider": 3.5,
+      "dragon": 4,
+      "fire_knight": 4,
+      "ice_golem": 4,
+      "iron_twins": 3.5,
+      "sand_devil": 3,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
     "id": "xalgaze-fangwall",
     "name": "Xalgaze Fangwall",
     "slug": "xalgaze-fangwall",
@@ -56670,55 +56719,6 @@
       "iron_twins": 2.5,
       "sand_devil": 2.5,
       "phantom_grove": 2.5,
-      "doom_tower": 0,
-      "faction_wars": 4
-    }
-  },
-  {
-    "id": "vallaryn-the-equalizer",
-    "name": "Vallaryn the Equalizer",
-    "slug": "vallaryn-the-equalizer",
-    "faction": "Undead Hordes",
-    "affinity": "Magic",
-    "rarity": "Legendary",
-    "role": "ATK",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Violent Harmony",
-        "description": "Attacks 1 enemy 2 times. Each hit heals this Champion by 20% of the damage inflicted. Each hit also has a 50% chance of placing a 100% [Heal Reduction] debuff for 2 turns. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
-      },
-      {
-        "name": "Precise Intervention",
-        "description": "Attacks all enemies. Has a 75% chance of placing a 25% [Weaken] debuff and a [Leech] debuff on all enemies for 2 turns. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Outcome Assured",
-        "description": "Attacks 1 enemy 2 times. Before attacking, removes all debuffs from this Champion &amp; swaps HP with the target. Will ignore 15% of the target’s DEF. Will ignore 30% of the target’s DEF and any [Shield] buffs instead, if this Champion’s current HP is greater than the target’s. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "My True Purpose [P]",
-        "description": "[Active Effect] Decreases the cooldown of one of this Champion’s skills by 2 turns whenever this Champion loses 30% or more HP from an enemy skill in a single turn. [Passive Effect] This Champion counterattacks with their default skill each time an enemy is healed by a skill. Occurs once per turn.",
-        "cooldown": 3
-      }
-    ],
-    "ratings": {
-      "overall": 3.5,
-      "clan_boss": 3.5,
-      "hydra": 3.5,
-      "chimera": 3.5,
-      "arena_offense": 3.5,
-      "dungeons": 3,
-      "spider": 3,
-      "dragon": 4,
-      "fire_knight": 4,
-      "ice_golem": 3.5,
-      "iron_twins": 2.5,
-      "sand_devil": 3,
-      "phantom_grove": 3.5,
       "doom_tower": 0,
       "faction_wars": 4
     }
