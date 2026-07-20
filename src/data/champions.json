@@ -21112,20 +21112,20 @@
     ],
     "ratings": {
       "overall": 2.5,
-      "clan_boss": 3.5,
-      "hydra": 1,
-      "chimera": 3,
+      "clan_boss": 2.5,
+      "hydra": 1.5,
+      "chimera": 2.5,
       "arena_offense": 3,
       "dungeons": 2,
       "spider": 2,
-      "dragon": 4,
-      "fire_knight": 3,
-      "ice_golem": 3.5,
+      "dragon": 3,
+      "fire_knight": 2.5,
+      "ice_golem": 3,
       "iron_twins": 2,
-      "sand_devil": 1,
-      "phantom_grove": 0.5,
-      "doom_tower": 2,
-      "faction_wars": 3.5
+      "sand_devil": 1.5,
+      "phantom_grove": 2,
+      "doom_tower": 0,
+      "faction_wars": 3
     }
   },
   {
@@ -28498,13 +28498,13 @@
       "arena_offense": 3,
       "dungeons": 3,
       "spider": 3.5,
-      "dragon": 3.5,
+      "dragon": 3,
       "fire_knight": 3,
       "ice_golem": 4,
       "iron_twins": 2,
       "sand_devil": 2.5,
       "phantom_grove": 1.5,
-      "doom_tower": 3,
+      "doom_tower": 0,
       "faction_wars": 3.5
     }
   },
@@ -38648,19 +38648,19 @@
       }
     ],
     "ratings": {
-      "overall": 4,
+      "overall": 4.5,
       "clan_boss": 4.5,
       "hydra": 2,
       "chimera": 4,
       "arena_offense": 5,
       "dungeons": 4,
       "spider": 3,
-      "dragon": 4,
+      "dragon": 4.5,
       "fire_knight": 4,
       "ice_golem": 5,
       "iron_twins": 3,
       "sand_devil": 3.5,
-      "phantom_grove": 3,
+      "phantom_grove": 4,
       "doom_tower": 0,
       "faction_wars": 5
     }
@@ -43511,19 +43511,19 @@
     "ratings": {
       "overall": 2.5,
       "clan_boss": 1,
-      "hydra": 2,
+      "hydra": 1.5,
       "chimera": 1.5,
       "arena_offense": 3.5,
       "dungeons": 2,
       "spider": 2,
-      "dragon": 4,
+      "dragon": 3,
       "fire_knight": 2,
       "ice_golem": 3,
-      "iron_twins": 0.5,
-      "sand_devil": 0.5,
+      "iron_twins": 1.5,
+      "sand_devil": 2,
       "phantom_grove": 1.5,
       "doom_tower": 0,
-      "faction_wars": 3.5
+      "faction_wars": 3
     }
   },
   {
@@ -54809,6 +54809,54 @@
     }
   },
   {
+    "id": "predator",
+    "name": "Predator",
+    "slug": "predator",
+    "faction": "Lizardmen",
+    "affinity": "Force",
+    "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/predator.jpg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Wrist Blades",
+        "description": "Attacks 1 enemy. Heals this Champion by 30% of the damage dealt. [Passive Effect] Whenever this Champion successfully Evades an enemy skill and all of its accompanying effects, counterattacks with this skill. Level 2: Damage +10% Level 3: Damage +10% Level 4: Damage +10%"
+      },
+      {
+        "name": "Smart Disc",
+        "description": "Attacks all enemies 2 times. After hitting the initially selected enemy, all other enemies will be hit in a random order. For the first hit, the damage received by the initially selected enemy will be increased by 75%. Each subsequent enemy hit following the initial hit will receive 15% less bonus damage (reduces to 15% bonus damage). Also destroys each enemy&#8217;s MAX HP by 30% of the damage dealt (stacks up to 50%). For the second hit, the damage received by the initially selected enemy will be increased by 15%. Each subsequent enemy hit following the initial hit will receive 15% more bonus damage (stacks up to 75% bonus damage). This attack ignores 15% of each target&#8217;s DEF if this Champion is under a [Veil] or [Perfect Veil] buff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Combistick Throw",
+        "description": "Attacks 1 enemy. Before attacking, places a [Hunter&#8217;s Gaze] debuff for 1 turn. This debuff cannot be resisted if this Champion is under a [Veil] or [Perfect Veil] buff. If this attack kills an enemy, places a [Block Revive] debuff on the target and a [Hunter&#8217;s Gaze] debuff on a random alive enemy for 1 turn. The [Hunter&#8217;s Gaze] debuff cannot be resisted if this Champion is under a [Veil] or [Perfect Veil] buff. If this attack does not kill an enemy, places a [Perfect Veil] buff on this Champion for 2 turns and fills their Turn Meter by 50%. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Yautja Clock [P]",
+        "description": "At the start of each Round, places a [Perfect Veil] buff on this Champion for 1 turn. Before this Champion takes a turn, also has an initial 50% chance to Evade an enemy skill and all of its accompanying effects. This initial chance reduces to 0% after this Champion&#8217;s first turn in a Round. Whenever this Champion kills an enemy, grants this Champion a 20% chance to Evade enemy skills and accompanying effects (stacks up to 60%)."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 3.5,
+      "hydra": 3.5,
+      "chimera": 3.5,
+      "arena_offense": 5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4.5,
+      "fire_knight": 3.5,
+      "ice_golem": 4.5,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 4,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
     "id": "sanguine-maria",
     "name": "Sanguine Maria",
     "slug": "sanguine-maria",
@@ -55988,54 +56036,6 @@
       "phantom_grove": 4,
       "doom_tower": 0,
       "faction_wars": 4.5
-    }
-  },
-  {
-    "id": "predator",
-    "name": "Predator",
-    "slug": "predator",
-    "faction": "Lizardmen",
-    "affinity": "Force",
-    "rarity": "Legendary",
-    "role": "HP",
-    "avatar_url": "/champions/predator.jpg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Wrist Blades",
-        "description": "Attacks 1 enemy. Heals this Champion by 30% of the damage dealt. [Passive Effect] Whenever this Champion successfully Evades an enemy skill and all of its accompanying effects, counterattacks with this skill. Level 2: Damage +10% Level 3: Damage +10% Level 4: Damage +10%"
-      },
-      {
-        "name": "Smart Disc",
-        "description": "Attacks all enemies 2 times. After hitting the initially selected enemy, all other enemies will be hit in a random order. For the first hit, the damage received by the initially selected enemy will be increased by 75%. Each subsequent enemy hit following the initial hit will receive 15% less bonus damage (reduces to 15% bonus damage). Also destroys each enemy&#8217;s MAX HP by 30% of the damage dealt (stacks up to 50%). For the second hit, the damage received by the initially selected enemy will be increased by 15%. Each subsequent enemy hit following the initial hit will receive 15% more bonus damage (stacks up to 75% bonus damage). This attack ignores 15% of each target&#8217;s DEF if this Champion is under a [Veil] or [Perfect Veil] buff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Combistick Throw",
-        "description": "Attacks 1 enemy. Before attacking, places a [Hunter&#8217;s Gaze] debuff for 1 turn. This debuff cannot be resisted if this Champion is under a [Veil] or [Perfect Veil] buff. If this attack kills an enemy, places a [Block Revive] debuff on the target and a [Hunter&#8217;s Gaze] debuff on a random alive enemy for 1 turn. The [Hunter&#8217;s Gaze] debuff cannot be resisted if this Champion is under a [Veil] or [Perfect Veil] buff. If this attack does not kill an enemy, places a [Perfect Veil] buff on this Champion for 2 turns and fills their Turn Meter by 50%. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Yautja Clock [P]",
-        "description": "At the start of each Round, places a [Perfect Veil] buff on this Champion for 1 turn. Before this Champion takes a turn, also has an initial 50% chance to Evade an enemy skill and all of its accompanying effects. This initial chance reduces to 0% after this Champion&#8217;s first turn in a Round. Whenever this Champion kills an enemy, grants this Champion a 20% chance to Evade enemy skills and accompanying effects (stacks up to 60%)."
-      }
-    ],
-    "ratings": {
-      "overall": 4,
-      "clan_boss": 3.5,
-      "hydra": 3.5,
-      "chimera": 3.5,
-      "arena_offense": 5,
-      "dungeons": 3,
-      "spider": 4.5,
-      "dragon": 4,
-      "fire_knight": 3,
-      "ice_golem": 3.5,
-      "iron_twins": 3,
-      "sand_devil": 2,
-      "phantom_grove": 4,
-      "doom_tower": 0,
-      "faction_wars": 5
     }
   },
   {
