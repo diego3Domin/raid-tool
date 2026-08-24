@@ -57395,6 +57395,54 @@
     }
   },
   {
+    "id": "antigone-man-slayer",
+    "name": "Antigone Man-slayer",
+    "slug": "antigone-man-slayer",
+    "faction": "Argonites",
+    "affinity": "Void",
+    "rarity": "Epic",
+    "role": "HP",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "MATERNAL INSTINCT",
+        "description": "Attacks 1 enemy. Heals this Champion by 10% of their MAX HP. Heals all other allies by 5% of this Champion’s MAX HP. Damage based on: [HP] Lvl. 2 Damage +5% Lvl. 3 Damage +5% Lvl. 4 Damage +5% Lvl. 5 Damage +5%"
+      },
+      {
+        "name": "ISLAND GUARDIAN",
+        "description": "Attacks all enemies. Has a 75% chance of placing a 25% [Weaken] debuff for 2 turns. Also places a [Shield] buff equal to 20% of this Champion’s MAX HP on all allies for 2 turns. Damage based on: [HP] Lvl. 2 Damage +10% Lvl. 3 Damage +10% Lvl. 4 Buff/Debuff Chance +10% Lvl. 5 Buff/Debuff Chance +15% Lvl. 6 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "UNBURDENING STRIKE",
+        "description": "Attacks 1 enemy. Before attacking, transfers all [Poison] and [HP Burn] debuffs, as well as 1 random debuff from all allies to this Champion. Will not transfer [Stun], [Sleep], [Fear], [True Fear], [Provoke], [Freeze], [Petrification], or [Sheep] debuffs. Transfers all debuffs from this Champion to the target. Damage based on: [HP] Lvl. 2 Damage +10% Lvl. 3 Damage +10% Lvl. 4 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "LET THEM SUFFER [P]",
+        "description": "Has a 25% chance to reflect any [Poison] and [HP Burn] debuffs placed on this Champion back to the attacker. If this Champion is under a [Shield] buff, the chance increases to 50%."
+      }
+    ],
+    "ratings": {
+      "overall": 3,
+      "clan_boss": 2.5,
+      "hydra": 2.5,
+      "chimera": 2.5,
+      "arena_offense": 2.5,
+      "dungeons": 3,
+      "spider": 4,
+      "dragon": 4,
+      "fire_knight": 3,
+      "ice_golem": 3.5,
+      "iron_twins": 3,
+      "sand_devil": 2.5,
+      "phantom_grove": 2.5,
+      "doom_tower": 0,
+      "faction_wars": 3.5
+    }
+  },
+  {
     "id": "gladewulf",
     "name": "Gladewulf",
     "slug": "gladewulf",
