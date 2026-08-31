@@ -40621,14 +40621,14 @@
       "overall": 3.5,
       "clan_boss": 4.5,
       "hydra": 3,
-      "chimera": 3.5,
+      "chimera": 3,
       "arena_offense": 2.5,
       "dungeons": 3,
       "spider": 4,
       "dragon": 4,
-      "fire_knight": 3,
+      "fire_knight": 3.5,
       "ice_golem": 4,
-      "iron_twins": 3.5,
+      "iron_twins": 3,
       "sand_devil": 2,
       "phantom_grove": 2,
       "doom_tower": 0,
@@ -41679,18 +41679,18 @@
     "ratings": {
       "overall": 3.5,
       "clan_boss": 2.5,
-      "hydra": 4,
+      "hydra": 3,
       "chimera": 2.5,
       "arena_offense": 3.5,
       "dungeons": 3,
-      "spider": 4.5,
+      "spider": 4,
       "dragon": 3.5,
-      "fire_knight": 2,
-      "ice_golem": 4.5,
+      "fire_knight": 2.5,
+      "ice_golem": 3.5,
       "iron_twins": 2.5,
       "sand_devil": 2,
-      "phantom_grove": 1.5,
-      "doom_tower": 4,
+      "phantom_grove": 2,
+      "doom_tower": 0,
       "faction_wars": 3.5
     }
   },
@@ -42642,13 +42642,13 @@
       "arena_offense": 4,
       "dungeons": 3,
       "spider": 4,
-      "dragon": 4.5,
+      "dragon": 4,
       "fire_knight": 3.5,
-      "ice_golem": 4.5,
+      "ice_golem": 4,
       "iron_twins": 1,
       "sand_devil": 1,
-      "phantom_grove": 1,
-      "doom_tower": 4,
+      "phantom_grove": 2,
+      "doom_tower": 0,
       "faction_wars": 4
     }
   },
@@ -43622,17 +43622,17 @@
       "overall": 3,
       "clan_boss": 2.5,
       "hydra": 3,
-      "chimera": 3,
-      "arena_offense": 3,
+      "chimera": 2.5,
+      "arena_offense": 2,
       "dungeons": 3,
-      "spider": 4.5,
+      "spider": 3,
       "dragon": 3,
       "fire_knight": 3,
-      "ice_golem": 3.5,
+      "ice_golem": 3,
       "iron_twins": 2.5,
       "sand_devil": 1.5,
       "phantom_grove": 2.5,
-      "doom_tower": 4,
+      "doom_tower": 0,
       "faction_wars": 3.5
     }
   },
@@ -53957,54 +53957,6 @@
     }
   },
   {
-    "id": "ozilda-the-wicked",
-    "name": "Ozilda the Wicked",
-    "slug": "ozilda-the-wicked",
-    "faction": "Dark Elves",
-    "affinity": "Void",
-    "rarity": "Legendary",
-    "role": "Support",
-    "avatar_url": "/champions/placeholder.svg",
-    "stats": {},
-    "skills": [
-      {
-        "name": "Enfeebling Curse",
-        "description": "Attacks all enemies. Has a 40% chance of placing a [Block Active Skills] debuff for 1 turn. Has a 100% chance instead against targets who are under a [Fear] or [True Fear] debuff. Lvl.2 Damage +15% Lvl.3 Buff/Debuff chance +10% Lvl.4 Buff/Debuff chance +10%"
-      },
-      {
-        "name": "You Can't Escape Me!",
-        "description": "Removes all buffs from all enemies. Steals 30% of each enemy&#8217;s Turn Meter if they&#8217;re under a [Fear] or [True Fear] debuff. Has a 75% chance of placing a 60% [Decrease DEF] debuff and a 100% [Ensnare] debuff on all enemies for 2 turns. Lvl.2 Buff/Debuff chance +10% Lvl.3 Buff/Debuff chance +15% Lvl.4 Cooldown -1 Lvl.5 Cooldown -1",
-        "cooldown": 5
-      },
-      {
-        "name": "Lambs to Slaughter",
-        "description": "Attacks all enemies. Places a [Master Seal] debuff on the initial target for 2 turns. Also has a 30% chance of placing a [Sheep] debuff on all other enemies for 1 turn. Places a [Block Passive Skills] debuff for 2 turns instead, if the 30% chance does not activate [Sheep] debuff. Lvl.2 Damage +20% Lvl.3 Cooldown -1 Lvl.4 Cooldown -1",
-        "cooldown": 4
-      },
-      {
-        "name": "Beyond Deranged",
-        "description": "This champion is immune to [Sheep], [Fear], [True Fear], [Ensnare], [Block Active Skills], [Seal], [Master Seal], and [Block Passive Skills] debuffs. Whenever an enemy receives a buff, has a 50% chance of placing a [True Fear] debuff on that enemy for 1 turn. Will ignore any [Block Debuffs] buffs. This effect can only activate once per skill, and once per target. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. This Champion and their allies deal 20% more damage against enemies under [Fear] or [True Fear] debuffs. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
-      }
-    ],
-    "ratings": {
-      "overall": 5,
-      "clan_boss": 2.5,
-      "hydra": 2.5,
-      "chimera": 3,
-      "arena_offense": 5,
-      "dungeons": 3,
-      "spider": 3.5,
-      "dragon": 3.5,
-      "fire_knight": 3,
-      "ice_golem": 3,
-      "iron_twins": 2,
-      "sand_devil": 2,
-      "phantom_grove": 2,
-      "doom_tower": 0,
-      "faction_wars": 5
-    }
-  },
-  {
     "id": "the-tin-woodman",
     "name": "The Tin Woodman",
     "slug": "the-tin-woodman",
@@ -54036,9 +53988,9 @@
     ],
     "ratings": {
       "overall": 5,
-      "clan_boss": 4.5,
-      "hydra": 4.5,
-      "chimera": 4.5,
+      "clan_boss": 5,
+      "hydra": 5,
+      "chimera": 5,
       "arena_offense": 5,
       "dungeons": 5,
       "spider": 4.5,
@@ -55986,6 +55938,54 @@
     }
   },
   {
+    "id": "ozilda-the-wicked",
+    "name": "Ozilda the Wicked",
+    "slug": "ozilda-the-wicked",
+    "faction": "Dark Elves",
+    "affinity": "Void",
+    "rarity": "Legendary",
+    "role": "Support",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Enfeebling Curse",
+        "description": "Attacks all enemies. Has a 40% chance of placing a [Block Active Skills] debuff for 1 turn. Has a 100% chance instead against targets who are under a [Fear] or [True Fear] debuff. Lvl.2 Damage +15% Lvl.3 Buff/Debuff chance +10% Lvl.4 Buff/Debuff chance +10%"
+      },
+      {
+        "name": "You Can't Escape Me!",
+        "description": "Removes all buffs from all enemies. Steals 30% of each enemy&#8217;s Turn Meter if they&#8217;re under a [Fear] or [True Fear] debuff. Has a 75% chance of placing a 60% [Decrease DEF] debuff and a 100% [Ensnare] debuff on all enemies for 2 turns. Lvl.2 Buff/Debuff chance +10% Lvl.3 Buff/Debuff chance +15% Lvl.4 Cooldown -1 Lvl.5 Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Lambs to Slaughter",
+        "description": "Attacks all enemies. Places a [Master Seal] debuff on the initial target for 2 turns. Also has a 30% chance of placing a [Sheep] debuff on all other enemies for 1 turn. Places a [Block Passive Skills] debuff for 2 turns instead, if the 30% chance does not activate [Sheep] debuff. Lvl.2 Damage +20% Lvl.3 Cooldown -1 Lvl.4 Cooldown -1",
+        "cooldown": 4
+      },
+      {
+        "name": "Beyond Deranged",
+        "description": "This champion is immune to [Sheep], [Fear], [True Fear], [Ensnare], [Block Active Skills], [Seal], [Master Seal], and [Block Passive Skills] debuffs. Whenever an enemy receives a buff, has a 50% chance of placing a [True Fear] debuff on that enemy for 1 turn. Will ignore any [Block Debuffs] buffs. This effect can only activate once per skill, and once per target. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. This Champion and their allies deal 20% more damage against enemies under [Fear] or [True Fear] debuffs. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 2.5,
+      "hydra": 2.5,
+      "chimera": 3,
+      "arena_offense": 5,
+      "dungeons": 3,
+      "spider": 3.5,
+      "dragon": 3.5,
+      "fire_knight": 3,
+      "ice_golem": 3,
+      "iron_twins": 2,
+      "sand_devil": 2,
+      "phantom_grove": 2,
+      "doom_tower": 0,
+      "faction_wars": 5
+    }
+  },
+  {
     "id": "the-scarecrow",
     "name": "The Scarecrow",
     "slug": "the-scarecrow",
@@ -56018,12 +56018,12 @@
     ],
     "ratings": {
       "overall": 4,
-      "clan_boss": 3.5,
-      "hydra": 4,
+      "clan_boss": 4,
+      "hydra": 4.5,
       "chimera": 4.5,
-      "arena_offense": 3.5,
+      "arena_offense": 4,
       "dungeons": 4,
-      "spider": 3.5,
+      "spider": 4,
       "dragon": 4,
       "fire_knight": 3.5,
       "ice_golem": 4,
@@ -56031,7 +56031,7 @@
       "sand_devil": 5,
       "phantom_grove": 3,
       "doom_tower": 0,
-      "faction_wars": 4
+      "faction_wars": 4.5
     }
   },
   {
