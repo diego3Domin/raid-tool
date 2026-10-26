@@ -26103,7 +26103,7 @@
       }
     ],
     "ratings": {
-      "overall": 4,
+      "overall": 4.5,
       "clan_boss": 3.5,
       "hydra": 4,
       "chimera": 4,
@@ -26117,7 +26117,7 @@
       "sand_devil": 2,
       "phantom_grove": 4,
       "doom_tower": 0,
-      "faction_wars": 0
+      "faction_wars": 4.5
     }
   },
   {
@@ -41950,21 +41950,21 @@
       }
     ],
     "ratings": {
-      "overall": 3,
-      "clan_boss": 2,
-      "hydra": 3,
-      "chimera": 3.5,
-      "arena_offense": 3,
-      "dungeons": 3,
-      "spider": 4,
-      "dragon": 4,
-      "fire_knight": 3,
-      "ice_golem": 4,
-      "iron_twins": 2.5,
+      "overall": 4.5,
+      "clan_boss": 3.5,
+      "hydra": 4,
+      "chimera": 4.5,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4.5,
+      "dragon": 5,
+      "fire_knight": 4,
+      "ice_golem": 5,
+      "iron_twins": 4,
       "sand_devil": 1,
-      "phantom_grove": 4,
+      "phantom_grove": 4.5,
       "doom_tower": 0,
-      "faction_wars": 4
+      "faction_wars": 4.5
     }
   },
   {
@@ -54582,16 +54582,16 @@
       }
     ],
     "ratings": {
-      "overall": 4.5,
+      "overall": 5,
       "clan_boss": 2,
-      "hydra": 2.5,
+      "hydra": 3,
       "chimera": 3.5,
       "arena_offense": 5,
       "dungeons": 3,
       "spider": 3.5,
-      "dragon": 3.5,
-      "fire_knight": 3.5,
-      "ice_golem": 3.5,
+      "dragon": 4,
+      "fire_knight": 4,
+      "ice_golem": 4,
       "iron_twins": 2,
       "sand_devil": 1,
       "phantom_grove": 2,
@@ -56083,6 +56083,54 @@
     }
   },
   {
+    "id": "owein-winterflame",
+    "name": "Owein Winterflame",
+    "slug": "owein-winterflame",
+    "faction": "Sylvan Watchers",
+    "affinity": "Spirit",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Latesummer's Ward",
+        "description": "Attacks all enemies 2 times. Each hit has a 50% chance of removing any [Shield] and [Magma Shield] buffs, and 1 other random buff from each enemy. This effect cannot be resisted if this Champion is under a [Shield] or [Magma Shield] buff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Emberwatch's Boon",
+        "description": "Equalizes the HP levels of all allies. The HP levels of all allies will be brought up to the level of the ally with the highest HP. Heals all allies. The value of the heal is proportional to this Champion’s DEF. Also places a 30% [Reflect Damage] buff on all allies for 2 turns. Allies with full HP will receive a protected [Reflect Damage] buff for 2 turns. Level 2: Heal +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Ever-Burning",
+        "description": "[Active Effect] Places a 60% [Increase DEF] buff and a [Shield] buff on all allies for 2 turns. The value of the [Shield] is proportional to this Champion’s DEF. [Passive Effect] Whenever a [Shield] buff on an ally expires, or is removed by damage or any other effect, places a [Magma Shield] buff on that ally for 1 turn. The value of the [Magma Shield] is proportional to this Champion’s DEF. Occurs once per turn. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Level 2: Shield +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Winter's Flame [P]",
+        "description": "Decreases the damage this Champion receives by 25%. Will decrease the damage this Champion receives by 50% instead if this Champion is under a [Shield] or [Magma Shield] buff. The amount of damage decreased in this way will be reflected back to all enemies. Whenever this Champion or an ally kills an enemy with damage from [Reflect Damage] buffs, passive Reflect Damage effects or a [Magma Shield] buff, places an [Unkillable] buff on them for 1 turn. Occurs once per ally, per turn. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 4,
+      "chimera": 4,
+      "arena_offense": 5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4.5,
+      "fire_knight": 4.5,
+      "ice_golem": 4.5,
+      "iron_twins": 3.5,
+      "sand_devil": 2.5,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 4.5
+    }
+  },
+  {
     "id": "thayla-hammerhorn",
     "name": "Thayla Hammerhorn",
     "slug": "thayla-hammerhorn",
@@ -56177,6 +56225,55 @@
       "phantom_grove": 4.5,
       "doom_tower": 0,
       "faction_wars": 0
+    }
+  },
+  {
+    "id": "tartarus-the-oarsman",
+    "name": "Tartarus the Oarsman",
+    "slug": "tartarus-the-oarsman",
+    "faction": "Argonites",
+    "affinity": "Void",
+    "rarity": "Legendary",
+    "role": "DEF",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Oar Pummel",
+        "description": "Attacks 1 enemy. Has a 75% chance of placing a [Stun] debuff for 1 turn. This debuff cannot be resisted if any ally or enemy is dead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+      },
+      {
+        "name": "Deemed Unworthy",
+        "description": "Attacks 1 enemy. Before attacking, places a 60% [Increase DEF] buff on all allies for 2 turns and a [Taunt] buff on this Champion for 2 turns. Will ignore 25% of the target’s DEF, as well as any [Block Damage] and [Shield] buffs. Will ignore 50% of the target’s DEF instead and places an extra hit, if any ally or enemy is dead. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Unfit To Live",
+        "description": "Attacks 1 enemy. Before attacking, places a [Keen Sight] buff on this Champion for 2 turns. Will ignore 50% of the target’s DEF, as well as any [Stone Skin] and [Unkillable] buffs. Will ignore 100% of the target’s DEF instead, if any ally or enemy is dead. This skill can target enemies under [Veil] or [Perfect Veil] buffs. Grants an Extra Turn if this attack kills an enemy. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Death hath No hold [P]",
+        "description": "[Passive Effect] This Champion cannot die until an enemy kills at least 1 ally. Occurs once per Round. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. [Active Effect] Denies 1 enemy revival attempt. If multiple enemies are revived at once, will deny 1 random enemy revival attempt. Activates an [Instant Turn] effect on this Champion and places a [Berserk] debuff on this Champion for 1 turn after denying an enemy revival attempt. This debuff cannot be removed, resisted, or blocked. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead.",
+        "cooldown": 4
+      }
+    ],
+    "ratings": {
+      "overall": 4.5,
+      "clan_boss": 4,
+      "hydra": 4,
+      "chimera": 4,
+      "arena_offense": 5,
+      "dungeons": 4,
+      "spider": 2.5,
+      "dragon": 4.5,
+      "fire_knight": 4,
+      "ice_golem": 4,
+      "iron_twins": 3,
+      "sand_devil": 4,
+      "phantom_grove": 5,
+      "doom_tower": 0,
+      "faction_wars": 4.5
     }
   },
   {
@@ -57208,33 +57305,81 @@
     }
   },
   {
-    "id": "owein-winterflame",
-    "name": "Owein Winterflame",
-    "slug": "owein-winterflame",
-    "faction": "Sylvan Watchers",
-    "affinity": "Spirit",
+    "id": "vott-head-lopper",
+    "name": "Vott Head-Lopper",
+    "slug": "vott-head-lopper",
+    "faction": "Banner Lords",
+    "affinity": "Magic",
     "rarity": "Legendary",
+    "role": "HP",
+    "avatar_url": "/champions/placeholder.svg",
+    "stats": {},
+    "skills": [
+      {
+        "name": "Ever-Sharp Ax",
+        "description": "Attacks all enemies. Decreases every target’s RES and DEF by 5% (stacks up to 30%). Level 2: Damage +10% Level 3: Damage +10%"
+      },
+      {
+        "name": "One Clean Out",
+        "description": "Attacks 1 enemy. Before attacking, places a [Hunter&#8217;s Gaze] and a [Deathbrand] debuff on the target for 2 turns. Will ignore 30% of the target&#8217;s DEF. Resets the cooldown of the Righteous Killing skill if the enemy is killed. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 5
+      },
+      {
+        "name": "Righteous Killing",
+        "description": "Attacks all enemies 3 times. Each hit decreases the duration of all buffs on each target by 1 turn. If there is any enemy with no buffs after this skill, grants an Extra Turn. Level 2: Damage +10% Level 3: Damage +10% Level 4: Cooldown -1 Level 5: Cooldown -1",
+        "cooldown": 6
+      },
+      {
+        "name": "Any Last Words?",
+        "description": "Activates the Ever-Sharp Ax skill every time an enemy is killed. Occurs once per turn. Increases this Champion’s C.DMG by 10% for each enemy killed. Stacks up to 100%. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. At the beginning of this Champion’s turn, heals them by 5% of their MAX HP. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
+      }
+    ],
+    "ratings": {
+      "overall": 4,
+      "clan_boss": 3,
+      "hydra": 4.5,
+      "chimera": 3.5,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 3.5,
+      "dragon": 4,
+      "fire_knight": 4,
+      "ice_golem": 4.5,
+      "iron_twins": 3,
+      "sand_devil": 2,
+      "phantom_grove": 3.5,
+      "doom_tower": 0,
+      "faction_wars": 4
+    }
+  },
+  {
+    "id": "primus-atalact",
+    "name": "Primus Atalact",
+    "slug": "primus-atalact",
+    "faction": "Lizardmen",
+    "affinity": "Void",
+    "rarity": "Epic",
     "role": "DEF",
     "avatar_url": "/champions/placeholder.svg",
     "stats": {},
     "skills": [
       {
-        "name": "Latesummer's Ward",
-        "description": "Attacks all enemies 2 times. Each hit has a 50% chance of removing any [Shield] and [Magma Shield] buffs, and 1 other random buff from each enemy. This effect cannot be resisted if this Champion is under a [Shield] or [Magma Shield] buff. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15%"
+        "name": "Primus' Promise",
+        "description": "Attacks 1 enemy. Has a 25% chance of placing a [Stun] debuff on the target for 1 turn. Places a [Perfect Veil] buff on the ally with the lowest DEF for 1 turn. Level 2: Damage +5% Level 3: Damage +5% Level 4: Buff/Debuff Chance +5% Level 5: Buff/Debuff Chance +10%"
       },
       {
-        "name": "Emberwatch's Boon",
-        "description": "Equalizes the HP levels of all allies. The HP levels of all allies will be brought up to the level of the ally with the highest HP. Heals all allies. The value of the heal is proportional to this Champion’s DEF. Also places a 30% [Reflect Damage] buff on all allies for 2 turns. Allies with full HP will receive a protected [Reflect Damage] buff for 2 turns. Level 2: Heal +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
-        "cooldown": 5
+        "name": "Steadfastly Loyal",
+        "description": "Attacks all enemies. Has a 75% chance of placing a [Provoke] debuff on all enemies for 1 turn. Places a [Counterattack] buff on this Champion for 2 turns. Level 2: Damage +10% Level 3: Damage +10% Level 4: Buff/Debuff Chance +10% Level 5: Buff/Debuff Chance +15% Level 6: Cooldown -1",
+        "cooldown": 4
       },
       {
-        "name": "Ever-Burning",
-        "description": "[Active Effect] Places a 60% [Increase DEF] buff and a [Shield] buff on all allies for 2 turns. The value of the [Shield] is proportional to this Champion’s DEF. [Passive Effect] Whenever a [Shield] buff on an ally expires, or is removed by damage or any other effect, places a [Magma Shield] buff on that ally for 1 turn. The value of the [Magma Shield] is proportional to this Champion’s DEF. Occurs once per turn. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead. Level 2: Shield +20% Level 3: Cooldown -1 Level 4: Cooldown -1",
-        "cooldown": 5
+        "name": "Phalanx of Scales",
+        "description": "Places a 60% [Increase DEF] buff on all allies for 2 turns. Then teams up with 3 random allies to attack a single enemy. Level 2: Cooldown -1 Level 3: Cooldown -1",
+        "cooldown": 6
       },
       {
-        "name": "Winter's Flame [P]",
-        "description": "Decreases the damage this Champion receives by 25%. Will decrease the damage this Champion receives by 50% instead if this Champion is under a [Shield] or [Magma Shield] buff. The amount of damage decreased in this way will be reflected back to all enemies. Whenever this Champion or an ally kills an enemy with damage from [Reflect Damage] buffs, passive Reflect Damage effects or a [Magma Shield] buff, places an [Unkillable] buff on them for 1 turn. Occurs once per ally, per turn. If there are multiple Champions on the team with this skill, only one will activate. This skill will not activate on duplicate copies of this Champion, if this particular Champion is dead."
+        "name": "Duty Until Death [P]",
+        "description": "Steals 1 random buff from the target whenver this Champion counterattacks."
       }
     ],
     "ratings": {
@@ -57242,17 +57387,17 @@
       "clan_boss": 4,
       "hydra": 3.5,
       "chimera": 3.5,
-      "arena_offense": 4,
+      "arena_offense": 3.5,
       "dungeons": 3,
       "spider": 4,
       "dragon": 4,
-      "fire_knight": 4,
+      "fire_knight": 4.5,
       "ice_golem": 4,
-      "iron_twins": 3,
+      "iron_twins": 2,
       "sand_devil": 2,
-      "phantom_grove": 2.5,
+      "phantom_grove": 3,
       "doom_tower": 0,
-      "faction_wars": 4.5
+      "faction_wars": 4
     }
   },
   {
