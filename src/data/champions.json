@@ -6456,21 +6456,21 @@
       }
     ],
     "ratings": {
-      "overall": 3.5,
+      "overall": 4,
       "clan_boss": 4,
-      "hydra": 2.5,
+      "hydra": 3.5,
       "chimera": 3.5,
-      "arena_offense": 4,
-      "dungeons": 3,
-      "spider": 2.5,
-      "dragon": 3,
+      "arena_offense": 4.5,
+      "dungeons": 4,
+      "spider": 4,
+      "dragon": 4,
       "fire_knight": 4.5,
-      "ice_golem": 3,
-      "iron_twins": 2,
+      "ice_golem": 3.5,
+      "iron_twins": 3,
       "sand_devil": 2,
-      "phantom_grove": 2.5,
+      "phantom_grove": 4,
       "doom_tower": 0,
-      "faction_wars": 3.5
+      "faction_wars": 4
     }
   },
   {
@@ -37753,21 +37753,21 @@
       }
     ],
     "ratings": {
-      "overall": 3.5,
-      "clan_boss": 4,
-      "hydra": 2,
-      "chimera": 4,
+      "overall": 4.5,
+      "clan_boss": 4.5,
+      "hydra": 3.5,
+      "chimera": 4.5,
       "arena_offense": 4,
-      "dungeons": 3,
-      "spider": 4,
-      "dragon": 3.5,
-      "fire_knight": 4,
+      "dungeons": 4,
+      "spider": 4.5,
+      "dragon": 4.5,
+      "fire_knight": 4.5,
       "ice_golem": 3.5,
-      "iron_twins": 2,
-      "sand_devil": 3,
-      "phantom_grove": 3,
+      "iron_twins": 3.5,
+      "sand_devil": 4,
+      "phantom_grove": 4,
       "doom_tower": 0,
-      "faction_wars": 3.5
+      "faction_wars": 4
     }
   },
   {
